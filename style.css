@@ -1,0 +1,396 @@
+/*
+Theme Name: CMKX
+Theme URI: 
+Author: Arley Consuegra Roselló
+Author URI: 
+Description: Este tema ha sido realizado para
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
+Text Domain: twentysixteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+h1,h2,h3,h4,h5,h6, p{
+	font-family: Arial;
+}
+
+img{
+	width: 100%;
+	height: auto;
+	max-width: 701px;
+}
+.container{
+	max-width: 975px;
+}
+
+div.topNavBar{
+	padding-bottom: 20px;
+}
+
+.navBarLight{
+  background-color: #dddcdc;
+}
+
+.navBarLight a{
+	color: black;
+}
+
+.navBarLight a:hover{
+	color: #BE2503;
+}
+
+h1,h2, h3, h4, h5, h6{
+	color: #BE2503;
+	padding-top: 8px;
+}
+
+a{
+    color: #BE2503;
+}
+
+p{
+	font-size: 12px;
+}
+
+div.singlePost p{
+	font-size: 18px;
+}
+
+.firstMainPost img{
+	width: 100%;
+    height: auto;
+}
+
+.thumbnailContainer{
+	max-height: 377px;
+	overflow: hidden;
+	margin-bottom: 10px;	
+}
+
+.secondMainPost img, .thirdMainPost img{
+	width: 100%;
+	height: auto;
+}
+
+.secondMainPostThumbnailContainer, .thirdMainPostThumbnailContainer{
+	height: 188px;
+	overflow: hidden;
+    margin-bottom: 7px;
+}
+
+.mainPostCaption h2{
+	font-size: 30px;
+	display: inline;
+}
+
+.secondMainPost h2, .thirdMainPost h2{
+    font-size: 16px;
+	display: inline;
+}
+
+.thirdMainPostCaption, .secondMainPostCaption{
+
+}
+
+ol.sponsors {
+    list-style: none;
+    padding: 15px;
+	text-align: center;
+
+}
+
+ol.sponsors li{
+    display: inline-block;
+	margin: 0 2% 0 2%;
+	padding: 5px 0 5px 0;
+	
+}
+
+.firstSecondaryPostContainer{
+	max-height: 358.417px;
+	overflow: hidden;
+}
+
+.firstSecondaryPost h3{
+	font-size: 20px;
+}
+
+.firstSecondaryPost img{
+	width: 100%;
+	height: auto;
+}
+
+.secondaryPostsContainer{
+	height: 111.833px;
+	overflow: hidden;
+	display: inline;	
+}
+
+ol.secondaryPosts img{
+	width: 50%;
+	height: auto;
+}
+
+ol.secondaryPosts h3{
+	font-size: 14px;
+	display: inline;
+	top: 0;
+    position: absolute;
+    padding: 10px;
+}
+
+ol.secondaryPosts li:first-of-type{
+    padding-top: 0;
+}
+
+ol.secondaryPosts li{
+    padding-top: 0.1rem;
+}
+
+.sectionThumbnailContainer{
+	max-height: 185px;
+	overflow: hidden;
+}
+.culturePosts img{
+	width: 100%;
+	height: 185px;
+}
+
+.culturePosts h3{
+	font-size: 16px;
+}
+
+ol.cultureSponsors{
+	list-style: none;
+}
+
+ol.cultureSponsors li{
+	display: inline-block;
+	padding: 10px 20px;
+	max-width: 298px;
+}
+
+ol.cultureSponsors img{
+	width: 100%;
+
+}
+
+p.date{
+	color: #808080cc;
+	font-size: 12px !important;
+
+}
+
+p.date + p{
+  padding-top: 5px;	
+}
+
+ol.tags{
+	padding: 0;
+	margin: 0;
+}
+
+ol.tags li:first-of-type a{
+	color: #333333;
+    font-size: 13px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+ol.tags li{
+	display: inline-block;
+    padding: 0px;
+}
+ol.tags li a{
+		color: #666666;
+		font-size: 12px;
+}
+
+.postCategories{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+.footer{
+	text-align: center;
+	font-weight: bold;
+	border-top: 1px solid #dddcdc;
+	font-family: Belgrano;
+}
+
+.footer p{
+	padding: 15px;
+    margin: 0;
+
+}
+#copyright{
+	font-size: 16px;
+	font-family: Belgrano;
+}
+#contactInfo{
+	font-size: 25px;
+	color: #BE2503;
+}
+ol.social-contact{
+	padding: 20px 0;
+	margin: 0;
+}
+ol.social-contact li{
+	display: inline-block;
+	width: 30%;
+	float: left;
+}
+
+ol.social-contact li svg{
+	height: 2em;
+	width: auto;
+}
+ol.direct-contact{
+	list-style: none;
+	text-align: left;
+}
+
+ol.direct-contact a{
+	color: black;
+}
+
+ol.direct-contact span{
+	color: red
+}
+
+ol.direct-contact i{
+	min-width: 16px;
+	color: #1985d4;
+}
+
+.thumbnailContainerInner{
+  overflow: hidden;
+  max-height: 270px;  
+}
+p.author{
+	margin: 0;
+	color: #000000;
+	font-size: 13px !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 0;
+}
+p.author a{
+		color: #000000;
+}
+
+p.redaction{
+	margin: 0;
+}
+.redaction a{
+	font-size: 12px;
+	color: #666666;
+}
+
+ol.relatedPosts{
+	list-style: none;
+	padding: 0;
+}
+
+ol.relatedPosts li{
+   display: inline-block;
+   width: 24%;
+   vertical-align: top;
+}
+
+ol.relatedPosts img{
+   width: 100%;
+   height: auto;
+}
+.thumbnailContainerRelated{
+   height: 120px;
+   overflow: hidden;   
+}
+
+h3.fromCover{
+	font-size: 18px;
+	padding-top: 0;
+}
+div.fromCover{
+	line-height: 1em !important;
+	font-size: 13px;
+}
+
+
+/*  Text effects code pen */
+h1.elegantshadow {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 72px;
+  padding: 20px 50px 20px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  color: #131313;
+  letter-spacing: .15em;
+  text-shadow: -5px 3px 5px grey;
+}
+h1.elegantshadow span:first-child{
+	color: #BE2503;
+}
+
+
+h1.insetshadow {
+  font: bold 20px arial, sans-serif;
+  background-color: #565656;
+  color: transparent;
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+		  
+  text-align: right;
+}
+
+#miniCarousel img{ 
+  width: 50px;  
+}
+/* Override boostrap */
+
+.list-group-item{
+	border: 0 !important;
+}
+
+
+hr{
+	border-top: 1px solid #dddcdc;
+}
+
+a:hover{
+	text-decoration: none;
+	color: black;
+}
+/*  ------------- */
+
+
+/* Utils */
+
+ .bold{
+	 font-weight: bold;
+ }
+ 
+ .zoomImage:hover img{
+	 transform: scale3d(1.05, 1.05, 1);
+ }
+
+/* ------------- */
+
+.header-row{
+	padding-bottom: 10px;
+}
+
+
+.authors{
+	font-weight: bolder;
+}
+
+
