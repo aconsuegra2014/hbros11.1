@@ -373,6 +373,71 @@
 	  <?php wp_reset_postdata(); ?>
 	<?php endif; ?>
   </div>
-  
+  <hr>
+    <p class="postCategories">
+    <?php   $category_id = get_cat_ID('foto-reportaje'); ?>
+    <?php   $category_link = get_category_link( $category_id ); ?>
+    <a href="<?php echo esc_url( $category_link ); ?>" title="Foto reportaje">Foto reportaje</a>
+  </p>
+  <div class="row">
+    <div class="col-md-7 connected-carousels">
+                <div class="stage">
+                    <div class="carousel carousel-stage">
+					<?php $culturePosts = new WP_Query( array( 'category_name' => 'cultura','posts_per_page' => 4 )  ); ?>
+					  <?php if ( $culturePosts->have_posts() ) : ?>
+                        <ul>
+			              <?php while ( $culturePosts->have_posts() ) : $culturePosts->the_post() ?>
+                            <li>
+							  <?php the_post_thumbnail(); ?>
+							</li>
+							<?php endwhile; ?>
+	                    </ul>
+						 <?php wp_reset_postdata(); ?>
+					    <?php endif; ?>
+                    </div>
+                    <a href="#" class="prev prev-stage"><span>&lsaquo;</span></a>
+                    <a href="#" class="next next-stage"><span>&rsaquo;</span></a>
+                </div>
+	</div>
+    <div class="col-md-5">
+	<div class="connected-carousels">
+	  <div class="carousel-description">
+	  <div class="carousel carousel-stage">
+					  <?php if ( $culturePosts->have_posts() ) : ?>
+                        <ul>
+			              <?php while ( $culturePosts->have_posts() ) : $culturePosts->the_post() ?>
+                            <li>
+							 <a >
+							  <?php the_title(); ?>
+							  </a>
+							</li>
+							<?php endwhile; ?>
+	                    </ul>
+						 <?php wp_reset_postdata(); ?>
+					    <?php endif; ?>
+                    </div>
+                
+
+	  </div>
+	      <div class="navigation">
+                    <a href="#" class="prev prev-navigation">&lsaquo;</a>
+                    <a href="#" class="next next-navigation">&rsaquo;</a>
+                    <div class="carousel carousel-navigation">
+                      <?php if ( $culturePosts->have_posts() ) : ?>
+                        <ul id="miniCarousel">
+			              <?php while ( $culturePosts->have_posts() ) : $culturePosts->the_post() ?>
+                            <li>
+							  <?php the_post_thumbnail(); ?>
+							</li>
+						<?php endwhile; ?>
+	                    </ul>
+						 <?php wp_reset_postdata(); ?>
+					    <?php endif; ?>
+                    </div>
+                </div>
+</div>
+            </div>
+	
+  </div>
 
 <?php get_footer(); ?>

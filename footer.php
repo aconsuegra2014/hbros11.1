@@ -1,49 +1,3 @@
-<div class="wrapper">
-            <h1>Connected Carousels</h1>
-            
-            <p>This example shows how to connect two carousels together so that one carousels acts as a navigation for the other.</p>
-            
-            <div class="connected-carousels">
-                <div class="stage">
-                    <div class="carousel carousel-stage">
-					<?php $culturePosts = new WP_Query( array( 'category_name' => 'cultura','posts_per_page' => 3 )  ); ?>
-					  <?php if ( $culturePosts->have_posts() ) : ?>
-                        <ul>
-			              <?php while ( $culturePosts->have_posts() ) : $culturePosts->the_post() ?>
-                            <li>
-							  <?php the_post_thumbnail(); ?>
-							</li>
-							<?php endwhile; ?>
-	                    </ul>
-						 <?php wp_reset_postdata(); ?>
-					    <?php endif; ?>
-                    </div>
-                    <p class="photo-credits">
-                        Photos by <a href="http://www.mw-fotografie.de">Marc Wiegelmann</a>
-                    </p>
-                    <a href="#" class="prev prev-stage"><span>&lsaquo;</span></a>
-                    <a href="#" class="next next-stage"><span>&rsaquo;</span></a>
-                </div>
-
-                <div class="navigation">
-                    <a href="#" class="prev prev-navigation">&lsaquo;</a>
-                    <a href="#" class="next next-navigation">&rsaquo;</a>
-                    <div class="carousel carousel-navigation">
-                      <?php if ( $culturePosts->have_posts() ) : ?>
-                        <ul id="miniCarousel">
-			              <?php while ( $culturePosts->have_posts() ) : $culturePosts->the_post() ?>
-                            <li>
-							  <?php the_post_thumbnail(); ?>
-							</li>
-						<?php endwhile; ?>
-	                    </ul>
-						 <?php wp_reset_postdata(); ?>
-					    <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-  
   <div class="row footer">
     <div class="col-md-6">
 	<p id="contactInfo"> Información de contacto
@@ -111,8 +65,9 @@
     <script src="<?php bloginfo('template_directory'); ?>/assets/js/bootstrap.min.js"></script>
 	<script src="<?php bloginfo('template_directory'); ?>/assets/js/clamp.min.js"></script>
 	<script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
-	
 	<script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.jcarousel.min.js"></script>
 	<script src="<?php bloginfo('template_directory'); ?>/assets/js/jcarousel.connected-carousels.js"></script>
+
+
   </body>
 </html>

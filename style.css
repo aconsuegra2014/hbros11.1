@@ -351,9 +351,57 @@ h1.insetshadow {
   text-align: right;
 }
 
-#miniCarousel img{ 
-  width: 50px;  
+/* Carousel */
+.navigation{
+	width: 350px;
+	float: left;
 }
+
+.connected-carousels .carousel-navigation, .carousel-description .carousel-stage{
+	width: 350px;
+	height: 95px;
+	box-sizing: unset;
+}
+
+.connected-carousels .next-navigation {
+  right: -125px !important;
+  }
+
+.carousel-stage{
+	height: 300px !important;
+	box-shadow: none !important;
+}
+.carousel-stage img{
+  max-width: 518.75px;
+  width: 100%;
+  height: auto;
+}
+.stage{
+	width: 100% !important;
+	max-width: 538.75px !important;
+}
+.carousel-description, .carousel-description .carousel-stage{
+	height: 120px !important;
+}
+.carousel-description .carousel-stage{
+	width: 518.75px;
+	box-sizing: unset;
+    box-shadow: none;
+}
+.carousel-description li{
+	width: 518.75px;
+	display: block;
+}
+.carousel-description a{
+	max-width: 370px;
+	display: block;
+}
+
+#miniCarousel img{ 
+  width: 165px;
+  height: auto;
+}
+
 /* Override boostrap */
 
 .list-group-item{
