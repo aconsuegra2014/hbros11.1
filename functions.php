@@ -22,7 +22,9 @@ add_filter ( 'the_excerpt' ,   'wpc_custom_excerpt' ) ;
 
 /* Adding support for menu */
 function register_my_menu() {
-  register_nav_menu('top-menu',__( 'Top menu' ));
+  register_nav_menus( array('top-menu' =>   'Top menu',
+                             'side-menu' => 'Side menu'
+							 ));
 }
 add_action( 'init', 'register_my_menu' );
 
@@ -41,12 +43,22 @@ function add_specific_link_class( $atts, $item, $args ) {
 add_filter( 'nav_menu_link_attributes', 'add_specific_link_class', 10, 3 );	
 
 // Adding class to li items in top menu	
-function add_specific_li_class( $classes, $item, $args ) { 
+function add_specific_li_class_to_top_menu( $classes, $item, $args ) { 
       if( $args->theme_location == 'top-menu' ) {
 	    $classes = array('nav-item');
 	  }
 	  return $classes;
 }
 
-add_filter( 'nav_menu_css_class', 'add_specific_li_class', 10, 4 ); 
+add_filter( 'nav_menu_css_class', 'add_specific_li_class_to_top_menu', 10, 4 ); 
+
+// Adding class to li items in side menu	
+function add_specific_li_class_to_side_menu( $classes, $item, $args ) { 
+      if( $args->theme_location == 'side-menu' ) {
+	    $classes = array('list-group-item');
+	  }
+	  return $classes;
+}
+
+add_filter( 'nav_menu_css_class', 'add_specific_li_class_to_side_menu', 10, 4 ); 
 

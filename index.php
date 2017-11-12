@@ -31,13 +31,8 @@
 		</div>
 		
 		<div class="col-md-3">
-		  <ul class="list-group">
-		    <li class="list-group-item">Noticiero provincial de radio</li>
-            <li class="list-group-item">Lente cultural</li>
-            <li class="list-group-item">Podcasts</li>
-            <li class="list-group-item">Programación variada</li>
-         </ul>
-    	</div>
+		  <?php wp_nav_menu( array('theme_location'    => 'side-menu', 'menu_class' => 'list-group')); ?>
+		</div>
 		
 	  </div>
 	  
@@ -96,8 +91,31 @@
 		  </div>
 		</div>
 		
-		<div class="col-md-3">
-		  Especiales
+		<div class="col-md-3" id="specials">
+		  <p class="postCategories">
+            <?php   $category_link = get_term_link('especiales', 'categoria_menu'  ); ?>
+            <a href="<?php echo esc_url( $category_link ); ?>" title="Especiales">Especiales</a>
+          </p>
+		
+		  <?php $specials_posts = new WP_Query(array('tax_query' => array(
+		                                                                  array(
+			                                                                'taxonomy' => 'categoria_menu',
+			                                                                'field'    => 'slug',
+			                                                                'terms'    => 'Especiales',
+		                                                                  ),
+	                                                                ),
+											   'posts_per_page' => 1
+                                               )); ?>
+          <?php if ( $specials_posts->have_posts() ) : ?>
+		  <?php $specials_posts->the_post(); ?>
+		  <?php the_post_thumbnail(); ?>
+		  <h2>
+			    <a href="<?php echo get_permalink()?>">
+		          <?php the_title(); ?>
+			    </a>
+		  </h2>
+		  <?php endif; ?>
+		<?php wp_reset_postdata(); ?>
 		</div>
 	  
 	  </div>

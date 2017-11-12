@@ -151,6 +151,9 @@ ol.secondaryPosts li{
     padding-top: 0.1rem;
 }
 
+#specials h2{
+	font-size: 14px;
+}
 .sectionThumbnailContainer{
 	max-height: 185px;
 	overflow: hidden;
