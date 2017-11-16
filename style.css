@@ -23,6 +23,9 @@ img{
 	height: auto;
 	max-width: 701px;
 }
+.ssba-wrap img{
+	width: unset;
+}
 .container{
 	max-width: 975px;
 }
@@ -90,6 +93,10 @@ div.singlePost p{
 .secondMainPost h2, .thirdMainPost h2{
     font-size: 16px;
 	display: inline;
+}
+
+.recentPosts{
+	font-size: 18px;
 }
 
 .thirdMainPostCaption, .secondMainPostCaption{
@@ -284,6 +291,15 @@ p.author{
 }
 p.author a{
 		color: #000000;
+}
+
+div.author p{
+	font-size: 12px;
+}
+
+div.author img{
+	border-radius: 50%;
+	width: 40%;
 }
 
 p.redaction{

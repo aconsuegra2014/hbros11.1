@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 	<?php while ( have_posts() ) : the_post(); ?>
 	<div>
 	  <?php $categoryTags =  []; ?>
@@ -31,10 +30,10 @@
 	    <?php the_title(); ?>
 	  </h2>
 		<p class="author">
-		  <?php	$authors = wp_get_post_terms($post->ID, 'autores', array("fields" => "names", 'orderby' => 'name')); ?>
+		  <?php	$authors = wp_get_post_terms($post->ID, 'autores', array("fields" => "all", 'orderby' => 'name')); ?>
 		  <?php foreach ($authors as $author) : ?>
-	 	    <a href="<?php echo esc_attr(get_term_link($author, autores))?>">								
-			  <?php echo $author ?>
+	 	    <a href="<?php echo esc_attr(get_term_link($author->name, autores))?>">								
+			  <?php echo $author->name ?>
 			</a>
 		  <?php endforeach; ?>
 						
@@ -85,6 +84,19 @@
     </div>
   </div>
   <div class="col-md-3">
+  <?php $author = $authors[0]; ?>
+  <?php $authorTermId = $author->term_id; ?>
+   <?php $authorPhoto = get_term_meta( $authorTermId, 'wpcf-author-photo', true ); ?>
+  <div class="author">
+	<a href="<?php echo esc_attr(get_term_link($author->name, autores))?>">								
+	  <?php echo $author->name ?>
+	</a>
+	<img src="<?php echo $authorPhoto; ?>" alt="<?php echo $author->name ?>">
+      <p>
+	  <?php echo $author->description; ?>
+	  </p>
+  </div>
+  <hr>
   <h3 class="fromCover">En portada</h3>
     <?php $main_posts = new WP_Query( array( 'category_name' => 'principal','posts_per_page' => 1 )  ); ?>
   <?php if ( $main_posts->have_posts() ) : ?>
@@ -104,7 +116,7 @@
 	<?php endif ?>
   <?php wp_reset_postdata(); ?>
   <hr>
-  <h2>Publicaciones recientes</h2>
+  <h2 class="recentPosts">Publicaciones recientes</h2>
 <ul class="list-group">
 <?php
 	$args = array( 'numberposts' => '5' );
