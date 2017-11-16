@@ -95,7 +95,7 @@ div.singlePost p{
 	display: inline;
 }
 
-.recentPosts{
+.recentPosts, .mostRead{
 	font-size: 18px;
 }
 

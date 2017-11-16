@@ -1,4 +1,18 @@
 ﻿<?php
+
+/*
+   Remove Unwanted Links and Tags From WordPress Head
+*/
+
+// remove the meta generator WP version tag
+remove_action( 'wp_head', 'wp_generator' );
+
+// remove rel="EditURI" link. USEFUL TO REMOVE THIS FOR SECURITY.
+remove_action( 'wp_head', 'rsd_link' );
+
+// remove the link rel="wlwmanifest"
+remove_action( 'wp_head', 'wlwmanifest_link' ); 
+
 function additional_js()
 {
   wp_enqueue_script('jquery');
@@ -61,4 +75,31 @@ function add_specific_li_class_to_side_menu( $classes, $item, $args ) {
 }
 
 add_filter( 'nav_menu_css_class', 'add_specific_li_class_to_side_menu', 10, 4 ); 
+
+// Set post count visit metadata
+function set_popular_post($postID) {
+    $count_key = 'post_visit_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+// To keep the count accurate, lets get rid of prefetching
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+// Counting popular post
+function count_popular_post($post_id) {
+	if (!is_single()) return;
+	if (empty($post_id)) {
+		global $post;
+		$post_id = $post->ID;
+	}
+	set_popular_post($post_id);
+}
+// Inserting 'count_popular_post' function in head of single posts.
+add_action( 'wp_head', 'count_popular_post');
 
