@@ -13,6 +13,24 @@
 		    <?php echo '<div class="row">'; ?>
 		<?php endif; ?>
 		<div class="col-md-3">
+ 		    <?php  $postTags = get_the_tags(); ?>
+		    <?php if(!is_array($postTags)) : ?>
+			<?php $postTags = ['']; ?>
+		    <?php endif; ?>
+		    <ol class="categoryTags">
+			<?php $counter = 0; ?>
+			<?php foreach($postTags as $tag) : ?>
+			    <li>
+				<a href="<?php echo get_tag_link($tag); ?>">
+				    <?php if($counter != 0)
+					echo ' | ';
+				    echo $tag->name; 
+				    $counter++;
+				    ?>
+				</a>
+			    </li>
+			<?php endforeach;?>
+		    </ol>
 		    <div class="categoryImagePostsContainer">
 			<?php the_post_thumbnail(); ?>
 		    </div>

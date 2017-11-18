@@ -199,8 +199,8 @@ p.date + p{
   padding-top: 5px;	
 }
 
-ol.tags{
-	padding: 0;
+ol.tags, ol.categoryTags{
+	padding: 0 0 10px 0;
 	margin: 0;
 }
 
@@ -210,11 +210,11 @@ ol.tags li:first-of-type a{
 	text-transform: uppercase;
 	font-weight: bold;
 }
-ol.tags li{
+ol.tags li, ol.categoryTags li{
 	display: inline-block;
     padding: 0px;
 }
-ol.tags li a{
+ol.tags li a, ol.categoryTags a{
 		color: #666666;
 		font-size: 12px;
 }
