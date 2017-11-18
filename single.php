@@ -56,6 +56,9 @@
     <div class=col-md-9>
 	<?php the_content(); ?>
 
+	<?php if ( comments_open() || get_comments_number() ) : ?>
+	    <?php comments_template();  ?>
+	<?php endif;  ?>
 	<hr>
 	<div>
 	    <h3>Contenido relacionado</h3>

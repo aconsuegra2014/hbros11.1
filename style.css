@@ -518,3 +518,11 @@ a:hover{
 	font-weight: bolder;
 }
 
+/* Comments */
+.commentlist{
+    list-style: none;
+}
+
+img.avatar {
+    width: unset;
+}
