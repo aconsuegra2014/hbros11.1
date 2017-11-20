@@ -31,10 +31,14 @@
 			    </li>
 			<?php endforeach;?>
 		    </ol>
+		    <p class="date category-date">
+			<?php echo get_the_date('d/m/Y'); ?>
+		    </p>
 		    <div class="categoryImagePostsContainer">
 			<?php the_post_thumbnail(); ?>
 		    </div>
 		    <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+
 		</div>
 		<?php if( $colCounter == 3  ) : ?>
 		    <?php echo '</div>'; ?>
