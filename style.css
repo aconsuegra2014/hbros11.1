@@ -3,6 +3,7 @@ Theme Name: CMKX
 Theme URI: 
 Author: Arley Consuegra Roselló
 Author URI: 
+Text Domain: cmxk
 Description: Este tema ha sido realizado para
 Version: 0.1
 License: GNU General Public License v2 or later
@@ -190,15 +191,17 @@ ol.cultureSponsors img{
 }
 
 p.date{
-	color: #808080cc;
-	font-size: 12px !important;
+    color: #808080cc;
+    font-size: 12px;
 
 }
 
 p.date + p{
   padding-top: 5px;	
 }
-
+p.category-date{
+    font-size: 11px;
+}
 ol.tags, ol.categoryTags{
 	padding: 0 0 10px 0;
 	margin: 0;

@@ -1,5 +1,10 @@
 
 <?php get_header(); ?>
+<?php $culture = 'cultura'; ?>
+<?php  if(get_locale() === 'en'): ?>
+    <?php $culture = 'culture'; ?>
+    
+<?php endif; ?>
 
 <div class='row'>
     <?php $main_posts = new WP_Query( array( 'category_name' => 'principal','posts_per_page' => 3 )  ); ?>
@@ -31,7 +36,7 @@
     </div>
     
     <div class="col-md-3">
-	<?php wp_nav_menu( array('theme_location'    => 'side-menu', 'menu_class' => 'list-group')); ?>
+	<?php wp_nav_menu( array('theme_location' => 'side-menu', 'menu_class' => 'list-group')); ?>
     </div>
     
 </div>
@@ -94,7 +99,7 @@
     <div class="col-md-3" id="specials">
 	<p class="postCategories">
             <?php   $category_link = get_term_link('especiales', 'categoria_menu'  ); ?>
-            <a href="<?php echo esc_url( $category_link ); ?>" title="Especiales">Especiales</a>
+            <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Especiales'); ?>"><?php _e('Especiales','cmkx'); ?></a>
         </p>
 	
 	<?php $specials_posts = new WP_Query(array('tax_query' => array(
@@ -193,9 +198,9 @@
 	</div>
 	<hr>
 	<p class="postCategories">
-	    <?php   $category_id = get_cat_ID( 'cultura' ); ?>
+	    <?php   $category_id = get_cat_ID($culture ); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
-	    <a href="<?php echo esc_url( $category_link ); ?>" title="Cultura">Cultura</a>
+	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Cultura','cmkx'); ?>"><?php _e('Cultura','cmkx'); ?></a>
 	</p>
 	<ol class="cultureSponsors">
 	    <li>
@@ -215,7 +220,7 @@
 	    </li>	
 	</ol>
 	<div class="row">
-	    <?php $culturePosts = new WP_Query( array( 'category_name' => 'cultura','posts_per_page' => 3 )  ); ?>
+	    <?php $culturePosts = new WP_Query( array( 'category_name' => $culture ,'posts_per_page' => 3 )  ); ?>
 	    <?php if ( $culturePosts->have_posts() ) : ?>
 		<?php while ( $culturePosts->have_posts() ) : $culturePosts->the_post() ?>
 		    <div class="col-md-4 culturePosts">
@@ -237,7 +242,7 @@
 	<p class="postCategories">
 	    <?php   $category_id = get_cat_ID( 'sociedad' ); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
-	    <a href="<?php echo esc_url( $category_link ); ?>" title="Sociedad">Sociedad</a>
+	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Sociedad','cmkx'); ?>"><?php _e('Sociedad','cmkx'); ?></a>
 	</p>
 	
 	<div class="row">
@@ -290,7 +295,7 @@
 	<p class="postCategories">
 	    <?php   $category_id = get_cat_ID( 'deportes' ); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
-	    <a href="<?php echo esc_url( $category_link ); ?>" title="Sociedad">Deportes</a>
+	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Deportes','cmkx'); ?>"><?php _e('Deportes','cmkx'); ?></a>
 	</p>
 	
 	<div class="row">
@@ -343,7 +348,7 @@
 	<p class="postCategories">
 	    <?php   $category_id = get_cat_ID('Ciencia y Tecnología'); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
-	    <a href="<?php echo esc_url( $category_link ); ?>" title="Ciencia y Tecnología">Ciencia y Tecnología</a>
+	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Ciencia y Tecnología','cmkx'); ?>"><?php _e('Ciencia y Tecnología','cmkx'); ?></a>
 	</p>
 	
 	<div class="row">
@@ -395,7 +400,7 @@
 	<p class="postCategories">
 	    <?php   $category_id = get_cat_ID('foto-reportaje'); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
-	    <a href="<?php echo esc_url( $category_link ); ?>" title="Foto reportaje">Foto reportaje</a>
+	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Foto reportaje','cmkx'); ?>"><?php _e('Foto reportaje','cmkx'); ?></a>
 	</p>
 	<div class="row">
 	    <div class="col-md-7 connected-carousels">

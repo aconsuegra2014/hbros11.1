@@ -1,4 +1,22 @@
 ﻿<?php
+// CHANGE LOCAL LANGUAGE
+// must be called before load_theme_textdomain()
+add_filter( 'locale', 'my_theme_localized' );
+function my_theme_localized( $locale )
+{
+    if ( isset( $_GET['l'] ) )
+    {
+	return sanitize_key( $_GET['l'] );
+    }
+
+    return $locale;
+}
+
+// Adding I18n support
+add_action( 'after_setup_theme', 'my_theme_setup' );
+function my_theme_setup(){
+    load_theme_textdomain( 'cmkx', get_template_directory() . '/languages' );
+}
 
 /*
    Remove Unwanted Links and Tags From WordPress Head
