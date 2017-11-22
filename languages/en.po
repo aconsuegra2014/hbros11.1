@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cmkx\n"
-"POT-Creation-Date: 2017-11-20 11:39-0500\n"
-"PO-Revision-Date: 2017-11-20 11:41-0500\n"
+"POT-Creation-Date: 2017-11-22 10:23-0500\n"
+"PO-Revision-Date: 2017-11-22 10:24-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -12,8 +12,28 @@ msgstr ""
 "X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: footer.php:3
+msgid "Información de contacto"
+msgstr "Contact information"
+
+#: footer.php:56
+msgid ""
+"Copyright © 2001-2017. Todos los derechos reservados. CMKX Radio Bayamo, "
+"Bayamo, Cuba."
+msgstr ""
+"Copyright © 2001-2017. All rights reserved. CMKX Radio Bayamo, Bayamo, Cuba."
+
+#: footer.php:58
+msgid ""
+"Fundada el 10 octubre de 1936. Autorizamos la reproducción de trabajos de "
+"este medio, siempre que sea de forma íntegra y se acredite la fuente"
+msgstr ""
+"Founded on October 10, 1936. We allow the copying of works of this Mass "
+"media, as long as it is in a complete way and the source be accredited"
 
 #: functions.php:143
 msgid "Name"
@@ -23,27 +43,27 @@ msgstr "Name"
 msgid "Email"
 msgstr "Email"
 
-#: index.php:97
+#: index.php:115
 msgid "Especiales"
 msgstr "Specials"
 
-#: index.php:198
+#: index.php:216
 msgid "Cultura"
 msgstr "Culture"
 
-#: index.php:240
+#: index.php:258
 msgid "Sociedad"
 msgstr "Society"
 
-#: index.php:293
+#: index.php:311
 msgid "Deportes"
 msgstr "Sports"
 
-#: index.php:346
+#: index.php:364
 msgid "Ciencia y Tecnología"
 msgstr "Science and Technology"
 
-#: index.php:398
+#: index.php:416
 msgid "Foto reportaje"
 msgstr "Photo journalism"
 

@@ -1,13 +1,26 @@
 
 <?php get_header(); ?>
 <?php $culture = 'cultura'; ?>
+<?php $society = 'sociedad'; ?>
+<?php $sports = 'deportes'; ?>
+<?php $science = 'ciencia'; ?>
+<?php $scienceCatName='Ciencia y Tecnología' ?>
+<?php $specials='especiales'; ?>
+<?php $main = 'principal'; ?>
+<?php $secondary ='secundaria'; ?>
 <?php  if(get_locale() === 'en'): ?>
     <?php $culture = 'culture'; ?>
-    
+    <?php $society = 'society'; ?>
+    <?php $sports = 'sports'; ?>
+    <?php $science = 'science-and-technology'; ?>
+    <?php $scienceCatName='Science and Technology'; ?>
+    <?php $specials='specials'; ?>
+    <?php $secondary ='secondary'; ?>
+    <?php $main = 'main'; ?>
 <?php endif; ?>
 
 <div class='row'>
-    <?php $main_posts = new WP_Query( array( 'category_name' => 'principal','posts_per_page' => 3 )  ); ?>
+    <?php $main_posts = new WP_Query( array( 'category_name' => $main ,'posts_per_page' => 3 )  ); ?>
     <div class="col-md-9">
 	<?php if ( $main_posts->have_posts() ) : ?>
             <div class="row">
@@ -99,14 +112,14 @@
     <div class="col-md-3" id="specials">
 	<p class="postCategories">
             <?php   $category_link = get_term_link('especiales', 'categoria_menu'  ); ?>
-            <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Especiales'); ?>"><?php _e('Especiales','cmkx'); ?></a>
+            <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Especiales','cmkx'); ?>"><?php _e('Especiales','cmkx'); ?></a>
         </p>
 	
 	<?php $specials_posts = new WP_Query(array('tax_query' => array(
 	    array(
 		'taxonomy' => 'categoria_menu',
 		'field'    => 'slug',
-		'terms'    => 'Especiales',
+		'terms'    => $specials,
 	    ),
 	),
 						   'posts_per_page' => 1
@@ -161,7 +174,7 @@
 	
 	<hr>
 	<div class="row">
-	    <?php $secondaryPosts = new WP_Query( array( 'category_name' => 'secundaria','posts_per_page' => 4 )  ); ?>
+	    <?php $secondaryPosts = new WP_Query( array( 'category_name' => $secondary,'posts_per_page' => 4 )  ); ?>
 	    <div class="col-md-7 firstSecondaryPost">
 		
 		<?php if ( $secondaryPosts->have_posts() ) : ?>
@@ -240,7 +253,7 @@
 	
 	<hr>
 	<p class="postCategories">
-	    <?php   $category_id = get_cat_ID( 'sociedad' ); ?>
+	    <?php   $category_id = get_cat_ID( $society ); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Sociedad','cmkx'); ?>"><?php _e('Sociedad','cmkx'); ?></a>
 	</p>
@@ -273,7 +286,7 @@
 	</div>
 	
 	<div class="row">
-	    <?php $societyPosts = new WP_Query( array( 'category_name' => 'sociedad','posts_per_page' => 3 )  ); ?>
+	    <?php $societyPosts = new WP_Query( array( 'category_name' => $society ,'posts_per_page' => 3 )  ); ?>
 	    <?php if ( $societyPosts->have_posts() ) : ?>
 		<?php while ( $societyPosts->have_posts() ) : $societyPosts->the_post() ?>
 		    <div class="col-md-4 culturePosts">
@@ -293,7 +306,7 @@
 	
 	<hr>
 	<p class="postCategories">
-	    <?php   $category_id = get_cat_ID( 'deportes' ); ?>
+	    <?php   $category_id = get_cat_ID( $sports ); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Deportes','cmkx'); ?>"><?php _e('Deportes','cmkx'); ?></a>
 	</p>
@@ -326,7 +339,7 @@
 	</div>
 	
 	<div class="row">
-	    <?php $sportPosts = new WP_Query( array( 'category_name' => 'deportes','posts_per_page' => 3 )  ); ?>
+	    <?php $sportPosts = new WP_Query( array( 'category_name' => $sports,'posts_per_page' => 3 )  ); ?>
 	    <?php if ( $sportPosts->have_posts() ) : ?>
 		<?php while ( $sportPosts->have_posts() ) : $sportPosts->the_post() ?>
 		    <div class="col-md-4 culturePosts">
@@ -346,7 +359,7 @@
 	
 	<hr>
 	<p class="postCategories">
-	    <?php   $category_id = get_cat_ID('Ciencia y Tecnología'); ?>
+	    <?php   $category_id = get_cat_ID($scienceCatName); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Ciencia y Tecnología','cmkx'); ?>"><?php _e('Ciencia y Tecnología','cmkx'); ?></a>
 	</p>
@@ -379,7 +392,7 @@
 	</div>
 	
 	<div class="row">
-	    <?php $scincePosts = new WP_Query( array( 'category_name' => 'ciencia','posts_per_page' => 3 )  ); ?>
+	    <?php $scincePosts = new WP_Query( array( 'category_name' => $science,'posts_per_page' => 3 )  ); ?>
 	    <?php if ( $scincePosts->have_posts() ) : ?>
 		<?php while ( $scincePosts->have_posts() ) : $scincePosts->the_post() ?>
 		    <div class="col-md-4 culturePosts">
