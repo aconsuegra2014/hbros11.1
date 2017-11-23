@@ -47,8 +47,41 @@
 		</div>
 	    </div>
     </div>
-    
     <div class="col-md-3">
+	<section>
+	    <?php $currentCoverage = new WP_Query( array( 'post_type' => 'cobertura', 'posts_per_page' => 1   ) ); ?>
+	    <?php $coverageId = 0;  ?>
+	    <?php if($currentCoverage->have_posts()) : ?>
+		<?php  $currentCoverage->the_post(); ?>
+		<?php $coverageId = $post->ID;  ?>
+		<h3>
+		    <?php if ( has_post_thumbnail() ): ?>  
+			<?php the_post_thumbnail(); ?>
+		    <?php else: ?>
+			<?php  echo the_title(); ?>
+		    <?php endif; ?>
+		    
+		</h3>
+	    <?php endif; ?>
+	    <?php wp_reset_postdata(); ?>
+	    
+	    <?php $coverages = new WP_Query(
+		array( 
+		    'meta_query' => array(
+			array('key' => '_wpcf_belongs_cobertura_id', 'value' => $coverageId)
+		    )
+		    
+		)
+	    ); ?>
+	    <ul class="list-group">
+		<?php while ($coverages->have_posts()) : $coverages->the_post(); ?>
+		    <li class="list-group-item">
+			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		    </li>
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
+	    </ul>
+	</section>
 	<?php wp_nav_menu( array('theme_location' => 'side-menu', 'menu_class' => 'list-group')); ?>
     </div>
     

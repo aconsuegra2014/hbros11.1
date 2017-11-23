@@ -162,3 +162,24 @@ function boostrap4_comment_form_submit_button(){
 }
 add_filter( 'comment_form_submit_button', 'boostrap4_comment_form_submit_button', 10 ,0 );
 
+
+/*
+// Create Custom Post Type for Work
+add_action( 'init', 'create_coverage_post_type' );
+function create_coverage_post_type() {
+    register_post_type( 'coverage',
+			array(
+			    'labels' => array(
+				'name' => __( 'Coverage' ),
+				'singular_name' => __( 'Coverage' )
+			    ),
+			    'supports' => array('title', 'editor','thumbnail','page-attributes'),
+			    'hierarchical' => true,
+			    'public' => true,
+			    'has_archive' => true,
+			    'rewrite' => array('slug' => 'coverage'),
+			    'taxonomies' => array('category', 'post_tag')
+			)
+    );
+}
+*/
