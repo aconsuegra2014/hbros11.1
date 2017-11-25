@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title><?php bloginfo('name'); ?></title>
@@ -55,11 +55,8 @@
                 'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                 'walker'            => new WP_Bootstrap_Navwalker())
             );
-        ?>
-	  <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Buscar">
-	  </form>
-     
+    ?>
+      <?php get_search_form(); ?>
     </nav>
     </div>
   </div>
