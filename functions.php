@@ -33,7 +33,10 @@ remove_action( 'wp_head', 'wlwmanifest_link' );
 
 function additional_js()
 {
-    wp_enqueue_script('jquery');
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/js/jquery.3.2.1.min.js', array(), null, true);
+    wp_enqueue_script('popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), null, true);
+    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), null, true);
     wp_print_scripts();
 
 
@@ -61,7 +64,9 @@ function register_my_menu() {
 add_action( 'init', 'register_my_menu' );
 
 // Register Custom Navigation Walker
-require_once 'D:\wamp\www\wordpress\wp-content\themes\AconsuegraCmk\wp-bootstrap-navwalker.php';
+//require_once 'D:\wamp\www\wordpress\wp-content\themes\AconsuegraCmk\class-wp-bootstrap-navwalker.php';
+// Register Custom Navigation Walker
+require_once('class-wp-bootstrap-navwalker.php');
 
 // Adding class to links in top menu	
 function add_specific_link_class( $atts, $item, $args ) {
@@ -164,22 +169,22 @@ add_filter( 'comment_form_submit_button', 'boostrap4_comment_form_submit_button'
 
 
 /*
-// Create Custom Post Type for Work
-add_action( 'init', 'create_coverage_post_type' );
-function create_coverage_post_type() {
-    register_post_type( 'coverage',
-			array(
-			    'labels' => array(
-				'name' => __( 'Coverage' ),
-				'singular_name' => __( 'Coverage' )
-			    ),
-			    'supports' => array('title', 'editor','thumbnail','page-attributes'),
-			    'hierarchical' => true,
-			    'public' => true,
-			    'has_archive' => true,
-			    'rewrite' => array('slug' => 'coverage'),
-			    'taxonomies' => array('category', 'post_tag')
-			)
-    );
-}
-*/
+   // Create Custom Post Type for Work
+   add_action( 'init', 'create_coverage_post_type' );
+   function create_coverage_post_type() {
+   register_post_type( 'coverage',
+   array(
+   'labels' => array(
+   'name' => __( 'Coverage' ),
+   'singular_name' => __( 'Coverage' )
+   ),
+   'supports' => array('title', 'editor','thumbnail','page-attributes'),
+   'hierarchical' => true,
+   'public' => true,
+   'has_archive' => true,
+   'rewrite' => array('slug' => 'coverage'),
+   'taxonomies' => array('category', 'post_tag')
+   )
+   );
+   }
+ */

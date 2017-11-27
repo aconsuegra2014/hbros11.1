@@ -19,9 +19,9 @@
     <?php $main = 'main'; ?>
 <?php endif; ?>
 
-<div class='row'>
+<div class='row no-gutters'>
     <?php $main_posts = new WP_Query( array( 'category_name' => $main ,'posts_per_page' => 3 )  ); ?>
-    <div class="col-md-9">
+    <div class="col">
 	<?php if ( $main_posts->have_posts() ) : ?>
             <div class="row">
 		<?php $mainPost = $main_posts->the_post(); ?>
@@ -47,7 +47,7 @@
 		</div>
 	    </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-custom">
 	<section>
 	    <?php $currentCoverage = new WP_Query( array( 'post_type' => 'cobertura', 'posts_per_page' => 1   ) ); ?>
 	    <?php $coverageId = 0;  ?>
@@ -82,13 +82,12 @@
 		<?php wp_reset_postdata(); ?>
 	    </ul>
 	</section>
-	<?php wp_nav_menu( array('theme_location' => 'side-menu', 'menu_class' => 'list-group')); ?>
     </div>
     
 </div>
 
 <div class="row">
-    <div class="col-md-9">
+    <div class="col">
 	<div class="row">
 	    <div class="col-md-6 secondMainPost">
 		<?php $secondMainPost = $main_posts->the_post(); ?>
@@ -142,7 +141,7 @@
 	</div>
     </div>
     
-    <div class="col-md-3" id="specials">
+    <div class="col-md-custom" id="specials">
 	<p class="postCategories">
             <?php   $category_link = get_term_link('especiales', 'categoria_menu'  ); ?>
             <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Especiales','cmkx'); ?>"><?php _e('Especiales','cmkx'); ?></a>
@@ -208,7 +207,7 @@
 	<hr>
 	<div class="row">
 	    <?php $secondaryPosts = new WP_Query( array( 'category_name' => $secondary,'posts_per_page' => 4 )  ); ?>
-	    <div class="col-md-7 firstSecondaryPost">
+	    <div class="col firstSecondaryPost">
 		
 		<?php if ( $secondaryPosts->have_posts() ) : ?>
 		    <?php $secondaryPosts->the_post(); ?>
@@ -222,7 +221,7 @@
 		    </h3>
 	    </div>
 	    
-	    <div class="col-md-5">
+	    <div class="col-md-custom">
 		<ol class="list-group secondaryPosts">
 		    <?php while($secondaryPosts->have_posts() ) : ?>
 			<?php $secondaryPosts->the_post(); ?>
