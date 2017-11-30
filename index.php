@@ -49,7 +49,15 @@
     </div>
     <div class="col-md-custom">
 	<section>
-	    <?php $currentCoverage = new WP_Query( array( 'post_type' => 'cobertura', 'posts_per_page' => 1   ) ); ?>
+	    <?php $currentCoverage = new WP_Query( array( 'post_type' => 'cobertura', 'posts_per_page' => 1,
+							  'meta_query' => array(
+							      array(
+								  'key'     => 'wpcf-activate-coverage',
+								  'value'   => 1
+							      )
+							  )
+	    ) ); ?>
+
 	    <?php $coverageId = 0;  ?>
 	    <?php if($currentCoverage->have_posts()) : ?>
 		<?php  $currentCoverage->the_post(); ?>
@@ -64,7 +72,7 @@
 		</h3>
 	    <?php endif; ?>
 	    <?php wp_reset_postdata(); ?>
-	    
+
 	    <?php $coverages = new WP_Query(
 		array( 
 		    'meta_query' => array(
@@ -73,6 +81,7 @@
 		    
 		)
 	    ); ?>
+
 	    <ul class="list-group">
 		<?php while ($coverages->have_posts()) : $coverages->the_post(); ?>
 		    <li class="list-group-item">
@@ -142,6 +151,11 @@
     </div>
     
     <div class="col-md-custom" id="specials">
+	<div id="widget-top-right-bar">
+	    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Top-right-widget')) : else : ?>
+		<p>Widget Top right bar
+	    <?php endif; ?>
+	</div>
 	<p class="postCategories">
             <?php   $category_link = get_term_link('especiales', 'categoria_menu'  ); ?>
             <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Especiales','cmkx'); ?>"><?php _e('Especiales','cmkx'); ?></a>
