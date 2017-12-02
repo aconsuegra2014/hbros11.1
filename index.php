@@ -70,26 +70,53 @@
 		    <?php endif; ?>
 		    
 		</h3>
-	    <?php endif; ?>
-	    <?php wp_reset_postdata(); ?>
-
-	    <?php $coverages = new WP_Query(
-		array( 
-		    'meta_query' => array(
-			array('key' => '_wpcf_belongs_cobertura_id', 'value' => $coverageId)
-		    )
-		    
-		)
-	    ); ?>
-
-	    <ul class="list-group">
-		<?php while ($coverages->have_posts()) : $coverages->the_post(); ?>
-		    <li class="list-group-item">
-			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		    </li>
-		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
-	    </ul>
+		
+		<?php $coverages = new WP_Query(
+		    array( 
+			'meta_query' => array(
+			    array('key' => '_wpcf_belongs_cobertura_id', 'value' => $coverageId)
+			)
+			
+		    )
+		); ?>
+		
+		<ul class="list-group">
+		    <?php while ($coverages->have_posts()) : $coverages->the_post(); ?>
+			<li class="list-group-item">
+			    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			</li>
+		    <?php endwhile; ?>
+		    <?php wp_reset_postdata(); ?>
+		</ul>
+	    <?php else: ?>
+		<div class="specials">
+		    <p class="postCategories">
+			<?php   $category_link = get_term_link('especiales', 'categoria_menu'  ); ?>
+			<a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Especiales','cmkx'); ?>"><?php _e('Especiales','cmkx'); ?></a>
+		    </p>
+		    
+		    <?php $specials_posts = new WP_Query(array('tax_query' => array(
+			array(
+			    'taxonomy' => 'categoria_menu',
+			    'field'    => 'slug',
+			    'terms'    => $specials,
+		    ),
+		    ),
+							       'posts_per_page' => 1
+		    )); ?>
+		    <?php if ( $specials_posts->have_posts() ) : ?>
+			<?php $specials_posts->the_post(); ?>
+			<?php the_post_thumbnail(); ?>
+			<h2>
+			    <a href="<?php echo get_permalink()?>">
+				<?php the_title(); ?>
+			    </a>
+			</h2>
+		    <?php endif; ?>
+		    <?php wp_reset_postdata(); ?>
+		</div>
+	    <?php endif; ?>
 	</section>
     </div>
     
@@ -150,7 +177,7 @@
 	</div>
     </div>
     
-    <div class="col-md-custom" id="specials">
+    <div class="col-md-custom specials">
 	<div id="widget-top-right-bar">
 	    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Top-right-widget')) : else : ?>
 		<p>Widget Top right bar

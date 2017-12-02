@@ -11,6 +11,7 @@
     <link href="<?php bloginfo('template_directory'); ?>/assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
     
     <link href="<?php bloginfo('template_directory'); ?>/assets/css/jcarousel.connected-carousels.css" rel="stylesheet" media="screen">
+    <link href="<?php bloginfo('template_directory'); ?>/assets/socicon/css/styles.css" rel="stylesheet" media="screen">
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

@@ -168,7 +168,7 @@ ol.secondaryPosts li{
     padding: 0.1rem 0 24px 0;
 }
 
-#specials h2{
+.specials h2{
 	font-size: 14px;
 }
 .sectionThumbnailContainer{
@@ -239,58 +239,6 @@ ol.tags li a, ol.categoryTags a{
 .categoryImagePostsContainer + a{
     display: block;
     padding: 4px 0 20px 0;
-}
-
-.footer{
-	text-align: center;
-	font-weight: bold;
-	border-top: 1px solid #dddcdc;
-	font-family: Belgrano;
-}
-
-.footer p{
-	padding: 15px;
-    margin: 0;
-
-}
-#copyright{
-	font-size: 16px;
-	font-family: Belgrano;
-}
-#contactInfo{
-	font-size: 25px;
-	color: #BE2503;
-}
-ol.social-contact{
-	padding: 20px 0;
-	margin: 0;
-}
-ol.social-contact li{
-	display: inline-block;
-	width: 30%;
-	float: left;
-}
-
-ol.social-contact li svg{
-	height: 2em;
-	width: auto;
-}
-ol.direct-contact{
-	list-style: none;
-	text-align: left;
-}
-
-ol.direct-contact a{
-	color: black;
-}
-
-ol.direct-contact span{
-	color: red
-}
-
-ol.direct-contact i{
-	min-width: 16px;
-	color: #1985d4;
 }
 
 .thumbnailContainerInner{
@@ -538,4 +486,125 @@ img.avatar {
 // Highlight image if alt tag is not present
 img:not([alt]) {
     border: 5px solid red;
+}
+
+/*  Footer */
+
+.footer{
+	text-align: center;
+	font-weight: bold;
+	border-top: 1px solid #dddcdc;
+	font-family: Belgrano;
+}
+.footer h2{
+    font-family: Belgrano;
+}
+
+.footer p{
+	padding: 15px;
+    margin: 0;
+
+}
+#copyright p{
+	font-size: 16px;
+	font-family: Belgrano;
+}
+#directContact, #feedback{
+    text-align: left;
+}
+
+#googleMaps{
+    height: 400px;
+}
+
+#googleMaps iframe{
+    width: 100%;
+    height: 100%;
+}
+
+ol.social-contact{
+	padding: 20px 10px;
+	margin: 0;
+}
+
+ol.social-contact li{
+	display: inline-block;
+	width: 15%;
+	font-size: 2em;
+}
+
+
+ol.social-contact li svg{
+	height: 2em;
+	width: auto;
+}
+
+ol.direct-contact{
+	list-style: none;
+	text-align: left;
+}
+
+ol.direct-contact a{
+	color: black;
+}
+
+ol.direct-contact span{
+	color: red
+}
+
+ol.direct-contact i{
+	min-width: 16px;
+	color: #1985d4;
+}
+
+
+ol#bayamoSections{
+    list-style: none;
+    
+}
+
+ol#bayamoSections li{
+    margin-bottom: 10px;
+}
+
+#cespedes{
+    background-image: url("assets/images/cespedes.png");
+    height: 87px;
+    background-repeat: no-repeat;
+}
+
+#carlosM{
+    display: inline-block;
+    font-size: 18px;
+    padding-left: 70px;
+}
+
+#cespedesT{
+    font-size: 28px;
+    padding-left: 75px;
+}
+
+#marti{
+    background-image: url("assets/images/marti.png");
+    height: 87px;
+    width: 310px;
+    background-repeat: no-repeat;
+    margin-bottom: 0 !important;
+}
+
+#marti span{
+    font-size: 15px;
+    font-family: Mistral;
+    padding-left: 70px;
+    display: block;
+    font-style: italic;
+}
+
+
+#bayamerias h2{
+    padding-top: 0;
+}
+
+#bayamerias img{
+    max-width: 194px;
 }
