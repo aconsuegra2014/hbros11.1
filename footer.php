@@ -1,4 +1,41 @@
 <div class="row footer">
+    <div class="col-md-3" id="feedback">
+	<ol id="bayamoSections">
+	    <li id="cespedes">
+		<h2>
+		    <a href="https://mobirise.com/">
+			<span id="carlosM">
+			    Carlos Manuel de
+			</span>
+			<span id="cespedesT">
+			    Céspedes
+			</span>
+		    </a>
+		</h2>
+	    </li>
+	    <li id="marti">
+		<h2>
+		    <a href="https://mobirise.com/mobirise-free-win.zip">
+			<span>
+			    Yo tengo de Bayamo
+			</span>
+			<span>
+			    el alma intrépida y natural
+			</span>
+		    </a>
+		</h2>
+	    </li>
+	    <li id="bayamerias">
+		<h2>
+		    <a href="https: //mobirise.com/mobirise-free-mac.zip">
+			Bayamerias
+			<img src="<?php bloginfo('template_directory'); ?>/assets/images/bayamosection.png"></img>
+		    </a>
+		</h2>
+	    </li>
+	</ol>
+        
+    </div>
     <div class="col-md-3" id="directContact">
         <p>
             <strong>Puedes ponerte en contacto con nosotros en</strong>
@@ -20,44 +57,7 @@
 		   Tu opinión importa, cualquier idea o sugerencia comunicate con nosotros.
 		 </p>
     </div>
-    <div class="col-md-3" id="feedback">
-        <p>
-	    <ol id="bayamoSections">
-		<li id="cespedes">
-		    <h2>
-			<a href="https://mobirise.com/">
-			    <span id="carlosM">
-				Carlos Manuel de
-			    </span>
-			    <span id="cespedesT">
-				Céspedes
-			    </span>
-			</a>
-		    </h2>
-		</li>
-		<li id="marti">
-		    <h2>
-			<a href="https://mobirise.com/mobirise-free-win.zip">
-			    <span>
-				Yo tengo de Bayamo
-			    </span>
-			    <span>
-				el alma intrépida y natural
-			    </span>
-			</a>
-		    </h2>
-		</li>
-		<li id="bayamerias">
-		    <h2>
-			<a href="https: //mobirise.com/mobirise-free-mac.zip">
-			    Bayamerias
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/bayamosection.png"></img>
-			</a>
-		    </h2>
-		</li>
-	    </ol>
-                       
-    </div>
+    
     <div class="col-md-6">
         <div id="googleMaps">
 	    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d233.76752485702804!2d-76.647822!3d20.3713256!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ed1eff0cf1001cf%3A0xa786eb0eb87625a3!2sEmisora+De+Radio+Bayamo+CMKX!5e0!3m2!1sen!2scu!4v1512054996492" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
