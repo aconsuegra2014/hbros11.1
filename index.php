@@ -19,105 +19,34 @@
     <?php $main = 'main'; ?>
 <?php endif; ?>
 
-<div class='row no-gutters'>
+<div class='row'>
     <?php $main_posts = new WP_Query( array( 'category_name' => $main ,'posts_per_page' => 3 )  ); ?>
-    <div class="col">
+    <div class="col no-gutters">
 	<?php if ( $main_posts->have_posts() ) : ?>
-            <div class="row">
-		<?php $mainPost = $main_posts->the_post(); ?>
-	        <div class="col-md-12 firstMainPost">
-         	    <?php if ( has_post_thumbnail($mainPost) ): ?>  
-			<div class="thumbnailContainer">
-			    <?php the_post_thumbnail($mainPost); ?>
-			</div>
-	            <?php else: ?>
-			<img src="<?php bloginfo('template_directory'); ?>/assets/images/fondo.png" alt="...">
-		    <?php endif; ?>
-		    <div class="mainPostCaption">
-			<h2 class="bold">
-			    <a href="<?php echo get_permalink()?>">
-				<?php the_title($mainPost); ?>
-			    </a>
-			</h2>
-   			<?php  echo the_excerpt(); ?>
-			<p class="date">
-		            <?php echo get_the_date( 'd/m/Y'); ?>
-			</p>
+            <?php $mainPost = $main_posts->the_post(); ?>
+	    <div class="col-md-12 firstMainPost">
+         	<?php if ( has_post_thumbnail() ): ?>  
+		    <div class="thumbnailContainer">
+			<?php the_post_thumbnail(); ?>
 		    </div>
+	        <?php else: ?>
+		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/fondo.png" alt="...">
+		<?php endif; ?>
+		
 		</div>
-	    </div>
     </div>
     <div class="col-md-custom">
-	<section>
-	    <?php $currentCoverage = new WP_Query( array( 'post_type' => 'cobertura', 'posts_per_page' => 1,
-							  'meta_query' => array(
-							      array(
-								  'key'     => 'wpcf-activate-coverage',
-								  'value'   => 1
-							      )
-							  )
-	    ) ); ?>
-
-	    <?php $coverageId = 0;  ?>
-	    <?php if($currentCoverage->have_posts()) : ?>
-		<?php  $currentCoverage->the_post(); ?>
-		<?php $coverageId = $post->ID;  ?>
-		<h3>
-		    <?php if ( has_post_thumbnail() ): ?>  
-			<?php the_post_thumbnail(); ?>
-		    <?php else: ?>
-			<?php  echo the_title(); ?>
-		    <?php endif; ?>
-		    
-		</h3>
-		<?php wp_reset_postdata(); ?>
-		
-		<?php $coverages = new WP_Query(
-		    array( 
-			'meta_query' => array(
-			    array('key' => '_wpcf_belongs_cobertura_id', 'value' => $coverageId)
-			)
-			
-		    )
-		); ?>
-		
-		<ul class="list-group">
-		    <?php while ($coverages->have_posts()) : $coverages->the_post(); ?>
-			<li class="list-group-item">
-			    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			</li>
-		    <?php endwhile; ?>
-		    <?php wp_reset_postdata(); ?>
-		</ul>
-	    <?php else: ?>
-		<div class="specials">
-		    <p class="postCategories">
-			<?php   $category_link = get_term_link('especiales', 'categoria_menu'  ); ?>
-			<a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Especiales','cmkx'); ?>"><?php _e('Especiales','cmkx'); ?></a>
-		    </p>
-		    
-		    <?php $specials_posts = new WP_Query(array('tax_query' => array(
-			array(
-			    'taxonomy' => 'categoria_menu',
-			    'field'    => 'slug',
-			    'terms'    => $specials,
-		    ),
-		    ),
-							       'posts_per_page' => 1
-		    )); ?>
-		    <?php if ( $specials_posts->have_posts() ) : ?>
-			<?php $specials_posts->the_post(); ?>
-			<?php the_post_thumbnail(); ?>
-			<h2>
-			    <a href="<?php echo get_permalink()?>">
-				<?php the_title(); ?>
-			    </a>
-			</h2>
-		    <?php endif; ?>
-		    <?php wp_reset_postdata(); ?>
-		</div>
-	    <?php endif; ?>
-	</section>
+	<div class="mainPostCaption">
+	    <h2 class="bold">
+		<a href="<?php echo get_permalink()?>">
+		    <?php the_title(); ?>
+		</a>
+	    </h2>
+   	    <?php  echo the_excerpt(); ?>
+	    <p class="date">
+		<?php echo get_the_date( 'd/m/Y'); ?>
+	    </p>
+	</div>
     </div>
     
 </div>
@@ -177,36 +106,12 @@
 	</div>
     </div>
     
-    <div class="col-md-custom specials">
-	<div id="widget-top-right-bar">
+    <div class="col-md-custom">
+	<div id="widget-middle-right-bar">
 	    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Top-right-widget')) : else : ?>
 		<p>Widget Top right bar
 	    <?php endif; ?>
 	</div>
-	<p class="postCategories">
-            <?php   $category_link = get_term_link('especiales', 'categoria_menu'  ); ?>
-            <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Especiales','cmkx'); ?>"><?php _e('Especiales','cmkx'); ?></a>
-        </p>
-	
-	<?php $specials_posts = new WP_Query(array('tax_query' => array(
-	    array(
-		'taxonomy' => 'categoria_menu',
-		'field'    => 'slug',
-		'terms'    => $specials,
-	    ),
-	),
-						   'posts_per_page' => 1
-        )); ?>
-        <?php if ( $specials_posts->have_posts() ) : ?>
-	    <?php $specials_posts->the_post(); ?>
-	    <?php the_post_thumbnail(); ?>
-	    <h2>
-		<a href="<?php echo get_permalink()?>">
-		    <?php the_title(); ?>
-		</a>
-	    </h2>
-	<?php endif; ?>
-	<?php wp_reset_postdata(); ?>
     </div>
     
 </div>

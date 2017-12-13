@@ -15,6 +15,7 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+/* ----------------------   General */
 h1,h2,h3,h4,h5,h6, p{
 	font-family: Arial;
 }
@@ -22,8 +23,24 @@ h1,h2,h3,h4,h5,h6, p{
 img{
 	width: 100%;
 	height: auto;
-	max-width: 701px;
+	max-width: 720px;
 }
+
+/* ------------------------------------ */
+
+/* Coverage */
+#specialCoverage{
+    font-weight: bold;
+    padding: 0 15px 0 15px;
+}
+.coverage{
+    padding-bottom: 30px;
+}
+
+.coverage h2{
+    font-size: 16px;
+}
+/* ------------------------------------ */
 .ssba-wrap img{
 	width: unset;
 }
@@ -32,8 +49,16 @@ img{
     padding: 0;
 }
 
+@media (min-width: 1024px) {
+    .col-md-custom{
+	max-width: 320px;
+	padding: 0 !important;
+    }
+}
 .col-md-custom{
-    max-width: 305px;
+    min-width: 320px;
+    padding: 0 0 0 15px;
+    width: 100%;
 }
 
 div.topNavBar{
@@ -75,14 +100,29 @@ div.singlePost p{
 }
 
 .thumbnailContainer{
-	max-height: 377px;
-	overflow: hidden;
-	margin-bottom: 10px;	
+    max-height: 377px;
+    min-width: 320px;
+    overflow: hidden;
+    margin-bottom: 25px;	
 }
 
 .secondMainPost img, .thirdMainPost img{
 	width: 100%;
 	height: auto;
+}
+
+#widget-middle-right-bar{
+    width: 305px;
+    padding: 0 5px 0 5px;
+}
+
+#wp-calendar{
+    width: 100%;
+    padding: 0;
+}
+#wp-calendar caption{
+    caption-side: top;
+    padding-top: 0;
 }
 
 .secondMainPostThumbnailContainer, .thirdMainPostThumbnailContainer{
@@ -92,8 +132,7 @@ div.singlePost p{
 }
 
 .mainPostCaption h2{
-	font-size: 30px;
-	display: inline;
+	font-size: 25px;
 }
 
 .secondMainPost h2, .thirdMainPost h2{
@@ -171,10 +210,6 @@ ol.secondaryPosts li{
 .specials h2{
 	font-size: 14px;
 }
-.sectionThumbnailContainer{
-	max-height: 185px;
-	overflow: hidden;
-}
 
 .culturePosts h3{
 	font-size: 16px;
@@ -242,9 +277,10 @@ ol.tags li a, ol.categoryTags a{
 }
 
 .thumbnailContainerInner{
-  overflow: hidden;
-  max-height: 270px;  
+    overflow: hidden;
+    max-height: 270px;  
 }
+
 p.author{
 	margin: 0;
 	color: #000000;
