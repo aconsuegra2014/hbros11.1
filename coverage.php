@@ -1,4 +1,4 @@
-
+<a href="<?php echo get_post_type_archive_link( 'cobertura' ); ?>">Movies Archive</a>
 
 <?php $currentCoverage = new WP_Query( array( 'post_type' => 'cobertura', 'posts_per_page' => 1,
 					      'meta_query' => array(

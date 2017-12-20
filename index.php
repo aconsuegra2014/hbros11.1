@@ -65,7 +65,7 @@
 		<?php endif; ?>
 		
 		<div class="secondMainPostCaption">
-		    <h2>
+		    <h2 class="bold">
 			<a href="<?php echo get_permalink()?>">
 			    <?php the_title($secondMainPost); ?>
 			</a>
@@ -90,7 +90,7 @@
                     <img src="<?php bloginfo('template_directory'); ?>/assets/images/fondo.png" alt="...">
 		<?php endif; ?>
 		<div class="thirdMainPostCaption">
-		    <h2>
+		    <h2 class="bold">
 			<a href="<?php echo get_permalink()?>">
 			    <?php the_title($thirdMainPost); ?>
 			</a>
@@ -117,37 +117,9 @@
 </div>
 <?php wp_reset_postdata(); ?>
 	<?php endif; ?>
-	
+	<hr>
 	<div class="row">
-	    <div class="col-md-12">
-		<ol class="sponsors">
-		    <li>	  
-	 		<a href="http://mesaredonda.cubadebate.cu/" target="_blank">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/mesaredonda.png" alt="Mesa redonda">
-			</a>
-		    </li>
-		    <li>
-			<a href="http://www.cubadebate.cu/" target="_blank">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/cubadebate.png" alt="Cubadebate">
-			</a>
-		    </li>
-		    <li>
-			<a href="http://razonesdecuba.cubadebate.cu/" target="_blank">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/razonesdecuba.png" alt="Razones de Cuba">
-			</a>
-		    </li>
-		    <li>
-			<a href="http://teveo.icrt.cu/" target="_blank">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/teveo.png" alt="Te veo">
-			</a>
-		    </li>
-		    <li>
-			<a href="http://www.cubaperiodistas.cu/" target="_blank">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/upec.png" alt="UPEC">
-			</a>
-		    </li>
-		</ol>
-	    </div>
+	    <img id="radioCubana" src="<?php bloginfo('template_directory'); ?>/assets/images/portal de la radio cubana.jpg" alt="Portal de la radio cubana">
 	</div>
 	
 	<hr>
@@ -189,27 +161,36 @@
 	</div>
 	<hr>
 	<p class="postCategories">
+	    <?php   $category_id = get_cat_ID( $sports ); ?>
+	    <?php   $category_link = get_category_link( $category_id ); ?>
+	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Deportes','cmkx'); ?>"><?php _e('Deportes','cmkx'); ?></a>
+	</p>
+	
+	<div class="row">
+	    <?php $sportPosts = new WP_Query( array( 'category_name' => $sports,'posts_per_page' => 3 )  ); ?>
+	    <?php if ( $sportPosts->have_posts() ) : ?>
+		<?php while ( $sportPosts->have_posts() ) : $sportPosts->the_post() ?>
+		    <div class="col-md-4 culturePosts">
+			<div class="sectionThumbnailContainer">
+			    <?php the_post_thumbnail(); ?>
+			</div>
+			<h3>
+			    <a href="<?php echo get_permalink()?>">
+				<?php the_title(); ?>
+    			    </a>
+			</h3>
+		    </div>
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
+	    <?php endif; ?>
+	</div>
+
+	<hr>
+	<p class="postCategories">
 	    <?php   $category_id = get_cat_ID($culture ); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Cultura','cmkx'); ?>"><?php _e('Cultura','cmkx'); ?></a>
 	</p>
-	<ol class="cultureSponsors">
-	    <li>
-		<a href="http://www.cubarte.cult.cu">
-		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/cubarte-periodico-logo.jpg" />
-		</a>
-	    </li>
-	    <li>
-		<a href="http://www.lapapeleta.cu/">
-		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/la-papeleta.png" />
-		</a>
-	    </li>
-	    <li>
-		<a href="http://tododearte.cult.cu/">
-		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/todo-arte.png" />
-		</a>
-	    </li>	
-	</ol>
 	<div class="row">
 	    <?php $culturePosts = new WP_Query( array( 'category_name' => $culture ,'posts_per_page' => 3 )  ); ?>
 	    <?php if ( $culturePosts->have_posts() ) : ?>
@@ -231,37 +212,35 @@
 	
 	<hr>
 	<p class="postCategories">
+	    <?php   $category_id = get_cat_ID($scienceCatName); ?>
+	    <?php   $category_link = get_category_link( $category_id ); ?>
+	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Ciencia y Tecnología','cmkx'); ?>"><?php _e('Ciencia y Tecnología','cmkx'); ?></a>
+	</p>
+	<div class="row">
+	    <?php $scincePosts = new WP_Query( array( 'category_name' => $science,'posts_per_page' => 3 )  ); ?>
+	    <?php if ( $scincePosts->have_posts() ) : ?>
+		<?php while ( $scincePosts->have_posts() ) : $scincePosts->the_post() ?>
+		    <div class="col-md-4 culturePosts">
+			<div class="sectionThumbnailContainer">
+			    <?php the_post_thumbnail(); ?>
+			</div>
+			<h3>
+			    <a href="<?php echo get_permalink()?>">
+				<?php the_title(); ?>
+    			    </a>
+			</h3>
+		    </div>
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
+	    <?php endif; ?>
+	</div>
+
+	<hr>
+	<p class="postCategories">
 	    <?php   $category_id = get_cat_ID( $society ); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Sociedad','cmkx'); ?>"><?php _e('Sociedad','cmkx'); ?></a>
 	</p>
-	
-	<div class="row">
-	    <div class="col-md-12">
-		<ol class="cultureSponsors">
-		    <li>
-			<a href="https://luistoledosande.wordpress.com/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/luis-toledo.jpg" />
-			</a>
-		    </li>
-		    <li>
-			<a href="http://fidel-elcedro.blogspot.com/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/david.jpg" />
-			</a>
-		    </li>
-		    <li>
-			<a href="https://cmkxradiobayamo.wordpress.com/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/cmkx-digital.jpg" />
-			</a>
-		    </li>	
-		    <li>
-			<a href="http://www.parlamentocubano.cu/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/" />
-			</a>
-		    </li>
-		</ol>
-	    </div>
-	</div>
 	
 	<div class="row">
 	    <?php $societyPosts = new WP_Query( array( 'category_name' => $society ,'posts_per_page' => 3 )  ); ?>
@@ -281,14 +260,11 @@
 		<?php wp_reset_postdata(); ?>
 	    <?php endif; ?>
 	</div>
-	
 	<hr>
-	<p class="postCategories">
-	    <?php   $category_id = get_cat_ID( $sports ); ?>
-	    <?php   $category_link = get_category_link( $category_id ); ?>
-	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Deportes','cmkx'); ?>"><?php _e('Deportes','cmkx'); ?></a>
-	</p>
-	
+	<div class="row">
+	    <?php dynamic_sidebar( 'bottom-middle-widget' ); ?>
+	</div>
+	<hr>
 	<div class="row">
 	    <div class="col-md-12">
 		<ol class="cultureSponsors">
@@ -314,78 +290,6 @@
 		    </li>
 		</ol>
 	    </div>
-	</div>
-	
-	<div class="row">
-	    <?php $sportPosts = new WP_Query( array( 'category_name' => $sports,'posts_per_page' => 3 )  ); ?>
-	    <?php if ( $sportPosts->have_posts() ) : ?>
-		<?php while ( $sportPosts->have_posts() ) : $sportPosts->the_post() ?>
-		    <div class="col-md-4 culturePosts">
-			<div class="sectionThumbnailContainer">
-			    <?php the_post_thumbnail(); ?>
-			</div>
-			<h3>
-			    <a href="<?php echo get_permalink()?>">
-				<?php the_title(); ?>
-    			    </a>
-			</h3>
-		    </div>
-		<?php endwhile; ?>
-		<?php wp_reset_postdata(); ?>
-	    <?php endif; ?>
-	</div>
-	
-	<hr>
-	<p class="postCategories">
-	    <?php   $category_id = get_cat_ID($scienceCatName); ?>
-	    <?php   $category_link = get_category_link( $category_id ); ?>
-	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Ciencia y Tecnología','cmkx'); ?>"><?php _e('Ciencia y Tecnología','cmkx'); ?></a>
-	</p>
-	
-	<div class="row">
-	    <div class="col-md-12">
-		<ol class="cultureSponsors">
-		    <li>
-			<a href="https://luistoledosande.wordpress.com/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/luis-toledo.jpg" />
-			</a>
-		    </li>
-		    <li>
-			<a href="http://fidel-elcedro.blogspot.com/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/david.jpg" />
-			</a>
-		    </li>
-		    <li>
-			<a href="https://cmkxradiobayamo.wordpress.com/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/cmkx-digital.jpg" />
-			</a>
-		    </li>	
-		    <li>
-			<a href="http://www.parlamentocubano.cu/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/" />
-			</a>
-		    </li>
-		</ol>
-	    </div>
-	</div>
-	
-	<div class="row">
-	    <?php $scincePosts = new WP_Query( array( 'category_name' => $science,'posts_per_page' => 3 )  ); ?>
-	    <?php if ( $scincePosts->have_posts() ) : ?>
-		<?php while ( $scincePosts->have_posts() ) : $scincePosts->the_post() ?>
-		    <div class="col-md-4 culturePosts">
-			<div class="sectionThumbnailContainer">
-			    <?php the_post_thumbnail(); ?>
-			</div>
-			<h3>
-			    <a href="<?php echo get_permalink()?>">
-				<?php the_title(); ?>
-    			    </a>
-			</h3>
-		    </div>
-		<?php endwhile; ?>
-		<?php wp_reset_postdata(); ?>
-	    <?php endif; ?>
 	</div>
 	<hr>
 	<p class="postCategories">
@@ -454,4 +358,35 @@
 	    
 	</div>
 
+	<div class="row">
+	    <div class="col-md-12">
+		<ol class="sponsors">
+		    <li>	  
+	 		<a href="http://mesaredonda.cubadebate.cu/" target="_blank">
+			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/mesaredonda.png" alt="Mesa redonda">
+			</a>
+		    </li>
+		    <li>
+			<a href="http://www.cubadebate.cu/" target="_blank">
+			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/cubadebate.png" alt="Cubadebate">
+			</a>
+		    </li>
+		    <li>
+			<a href="http://razonesdecuba.cubadebate.cu/" target="_blank">
+			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/razonesdecuba.png" alt="Razones de Cuba">
+			</a>
+		    </li>
+		    <li>
+			<a href="http://teveo.icrt.cu/" target="_blank">
+			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/teveo.png" alt="Te veo">
+			</a>
+		    </li>
+		    <li>
+			<a href="http://www.cubaperiodistas.cu/" target="_blank">
+			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/upec.png" alt="UPEC">
+			</a>
+		    </li>
+		</ol>
+	    </div>
+	</div>
 	<?php get_footer(); ?>

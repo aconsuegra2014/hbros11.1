@@ -137,7 +137,8 @@ div.singlePost p{
 
 .secondMainPost h2, .thirdMainPost h2{
     font-size: 16px;
-	display: inline;
+    height: 45px;
+    overflow: hidden;
 }
 
 .recentPosts, .mostRead{
@@ -148,6 +149,9 @@ div.singlePost p{
 
 }
 
+#radioCubana{
+    margin: 0 auto;
+}
 section{
     max-height: 500px;
     overflow-y: auto;
@@ -204,7 +208,7 @@ ol.secondaryPosts li:first-of-type{
 }
 
 ol.secondaryPosts li{
-    padding: 0.1rem 0 24px 0;
+    padding: 0.1rem 0 15px 0;
 }
 
 .specials h2{
@@ -265,6 +269,7 @@ ol.tags li a, ol.categoryTags a{
 .postCategories{
 	font-size: 14px;
 	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .categoryImagePostsContainer{

@@ -1,13 +1,21 @@
 <?php get_header(); ?>
 
+<?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; ?>
+
 <?php $coverages = new WP_Query(
     array(
 	'meta_query' => array(
 	    array('key' => '_wpcf_belongs_cobertura_id', 'value' => $post->ID)
-	)
-	
+	),
+	'posts_per_page' => 12,
+	'paged' => $paged
     )
+
 ); ?>
+
+<?php $temp_query = $wp_query; ?>
+<?php $wp_query = null;  ?>
+<?php $wp_query = $coverages; ?>
 
 <div class="row">
     <div class="col-md-12">
@@ -68,4 +76,10 @@
 	<?php the_posts_pagination( array( 'mid_size' => 2, 'next_text' => 'Siguiente', 'prev_text' => 'Anterior', 'screen_reader_text' => 'a', 'type' => 'list' ) ); ?>
     </div>
 </div>
+
+<?php $wp_query = $temp_query  ?>
+
+<?php $wp_query = null;  ?>
+<?php $wp_query = temp_query; ?>
+
 <?php get_footer(); ?>
