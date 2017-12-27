@@ -187,8 +187,8 @@ add_filter( 'comment_form_field_comment', 'boostrap4_comment_form_field_comment'
 
 function boostrap4_comment_form_submit_button(){
     return '<div class="form-group">
-    <input name="submit" type="submit" id="submit" class="btn" value="Post Comment" />
-    </div>';
+    <input name="submit" type="submit" id="submit" class="btn" value="'. __("Post Comment") . '" />
+	</div>';
 }
 add_filter( 'comment_form_submit_button', 'boostrap4_comment_form_submit_button', 10 ,0 );
 
@@ -209,7 +209,7 @@ add_filter( 'comment_form_submit_button', 'boostrap4_comment_form_submit_button'
    'has_archive' => true,
    'rewrite' => array('slug' => 'coverage'),
    'taxonomies' => array('category', 'post_tag')
-   )
-   );
-   }
- */
+)
+);
+}
+*/

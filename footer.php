@@ -39,23 +39,23 @@
     <div class="col-md-3" id="directContact">
         <p>
             <strong>Puedes ponerte en contacto con nosotros en</strong>
-         </p>
-		 <p>
-			Paseo General García # 156 Bayamo, Granma, Cuba. 
-		</p>
-		<p>
+        </p>
+	<p>
+	    Paseo General García # 156 Bayamo, Granma, Cuba. 
+	</p>
+	<p>
             <strong>o a través del los siguientes vías</strong>
-         </p>
-		<p>
+        </p>
+	<p>
             Email: <a href="mailto:cmkx@rbayamo.icrt.cu">
-		cmkx@rbayamo.icrt.cu
+	    cmkx@rbayamo.icrt.cu
 	    </a><br>Phone: <a href="tel:+5323427995">
 		+53 23 427995
 	    </a>
-		</p>
-		<p>
-		   Tu opinión importa, cualquier idea o sugerencia comunicate con nosotros.
-		 </p>
+	</p>
+	<p>
+	    Tu opinión importa, cualquier idea o sugerencia comunicate con nosotros.
+	</p>
     </div>
     
     <div class="col-md-6">
@@ -68,10 +68,10 @@
 <div class="row">
     <div class="col-md-6" id="copyright">
         <p>
-		   Copyright © 2001-2017. Todos los derechos reservados. CMKX Radio Bayamo, Bayamo, Cuba.
-		   <br><br>
-		   Fundada el 10 octubre de 1936. Autorizamos la reproducción de trabajos de este medio, siempre que sea de forma íntegra y se acredite la fuente	    
-	    </p>
+	    Copyright © 2001-2017. Todos los derechos reservados. CMKX Radio Bayamo, Bayamo, Cuba.
+	    <br><br>
+	    Fundada el 10 octubre de 1936. Autorizamos la reproducción de trabajos de este medio, siempre que sea de forma íntegra y se acredite la fuente	    
+	</p>
     </div>
     <div class="col-md-6">
         <ol class="social-contact">
@@ -109,7 +109,37 @@
     </div>
 </div>
 
-
+<div class="row">
+    <div class="col-md-12">
+	<ol class="sponsors">
+	    <li>	  
+	 	<a href="http://mesaredonda.cubadebate.cu/" target="_blank">
+		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/mesaredonda2.png" alt="Mesa redonda">
+		</a>
+	    </li>
+	    <li>
+		<a href="http://www.cubadebate.cu/" target="_blank">
+		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/cubadebate2.png" alt="Cubadebate">
+		</a>
+	    </li>
+	    <li>
+		<a href="http://razonesdecuba.cubadebate.cu/" target="_blank">
+		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/razonesdecuba2.png" alt="Razones de Cuba">
+		</a>
+	    </li>
+	    <li>
+		<a href="http://teveo.icrt.cu/" target="_blank">
+		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/teveo2.png" alt="Te veo">
+		</a>
+	    </li>
+	    <li>
+		<a href="http://www.cubaperiodistas.cu/" target="_blank">
+		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/upec2.png" alt="UPEC">
+		</a>
+	    </li>
+	</ol>
+    </div>
+</div>
 </div>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/clamp.min.js"></script>

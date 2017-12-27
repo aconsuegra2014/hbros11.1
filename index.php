@@ -118,8 +118,10 @@
 <?php wp_reset_postdata(); ?>
 	<?php endif; ?>
 	<hr>
-	<div class="row">
-	    <img id="radioCubana" src="<?php bloginfo('template_directory'); ?>/assets/images/portal de la radio cubana.jpg" alt="Portal de la radio cubana">
+	<div class="row" id="radioCubana">
+	    <a href="http://www.radiocubana.cu/">
+		<img src="<?php bloginfo('template_directory'); ?>/assets/images/portal de la radio cubana.jpg" alt="Portal de la radio cubana">
+	    </a>
 	</div>
 	
 	<hr>
@@ -147,7 +149,7 @@
 			    <div class="secondaryPostsContainer">
 				<?php the_post_thumbnail(); ?>
 			    </div>
-			    <h3>
+			    <h3 class="bold">
 				<a href="<?php echo get_permalink()?>">
 				    <?php the_title(); ?>
 				</a>
@@ -174,7 +176,7 @@
 			<div class="sectionThumbnailContainer">
 			    <?php the_post_thumbnail(); ?>
 			</div>
-			<h3>
+			<h3 class="bold">
 			    <a href="<?php echo get_permalink()?>">
 				<?php the_title(); ?>
     			    </a>
@@ -199,7 +201,7 @@
 			<div class="sectionThumbnailContainer">
 			    <?php the_post_thumbnail(); ?>
 			</div>
-			<h3>
+			<h3 class="bold">
 			    <a href="<?php echo get_permalink()?>">
 				<?php the_title(); ?>
     			    </a>
@@ -224,7 +226,7 @@
 			<div class="sectionThumbnailContainer">
 			    <?php the_post_thumbnail(); ?>
 			</div>
-			<h3>
+			<h3 class="bold">
 			    <a href="<?php echo get_permalink()?>">
 				<?php the_title(); ?>
     			    </a>
@@ -250,7 +252,7 @@
 			<div class="sectionThumbnailContainer">
 			    <?php the_post_thumbnail(); ?>
 			</div>
-			<h3>
+			<h3 class="bold">
 			    <a href="<?php echo get_permalink()?>">
 				<?php the_title(); ?>
     			    </a>
@@ -356,37 +358,5 @@
 		</div>
             </div>
 	    
-	</div>
-
-	<div class="row">
-	    <div class="col-md-12">
-		<ol class="sponsors">
-		    <li>	  
-	 		<a href="http://mesaredonda.cubadebate.cu/" target="_blank">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/mesaredonda.png" alt="Mesa redonda">
-			</a>
-		    </li>
-		    <li>
-			<a href="http://www.cubadebate.cu/" target="_blank">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/cubadebate.png" alt="Cubadebate">
-			</a>
-		    </li>
-		    <li>
-			<a href="http://razonesdecuba.cubadebate.cu/" target="_blank">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/razonesdecuba.png" alt="Razones de Cuba">
-			</a>
-		    </li>
-		    <li>
-			<a href="http://teveo.icrt.cu/" target="_blank">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/teveo.png" alt="Te veo">
-			</a>
-		    </li>
-		    <li>
-			<a href="http://www.cubaperiodistas.cu/" target="_blank">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/upec.png" alt="UPEC">
-			</a>
-		    </li>
-		</ol>
-	    </div>
 	</div>
 	<?php get_footer(); ?>
