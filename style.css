@@ -157,22 +157,32 @@ section{
     max-height: 500px;
     overflow-y: auto;
 }
-ol.sponsors {
+
+
+ol.sponsors, ol#blogs {
     list-style: none;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     padding: 0;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+ol.sponsors{
     background-color: hsl(7.5, 100%, 39.4%);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 
 }
 
-ol.sponsors li{
-    padding: 15px 0 15px 0;
+ol.sponsors li, ol#blogs li{
+    padding: 15px 10px 15px 10px;
+	max-width: 300px;
 	
+}
+
+ol#blogs img{
+    max-width: 68px;
 }
 
 .firstSecondaryPostContainer{
@@ -224,20 +234,7 @@ ol.secondaryPosts li{
 	font-size: 16px;
 }
 
-ol.cultureSponsors{
-	list-style: none;
-}
 
-ol.cultureSponsors li{
-	display: inline-block;
-	padding: 10px 20px;
-	max-width: 298px;
-}
-
-ol.cultureSponsors img{
-	width: 100%;
-
-}
 
 p.date{
     color: #808080cc;
@@ -430,6 +427,20 @@ border-color: #888;
 color: #fff;
 }
 
+/* Feed burner */
+div.feedburnerFeedBlock ul{
+	list-style: none;
+	padding: 0;
+}
+
+div.feedburnerFeedBlock ul li{
+	padding: 0;
+}
+
+#creditfooter{
+	display: none;
+}
+
 /* Carousel */
 .navigation{
 /*	width: 350px;*/
@@ -507,6 +518,10 @@ a:hover{
  
  .zoomImage:hover img{
 	 transform: scale3d(1.05, 1.05, 1);
+ }
+
+ .litle-shadow{
+     box-shadow: 1px 1px 5px hsla(0, 0%, 0%, 0.1);
  }
 
 /* ------------- */

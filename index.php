@@ -269,25 +269,42 @@
 	<hr>
 	<div class="row">
 	    <div class="col-md-12">
-		<ol class="cultureSponsors">
+		<ol id="blogs">
+		    <li>
+			<a href="https://cmkxradiobayamo.wordpress.com/">
+			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/cmkx-digital.jpg" />
+			</a>
+			<script src="http://feeds.feedburner.com/wordpress/cMQQ?format=sigpro" type="text/javascript" ></script>
+		    </li>
+		    <li>
+			<a href="http://solbayamo.blogspot.com/">
+			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/Foto-Yero-blog-100x100.jpg" />
+			</a>
+			<script src="http://feeds.feedburner.com/blogspot/bWAaF?format=sigpro" type="text/javascript" ></script>
+		    </li>
+		    <li>
+			<li>
+			<a href="https://zonadestrike.wordpress.com/">
+			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/Ibrain-100x100.jpg" />
+			</a>
+			<script src="http://feeds.feedburner.com/wordpress/gkCD?format=sigpro" type="text/javascript" ></script>
+		    </li>
 		    <li>
 			<a href="https://luistoledosande.wordpress.com/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/luis-toledo.jpg" />
+			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/luis-toledo.jpg" />
 			</a>
+			<script src="http://feeds.feedburner.com/wordpress/UZdf?format=sigpro" type="text/javascript" ></script>
 		    </li>
 		    <li>
 			<a href="http://fidel-elcedro.blogspot.com/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/david.jpg" />
+			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/david.jpg" />
 			</a>
+			<script src="http://feeds.feedburner.com/blogspot/PsWNLS?format=sigpro" type="text/javascript" ></script>
 		    </li>
 		    <li>
-			<a href="https://cmkxradiobayamo.wordpress.com/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/cmkx-digital.jpg" />
-			</a>
-		    </li>	
-		    <li>
-			<a href="http://www.parlamentocubano.cu/">
-			    <img src="<?php bloginfo('template_directory'); ?>/assets/images/" />
+			<a href="https://www.espinof.com/">
+			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/icono-cine-100x100.jpg" />
+				<script src="http://feeds.feedburner.com/weblogssl/NINY?format=sigpro" type="text/javascript" ></script>
 			</a>
 		    </li>
 		</ol>
