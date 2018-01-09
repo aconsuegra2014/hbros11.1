@@ -1,0 +1,22 @@
+p.feedTitle{
+  text-align: center;
+  font-size: 16px;
+  margin: 0;
+}
+
+p.feedTitle{
+  font-weight: bold;
+}
+
+span.headline a{
+	font-size: 13px;
+	color: black;
+}
+
+div.feedburnerFeedBlock ul{
+	margin: 0;
+}
+
+div.feedburnerFeedBlock ul li{
+	text-align: center;
+}
