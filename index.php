@@ -267,49 +267,57 @@
 	    <?php dynamic_sidebar( 'bottom-middle-widget' ); ?>
 	</div>
 	<hr>
-	<div class="row">
-	    <div class="col-md-12">
-		<ol id="blogs">
-		    <li>
+
+	<div id="blogs" class="carousel slide" data-ride="carousel" data-interval="9000">
+        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+            <div class="carousel-item col-md-4 active">
 			<a href="https://cmkxradiobayamo.wordpress.com/">
-			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/cmkx-digital.jpg" />
+			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/cmkx-digital.jpg" />
 			</a>
 			<script src="http://feeds.feedburner.com/wordpress/cMQQ?format=sigpro" type="text/javascript" ></script>
-		    </li>
-		    <li>
+            </div>
+            <div class="carousel-item col-md-4">
 			<a href="http://solbayamo.blogspot.com/">
-			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/Foto-Yero-blog-100x100.jpg" />
+			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/Foto-Yero-blog-100x100.jpg" />
 			</a>
 			<script src="http://feeds.feedburner.com/blogspot/bWAaF?format=sigpro" type="text/javascript" ></script>
-		    </li>
-		    <li>
-			<li>
+            </div>
+            <div class="carousel-item col-md-4">
 			<a href="https://zonadestrike.wordpress.com/">
-			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/Ibrain-100x100.jpg" />
+			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/Ibrain-100x100.jpg" />
 			</a>
 			<script src="http://feeds.feedburner.com/wordpress/gkCD?format=sigpro" type="text/javascript" ></script>
-		    </li>
-		    <li>
+            </div>
+            <div class="carousel-item col-md-4">
 			<a href="https://luistoledosande.wordpress.com/">
-			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/luis-toledo.jpg" />
+			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/luis-toledo.jpg" />
 			</a>
 			<script src="http://feeds.feedburner.com/wordpress/UZdf?format=sigpro" type="text/javascript" ></script>
-		    </li>
-		    <li>
+            </div>
+            <div class="carousel-item col-md-4">
 			<a href="http://fidel-elcedro.blogspot.com/">
-			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/david.jpg" />
+			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/david.jpg" />
 			</a>
 			<script src="http://feeds.feedburner.com/blogspot/PsWNLS?format=sigpro" type="text/javascript" ></script>
-		    </li>
-		    <li>
+            </div>
+            <div class="carousel-item col-md-4">
 			<a href="https://www.espinof.com/">
-			    <img class="rounded-circle litle-shadow" src="<?php bloginfo('template_directory'); ?>/assets/images/icono-cine-100x100.jpg" />
+			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/icono-cine-100x100.jpg" />
 				<script src="http://feeds.feedburner.com/weblogssl/NINY?format=sigpro" type="text/javascript" ></script>
 			</a>
-		    </li>
-		</ol>
-	    </div>
-	</div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <i class="fa fa-chevron-left fa-lg text-muted"></i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+            <i class="fa fa-chevron-right fa-lg text-muted"></i>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+	
 	<hr>
 	<p class="postCategories">
 	    <?php   $category_id = get_cat_ID('foto-reportaje'); ?>

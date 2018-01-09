@@ -159,7 +159,7 @@ section{
 }
 
 
-ol.sponsors, ol#blogs {
+ol.sponsors {
     list-style: none;
     padding: 0;
     text-align: center;
@@ -175,13 +175,13 @@ ol.sponsors{
 
 }
 
-ol.sponsors li, ol#blogs li{
+ol.sponsors li {
     padding: 15px 10px 15px 10px;
 	max-width: 300px;
 	
 }
 
-ol#blogs img{
+div#blogs img{
     max-width: 68px;
 }
 
@@ -490,6 +490,12 @@ div.feedburnerFeedBlock ul li{
 #miniCarousel img{ 
   width: 165px;
   height: auto;
+}
+
+/* Tag clouds */
+div.tagcloud a{
+	    box-shadow: 1px 1px 1px lightsalmon;
+    padding: 5px;
 }
 
 /* Override boostrap */
