@@ -26,6 +26,11 @@ img{
 	max-width: 720px;
 }
 
+/*    */
+#logo-cmkx{
+  max-width: 450px;	
+}
+
 /* ------------------------------------ */
 
 /* Coverage */
@@ -40,6 +45,18 @@ img{
 .coverage h2{
     font-size: 16px;
 }
+
+ol#coverage-posts{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(244px, 1fr));
+    list-style: none;
+    grid-gap: 15px;
+    padding: 0;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+
 /* ------------------------------------ */
 .ssba-wrap img{
 	width: unset;

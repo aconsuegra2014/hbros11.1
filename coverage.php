@@ -1,5 +1,3 @@
-<a href="<?php echo get_post_type_archive_link( 'cobertura' ); ?>">Movies Archive</a>
-
 <?php $currentCoverage = new WP_Query( array( 'post_type' => 'cobertura', 'posts_per_page' => 1,
 					      'meta_query' => array(
 						  array(
@@ -19,7 +17,9 @@
 	    <?php the_post_thumbnail(); ?>
 	<?php else: ?>
 	    <h1 class="elegantshadow" style="font-size: 30px;font-weight: bold;color: #262b62;">
-		<?php  echo the_title(); ?>
+		<a href="<?php echo get_permalink()?>">
+		  <?php  echo the_title(); ?>
+		</a>
 	    </h1>
 	<?php endif; ?>
 	

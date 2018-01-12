@@ -27,13 +27,7 @@
     <div class="container">
       <div class="row">
 	<div class="col-md-12">
-	  <h1 class="elegantshadow">
-	    <span>Radio</span>
-	    <span>Bayamo</span>
-	  </h1>
-	  <h1 class="insetshadow">
-	    <span>CMKX</span>
-	    <span>99.5 FM / 1150 AM</span>
+	  <img id="logo-cmkx" src="<?php bloginfo('template_directory'); ?>/assets/images/CMKX S 2.jpg" alt="Logo CMKX">
 	</div>
       </div>
       
