@@ -33,7 +33,7 @@
 		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/fondo.png" alt="...">
 		<?php endif; ?>
 		
-		</div>
+	    </div>
     </div>
     <div class="col-md-custom">
 	<div class="mainPostCaption">
@@ -269,53 +269,53 @@
 	<hr>
 
 	<div id="blogs" class="carousel slide" data-ride="carousel" data-interval="9000">
-        <div class="carousel-inner row w-100 mx-auto" role="listbox">
-            <div class="carousel-item col-md-4 active">
-			<a href="https://cmkxradiobayamo.wordpress.com/">
-			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/cmkx-digital.jpg" />
-			</a>
-			<script src="http://feeds.feedburner.com/wordpress/cMQQ?format=sigpro" type="text/javascript" ></script>
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+		<div class="carousel-item col-md-4 active">
+		    <a href="https://cmkxradiobayamo.wordpress.com/">
+			<img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/cmkx-digital.jpg" />
+		    </a>
+		    <script src="http://feeds.feedburner.com/wordpress/cMQQ?format=sigpro" type="text/javascript" ></script>
+		</div>
+		<div class="carousel-item col-md-4">
+		    <a href="http://solbayamo.blogspot.com/">
+			<img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/Foto-Yero-blog-100x100.jpg" />
+		    </a>
+		    <script src="http://feeds.feedburner.com/blogspot/bWAaF?format=sigpro" type="text/javascript" ></script>
+		</div>
+		<div class="carousel-item col-md-4">
+		    <a href="https://zonadestrike.wordpress.com/">
+			<img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/Ibrain-100x100.jpg" />
+		    </a>
+		    <script src="http://feeds.feedburner.com/wordpress/gkCD?format=sigpro" type="text/javascript" ></script>
+		</div>
+		<div class="carousel-item col-md-4">
+		    <a href="https://luistoledosande.wordpress.com/">
+			<img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/luis-toledo.jpg" />
+		    </a>
+		    <script src="http://feeds.feedburner.com/wordpress/UZdf?format=sigpro" type="text/javascript" ></script>
+		</div>
+		<div class="carousel-item col-md-4">
+		    <a href="http://fidel-elcedro.blogspot.com/">
+			<img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/david.jpg" />
+		    </a>
+		    <script src="http://feeds.feedburner.com/blogspot/PsWNLS?format=sigpro" type="text/javascript" ></script>
+		</div>
+		<div class="carousel-item col-md-4">
+		    <a href="https://www.espinof.com/">
+			<img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/icono-cine-100x100.jpg" />
+			<script src="http://feeds.feedburner.com/weblogssl/NINY?format=sigpro" type="text/javascript" ></script>
+		    </a>
+		</div>
             </div>
-            <div class="carousel-item col-md-4">
-			<a href="http://solbayamo.blogspot.com/">
-			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/Foto-Yero-blog-100x100.jpg" />
-			</a>
-			<script src="http://feeds.feedburner.com/blogspot/bWAaF?format=sigpro" type="text/javascript" ></script>
-            </div>
-            <div class="carousel-item col-md-4">
-			<a href="https://zonadestrike.wordpress.com/">
-			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/Ibrain-100x100.jpg" />
-			</a>
-			<script src="http://feeds.feedburner.com/wordpress/gkCD?format=sigpro" type="text/javascript" ></script>
-            </div>
-            <div class="carousel-item col-md-4">
-			<a href="https://luistoledosande.wordpress.com/">
-			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/luis-toledo.jpg" />
-			</a>
-			<script src="http://feeds.feedburner.com/wordpress/UZdf?format=sigpro" type="text/javascript" ></script>
-            </div>
-            <div class="carousel-item col-md-4">
-			<a href="http://fidel-elcedro.blogspot.com/">
-			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/david.jpg" />
-			</a>
-			<script src="http://feeds.feedburner.com/blogspot/PsWNLS?format=sigpro" type="text/javascript" ></script>
-            </div>
-            <div class="carousel-item col-md-4">
-			<a href="https://www.espinof.com/">
-			    <img class="rounded-circle litle-shadow img-fluid mx-auto d-block" src="<?php bloginfo('template_directory'); ?>/assets/images/icono-cine-100x100.jpg" />
-				<script src="http://feeds.feedburner.com/weblogssl/NINY?format=sigpro" type="text/javascript" ></script>
-			</a>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#blogs" role="button" data-slide="prev">
-            <i class="fa fa-chevron-left fa-lg text-muted"></i>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next text-faded" href="#blogs" role="button" data-slide="next">
-            <i class="fa fa-chevron-right fa-lg text-muted"></i>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+            <a class="carousel-control-prev" href="#blogs" role="button" data-slide="prev">
+		<i class="fa fa-chevron-left fa-lg text-muted"></i>
+		<span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-faded" href="#blogs" role="button" data-slide="next">
+		<i class="fa fa-chevron-right fa-lg text-muted"></i>
+		<span class="sr-only">Next</span>
+            </a>
+	</div>
 
 	
 	<hr>
@@ -325,6 +325,24 @@
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Foto reportaje','cmkx'); ?>"><?php _e('Foto reportaje','cmkx'); ?></a>
 	</p>
 	<div class="row">
+	    <div id="slider">
+		<?php $photoReport = new WP_Query( array( 'post_type' => 'foto-reportaje','posts_per_page' => 1 )  ); ?>
+		<?php if($photoReport->have_posts()) : ?>
+		    <?php $p = $photoReport->the_post(); ?>
+		    
+		    <?php  $gallery =  get_post_gallery($post, false); ?> 
+		    <?php $imageIds = explode( ',', $gallery['ids'] ); ?>	 
+		    <?php $imageCounter = 0; ?>
+		    <?php foreach($gallery['src'] as $imageUrl) : ?>
+			<?php $alt = get_post_meta( $imageIds[$imageCounter], '_wp_attachment_image_alt', true ); ?>
+			
+			<img src="<?php echo $imageUrl ?>" title="<?php echo $alt ?>" > 
+			<?php $imageCounter++; ?>
+		    <?php endforeach; ?>
+
+		<?php endif; ?>
+		<?php wp_reset_postdata(); ?>
+	    </div>
 	    <div class="col-md-7 connected-carousels">
                 <div class="stage">
                     <div class="carousel carousel-stage">

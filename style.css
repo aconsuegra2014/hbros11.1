@@ -364,6 +364,11 @@ div.fromCover{
 }
 
 
+/* Foto reportaje*/
+#slider{
+/*	max-height: 500px; */
+}
+
 /*  Text effects code pen */
 h1.elegantshadow {
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;

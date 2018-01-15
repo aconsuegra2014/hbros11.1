@@ -144,10 +144,11 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/clamp.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.nicescroll.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.jcarousel.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/jcarousel.connected-carousels.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/bloggers-carousel.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/slider.jquery.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
 
 
 

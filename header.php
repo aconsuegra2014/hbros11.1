@@ -13,6 +13,7 @@
     <link href="<?php bloginfo('template_directory'); ?>/assets/css/jcarousel.connected-carousels.css" rel="stylesheet" media="screen">
     <link href="<?php bloginfo('template_directory'); ?>/assets/css/bloggers-carousel.css" rel="stylesheet" media="screen">
 	<link href="<?php bloginfo('template_directory'); ?>/assets/css/feedburner.css" rel="stylesheet" media="screen">
+	<link href="<?php bloginfo('template_directory'); ?>/assets/css/slider.css" rel="stylesheet" media="screen">
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
