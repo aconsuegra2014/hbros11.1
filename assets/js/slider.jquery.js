@@ -66,7 +66,7 @@
                 width: null,
                 init: function() {
                     this.$imgs = a("img", j);
-                    this.size = this.$imgs.size();
+                    this.size = this.$imgs.length;
                     this.$imgs.hide();
                     this.nextImg = 0;
                     this.width = j.width();
@@ -407,7 +407,7 @@
                     a(this).html(C)
                 });
                 if (C != "") {
-                    if (D.size() > 0) {
+                    if (D.length > 0) {
                         if (!D.is(":visible")) {
                             D.html(C)
                         }

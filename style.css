@@ -3,18 +3,16 @@ Theme Name: CMKX
 Theme URI: 
 Author: Arley Consuegra Roselló
 Author URI: 
-Text Domain: cmxk
+Text Domain: cmkx
+Domain Path: /languages
 Description: Este tema ha sido realizado para
 Version: 0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
-Text Domain: twentysixteen
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+@import 'assets/css/header.css';
 /* ----------------------   General */
 h1,h2,h3,h4,h5,h6, p{
 	font-family: Arial;
@@ -26,12 +24,11 @@ img{
 	max-width: 720px;
 }
 
-/*    */
-#logo-cmkx{
-  max-width: 450px;	
-}
-
 /* ------------------------------------ */
+
+#top-bayamo{
+    max-width: 1024px;
+}
 
 /* Coverage */
 #specialCoverage{
@@ -76,10 +73,6 @@ ol#coverage-posts{
     min-width: 320px;
     padding: 0 0 0 15px;
     width: 100%;
-}
-
-div.topNavBar{
-	padding-bottom: 20px;
 }
 
 .navBarLight{
@@ -372,7 +365,6 @@ div.fromCover{
 /*  Text effects code pen */
 h1.elegantshadow {
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  font-size: 72px;
   padding: 20px 50px 20px 50px;
   text-align: center;
   text-transform: uppercase;
@@ -463,57 +455,16 @@ div.feedburnerFeedBlock ul li{
 	display: none;
 }
 
-/* Carousel */
-.navigation{
-/*	width: 350px;*/
-	float: left;
+
+/* Photo report */
+#photo-report p{
+    font-size: 15px;
 }
 
-.connected-carousels .carousel-navigation, .carousel-description .carousel-stage{
-	width: 350px;
-	height: 95px;
-	box-sizing: unset;
+#photo-report-container{
+    max-height: 400px;
+    overflow: hidden;
 }
-
-.connected-carousels .next-navigation {
-  right: -125px !important;
-  }
-
-.carousel-stage{
-	height: 300px !important;
-	box-shadow: none !important;
-}
-.carousel-stage img{
-  max-width: 518.75px;
-  width: 100%;
-  height: auto;
-}
-.stage{
-	width: 100% !important;
-	max-width: 538.75px !important;
-}
-.carousel-description, .carousel-description .carousel-stage{
-	height: 120px !important;
-}
-.carousel-description .carousel-stage{
-	width: 518.75px;
-	box-sizing: unset;
-    box-shadow: none;
-}
-.carousel-description li{
-	width: 518.75px;
-	display: block;
-}
-.carousel-description a{
-	max-width: 370px;
-	display: block;
-}
-
-#miniCarousel img{ 
-  width: 165px;
-  height: auto;
-}
-
 /* Tag clouds */
 div.tagcloud a{
 	    box-shadow: 1px 1px 1px lightsalmon;
@@ -582,7 +533,6 @@ img:not([alt]) {
 .footer{
 	text-align: center;
 	font-weight: bold;
-	border-top: 1px solid #dddcdc;
 	font-family: Belgrano;
 }
 .footer h2{

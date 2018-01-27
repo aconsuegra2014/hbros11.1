@@ -209,7 +209,15 @@ add_filter( 'comment_form_submit_button', 'boostrap4_comment_form_submit_button'
    'has_archive' => true,
    'rewrite' => array('slug' => 'coverage'),
    'taxonomies' => array('category', 'post_tag')
-)
-);
+   )
+   );
+   }
+ */
+
+
+require_once('widgets\cmkx-real-audio.php');
+function cmkx_register_real_audio_widget() { 
+    register_widget( 'cmkxRealAudio' );
 }
-*/
+add_action( 'widgets_init', 'cmkx_register_real_audio_widget' );
+

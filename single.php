@@ -61,7 +61,7 @@
 	<?php endif;  ?>
 	<hr>
 	<div>
-	    <h3>Contenido relacionado</h3>
+	    <h3><?php _e('Contenido relacionado','cmkx'); ?></h3>
 	    <?php $tags = wp_get_post_tags($post->ID); ?>
 	    <?php if ($tags) : ?>
 		<?php $tag_ids = array(); ?>
@@ -103,7 +103,7 @@
 	    </div>
 	    <?php endif; ?>
 	<hr>
-	<h3 class="fromCover">En portada</h3>
+	<h3 class="fromCover"><?php _e('En portada','cmkx'); ?></h3>
 	<?php $main_posts = new WP_Query( array( 'category_name' => 'principal','posts_per_page' => 1 )  ); ?>
 	<?php if ( $main_posts->have_posts() ) : ?>
 	    <?php $mainPost = $main_posts->the_post(); ?>
@@ -122,7 +122,7 @@
 	<?php endif ?>
 	<?php wp_reset_postdata(); ?>
 	<hr>
-	<h2 class="recentPosts">Publicaciones recientes</h2>
+	<h2 class="recentPosts"><?php _e('Publicaciones recientes','cmkx'); ?></h2>
 	<ol class="list-group">
 	    <?php
 	    $args = array( 'numberposts' => '5' );
@@ -134,7 +134,7 @@
 	    ?>
 	</ol>
 	<hr>
-	<h2 class="mostRead">Más leidas</h2>
+	<h2 class="mostRead"><?php _e('Más leidas','cmkx');  ?></h2>
 	<ol class="list-group">
 	    <?php $popular = new WP_Query(array('posts_per_page'=>7, 'meta_key'=>'post_visit_count', 'orderby'=>'meta_value_num', 'order'=>'DESC')); ?>
 	    <?php while ($popular->have_posts()) : $popular->the_post(); ?>

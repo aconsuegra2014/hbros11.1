@@ -8,7 +8,7 @@
 <?php $specials='especiales'; ?>
 <?php $main = 'principal'; ?>
 <?php $secondary ='secundaria'; ?>
-<?php  if(get_locale() === 'en'): ?>
+<?php  if(get_locale() === 'en_en'): ?>
     <?php $culture = 'culture'; ?>
     <?php $society = 'society'; ?>
     <?php $sports = 'sports'; ?>
@@ -324,82 +324,35 @@
 	    <?php   $category_link = get_category_link( $category_id ); ?>
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Foto reportaje','cmkx'); ?>"><?php _e('Foto reportaje','cmkx'); ?></a>
 	</p>
-	<div class="row">
-	    <div id="slider">
-		<?php $photoReport = new WP_Query( array( 'post_type' => 'foto-reportaje','posts_per_page' => 1 )  ); ?>
-		<?php if($photoReport->have_posts()) : ?>
-		    <?php $p = $photoReport->the_post(); ?>
-		    
-		    <?php  $gallery =  get_post_gallery($post, false); ?> 
-		    <?php $imageIds = explode( ',', $gallery['ids'] ); ?>	 
-		    <?php $imageCounter = 0; ?>
-		    <?php foreach($gallery['src'] as $imageUrl) : ?>
-			<?php $alt = get_post_meta( $imageIds[$imageCounter], '_wp_attachment_image_alt', true ); ?>
-			
-			<img src="<?php echo $imageUrl ?>" title="<?php echo $alt ?>" > 
-			<?php $imageCounter++; ?>
-		    <?php endforeach; ?>
+	<div class="row" id="photo-report">
 
-		<?php endif; ?>
-		<?php wp_reset_postdata(); ?>
-	    </div>
-	    <div class="col-md-7 connected-carousels">
-                <div class="stage">
-                    <div class="carousel carousel-stage">
-			<?php $culturePosts = new WP_Query( array( 'category_name' => 'cultura','posts_per_page' => 4 )  ); ?>
-			<?php if ( $culturePosts->have_posts() ) : ?>
-                            <ul>
-			        <?php while ( $culturePosts->have_posts() ) : $culturePosts->the_post() ?>
-				    <li>
-					<?php the_post_thumbnail(); ?>
-				    </li>
-				<?php endwhile; ?>
-	                    </ul>
-			    <?php wp_reset_postdata(); ?>
+	    <div class="col-md-7">
+		<?php $photoReport = new WP_Query( array( 'post_type' => 'foto-reportaje','posts_per_page' => 1 )  ); ?>
+		<div id="photo-report-container">
+		    <div id="slider">
+			<?php if($photoReport->have_posts()) : ?>
+			    <?php $p = $photoReport->the_post(); ?>
+			    
+			    <?php  $gallery =  get_post_gallery($post, false); ?> 
+			    <?php $imageIds = explode( ',', $gallery['ids'] ); ?>	 
+			    <?php $imageCounter = 0; ?>
+			    <?php foreach($gallery['src'] as $imageUrl) : ?>
+				<?php $alt = get_post_meta( $imageIds[$imageCounter], '_wp_attachment_image_alt', true ); ?>
+				
+				<img src="<?php echo $imageUrl ?>" title="<?php echo $alt ?>" > 
+				<?php $imageCounter++; ?>
+			    <?php endforeach; ?>
+			    
 			<?php endif; ?>
-                    </div>
-                    <a href="#" class="prev prev-stage"><span>&lsaquo;</span></a>
-                    <a href="#" class="next next-stage"><span>&rsaquo;</span></a>
-                </div>
+		    </div>
+		</div>
 	    </div>
 	    <div class="col-md-5">
-		<div class="connected-carousels">
-		    <div class="carousel-description">
-			<div class="carousel carousel-stage">
-			    <?php if ( $culturePosts->have_posts() ) : ?>
-				<ul>
-			            <?php while ( $culturePosts->have_posts() ) : $culturePosts->the_post() ?>
-					<li>
-					    <a >
-						<?php the_title(); ?>
-					    </a>
-					</li>
-				    <?php endwhile; ?>
-				</ul>
-				<?php wp_reset_postdata(); ?>
-			    <?php endif; ?>
-			</div>
-			
-
-		    </div>
-		    <div class="navigation">
-			<a href="#" class="prev prev-navigation">&lsaquo;</a>
-			<a href="#" class="next next-navigation">&rsaquo;</a>
-			<div class="carousel carousel-navigation">
-			    <?php if ( $culturePosts->have_posts() ) : ?>
-				<ul id="miniCarousel">
-			            <?php while ( $culturePosts->have_posts() ) : $culturePosts->the_post() ?>
-					<li>
-					    <?php the_post_thumbnail(); ?>
-					</li>
-				    <?php endwhile; ?>
-				</ul>
-				<?php wp_reset_postdata(); ?>
-			    <?php endif; ?>
-			</div>
-                    </div>
-		</div>
+		<?php  echo the_excerpt(); ?>
+		<?php wp_reset_postdata(); ?>
             </div>
 	    
 	</div>
+	<hr>
+	
 	<?php get_footer(); ?>

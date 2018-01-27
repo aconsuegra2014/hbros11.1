@@ -25,16 +25,46 @@
     <?php wp_head(); ?>
   </head>
   <body>
+    
     <div class="container">
-      <div class="row">
-	<div class="col-md-12">
-	  <img id="logo-cmkx" src="<?php bloginfo('template_directory'); ?>/assets/images/CMKX S 2.jpg" alt="Logo CMKX">
+      <img id="top-bayamo" src="<?php bloginfo('template_directory'); ?>/assets/images/Bayamo top web.jpg" alt="Bayamo">
+      <div id="top-radio-station">
+	<div>
+	  <h1 class="elegantshadow radio-station">
+	    <span>Radio</span>
+	    <span>Bayamo</span>
+	  </h1>
+	  <h1 class="insetshadow">
+	    <span>CMKX</span>
+	    <span>99.5 FM / 1150 AM</span>
+	  </h1>
 	</div>
-      </div>
-      
-      
-      <div class="row topNavBar"> 	  
-	<div class="col-md-12">
+        <div>
+	  <ol class="social-media">
+	    <li >
+	      <a id="cmkx-audio-control" href="#">
+		<img id="real-audio-ico" src="<?php bloginfo('template_directory'); ?>/assets/images/radio.png">
+	      </a>
+	    </li>
+	    <li>
+              <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+	    </li>
+            <li>
+	      <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+	    </li>
+	    <li>
+	      <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+	    </li>
+            <li>
+	      <a href="#"><i class="fa fa-youtube-square fa-2x"></i></a>
+	    </li>
+            <li>
+	      <a href="#"><i class="fa fa-rss-square fa-2x"></i></a>
+	    </li>
+          </ol>
+	</div>
+	
+	<div class="topNavBar"> 	  
 	  <nav class="navbar navbar-expand-lg navBarLight navbar-light">
 	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -57,6 +87,10 @@
 	    <?php get_search_form(); ?>
 	  </nav>
 	</div>
+	
+	
       </div>
+      
+      
 
       <?php get_template_part("coverage"); ?>

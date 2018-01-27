@@ -1,0 +1,64 @@
+#top-radio-station{
+    display: grid;
+    grid-template-areas: 
+      "r-station s-media"
+      "n-menu n-menu";
+    width: 100%;
+    background: white;
+    max-width: 1024px;
+    z-index: 1;
+
+
+}
+
+@media all and (max-width: 600px){
+    #top-radio-station{
+	display: block;
+    }
+}
+#real-audio-ico{
+    width: 30px;
+    filter: grayscale(100%);
+}
+div.topNavBar{
+    padding-bottom: 20px;
+    grid-column: 1 / -1 ;
+}
+
+
+
+
+h1.radio-station{
+    font-size: 30px;
+}
+
+
+ol.social-media{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    list-style: none;
+    padding-top: 20px;
+}
+
+div#real-audio-container{
+    width: 300px;
+}
+div#real-audio-container p{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    background-color: #BE2503;
+    margin: 0px;
+    padding: 5px 0 5px 0;
+}
+
+
+audio#cmkx-audio{
+    width:100%;
+}
+
+

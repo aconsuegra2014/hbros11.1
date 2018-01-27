@@ -68,9 +68,9 @@
 <div class="row">
     <div class="col-md-6" id="copyright">
         <p>
-	    Copyright © 2001-2017. Todos los derechos reservados. CMKX Radio Bayamo, Bayamo, Cuba.
+	    <?php _e('Copyright © 2001-2018. Todos los derechos reservados. CMKX Radio Bayamo, Bayamo, Cuba.','cmkx');  ?>
 	    <br><br>
-	    Fundada el 10 octubre de 1936. Autorizamos la reproducción de trabajos de este medio, siempre que sea de forma íntegra y se acredite la fuente	    
+	    <?php _e('Fundada el 10 octubre de 1936. Autorizamos la reproducción de trabajos de este medio, siempre que sea de forma íntegra y se acredite la fuente.', 'cmkx'); ?>
 	</p>
     </div>
     <div class="col-md-6">
@@ -145,7 +145,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/clamp.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.nicescroll.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.jcarousel.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/jcarousel.connected-carousels.js"></script>
+
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/bloggers-carousel.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/slider.jquery.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
