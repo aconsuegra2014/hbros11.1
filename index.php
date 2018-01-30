@@ -1,5 +1,6 @@
 
 <?php get_header(); ?>
+<?php  $language = 'es_ES'; ?>
 <?php $culture = 'cultura'; ?>
 <?php $society = 'sociedad'; ?>
 <?php $sports = 'deportes'; ?>
@@ -9,6 +10,7 @@
 <?php $main = 'principal'; ?>
 <?php $secondary ='secundaria'; ?>
 <?php  if(get_locale() === 'en_en'): ?>
+    <?php $language = 'en_EN'; ?>
     <?php $culture = 'culture'; ?>
     <?php $society = 'society'; ?>
     <?php $sports = 'sports'; ?>
@@ -38,7 +40,7 @@
     <div class="col-md-custom">
 	<div class="mainPostCaption">
 	    <h2 class="bold">
-		<a href="<?php echo get_permalink()?>">
+		<a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
 		    <?php the_title(); ?>
 		</a>
 	    </h2>
@@ -66,7 +68,7 @@
 		
 		<div class="secondMainPostCaption">
 		    <h2 class="bold">
-			<a href="<?php echo get_permalink()?>">
+			<a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
 			    <?php the_title($secondMainPost); ?>
 			</a>
 		    </h2>
@@ -91,7 +93,7 @@
 		<?php endif; ?>
 		<div class="thirdMainPostCaption">
 		    <h2 class="bold">
-			<a href="<?php echo get_permalink()?>">
+			<a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
 			    <?php the_title($thirdMainPost); ?>
 			</a>
 		    </h2>
@@ -135,7 +137,7 @@
 			<?php the_post_thumbnail(); ?>
 		    </div>
 		    <h3 class="bold">
-			<a href="<?php echo get_permalink()?>">
+			<a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
 		            <?php the_title(); ?>
 			</a>
 		    </h3>
@@ -150,7 +152,7 @@
 				<?php the_post_thumbnail(); ?>
 			    </div>
 			    <h3 class="bold">
-				<a href="<?php echo get_permalink()?>">
+				<a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
 				    <?php the_title(); ?>
 				</a>
 			    </h3>
@@ -177,7 +179,7 @@
 			    <?php the_post_thumbnail(); ?>
 			</div>
 			<h3 class="bold">
-			    <a href="<?php echo get_permalink()?>">
+			    <a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
 				<?php the_title(); ?>
     			    </a>
 			</h3>
@@ -202,7 +204,7 @@
 			    <?php the_post_thumbnail(); ?>
 			</div>
 			<h3 class="bold">
-			    <a href="<?php echo get_permalink()?>">
+			    <a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
 				<?php the_title(); ?>
     			    </a>
 			</h3>
@@ -227,7 +229,7 @@
 			    <?php the_post_thumbnail(); ?>
 			</div>
 			<h3 class="bold">
-			    <a href="<?php echo get_permalink()?>">
+			    <a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
 				<?php the_title(); ?>
     			    </a>
 			</h3>
@@ -253,7 +255,7 @@
 			    <?php the_post_thumbnail(); ?>
 			</div>
 			<h3 class="bold">
-			    <a href="<?php echo get_permalink()?>">
+			    <a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
 				<?php the_title(); ?>
     			    </a>
 			</h3>
