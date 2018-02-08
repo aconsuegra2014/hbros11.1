@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 #top-radio-station{
     display: grid;
     grid-template-areas: 
@@ -37,13 +38,35 @@ div.topNavBar{
     grid-column: 1 / -1 ;
 }
 
-
+a.nav-link img{
+    width: auto;
+}
 
 
 h1.radio-station{
     font-size: 30px;
 }
 
+h1.radio-station span:nth-of-type(1){
+    color: white;
+    padding: 0 10px 0 10px;
+    border-radius: 20px;
+    background-color: #BE2503;
+}
+
+h1.radio-station span:nth-of-type(2){
+    font-weight: bold;
+    color: black;
+}
+
+h1.radio-station span:nth-of-type(3){
+    font-weight: bold;
+}
+
+h1.radio-station span:nth-of-type(4){
+    color: gray;
+    font-size: 14px;
+}
 
 ol.social-media{
     display: flex;
@@ -52,25 +75,5 @@ ol.social-media{
     margin-bottom: 0px;
     padding-left: 0px;
     list-style: none;
-    padding-top: 20px;
+    padding-top: 8px;
 }
-
-div#real-audio-container{
-    width: 300px;
-}
-div#real-audio-container p{
-    font-size: 30px;
-    text-align: center;
-    color: white;
-    text-shadow: 5px 5px 5px black;
-    background-color: #BE2503;
-    margin: 0px;
-    padding: 5px 0 5px 0;
-}
-
-
-audio#cmkx-audio{
-    width:100%;
-}
-
-

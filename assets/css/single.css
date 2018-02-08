@@ -1,0 +1,4 @@
+ol#comment-list,ol.children{
+    list-style: none;
+    width: 100%;
+}

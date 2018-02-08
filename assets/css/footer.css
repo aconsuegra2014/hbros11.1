@@ -1,0 +1,13 @@
+#copyright p,#phisical-address{
+    font-size: 12px;
+    font-family: Arial;
+    line-height: 10px;
+    text-align: center;
+    font-style: oblique;
+}
+#phisical-address span{
+	font-weight: bold;
+}
+#phisical-address span:nth-of-type(2){
+	color: #BE2503;
+}
