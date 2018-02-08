@@ -11,6 +11,7 @@ class cmkxRealAudio extends WP_Widget{
 
     function widget($args,$instance){
 	echo '<div id="real-audio-container">';
+	echo '<p>'. __('Audio real','cmkx') .'</p>';
 	echo "<audio id='cmkx-audio' controls='' src='https://icecast.teveo.icrt.cu/7hdNcTbM' preload='none'>";
 	echo "Your browser does not support the audio tag.";
 	echo "</audio>";

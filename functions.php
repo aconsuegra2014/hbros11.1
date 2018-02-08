@@ -1,22 +1,15 @@
 ﻿<?php
-// CHANGE LOCAL LANGUAGE
-// must be called before load_theme_textdomain()
-add_filter( 'locale', 'my_theme_localized' );
-function my_theme_localized( $locale )
-{
-    if ( isset( $_GET['l'] ) )
-    {
-	return sanitize_key( $_GET['l'] );
-    }
-
-    return $locale;
-}
-
 // Adding I18n support
 add_action( 'after_setup_theme', 'my_theme_setup' );
 function my_theme_setup(){
     load_theme_textdomain( 'cmkx', get_template_directory() . '/languages' );
 }
+
+/* Add support for post thumbnails */
+add_theme_support( 'post-thumbnails' );
+/* Add support for html5 */
+add_theme_support( 'html5',array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption',) );
+
 
 /*
    Remove Unwanted Links and Tags From WordPress Head
@@ -42,9 +35,6 @@ function additional_js()
 
 }
 add_action('wp_head','additional_js');
-
-/* Add support for post thumbnails */
-add_theme_support( 'post-thumbnails' ); 
 
 /* Add custom class to the_excerpt method */
 /*
@@ -77,18 +67,71 @@ register_sidebar(
 	'after_title'   => '</h2>')
 );
 
-// Middle bottom widget
+
+// Right Sport widget
 register_sidebar(
     array(
-	'name'          => __( 'bottom-middle-widget', 'cmkx' ),
-	'id'            => 'bottom-middle-widget',
-	'description'   => '',
+	'name'          => __( 'right-sport-widget', 'cmkx' ),
+	'id'            => 'right-sport-widget',
+	'description'   => 'Widget placed at right of sport news',
 	'class'         => '',
 	'before_widget' => '',
 	'after_widget'  => '',
-	'before_title'  => '<h2 id="bottom-middle-widget">',
+	'before_title'  => '<h2 id="right-sport-widget">',
 	'after_title'   => '</h2>')
 );
+
+// Right Culture widget
+register_sidebar(
+    array(
+	'name'          => __( 'right-culture-widget', 'cmkx' ),
+	'id'            => 'right-culture-widget',
+	'description'   => 'Widget placed at right of culture news',
+	'class'         => '',
+	'before_widget' => '',
+	'after_widget'  => '',
+	'before_title'  => '<h2 id="right-culture-widget">',
+	'after_title'   => '</h2>')
+);
+
+// Right Science widget
+register_sidebar(
+    array(
+	'name'          => __( 'right-science-widget', 'cmkx' ),
+	'id'            => 'right-science-widget',
+	'description'   => 'Widget placed at right of scince news',
+	'class'         => '',
+	'before_widget' => '',
+	'after_widget'  => '',
+	'before_title'  => '<h2 id="right-science-widget">',
+	'after_title'   => '</h2>')
+);
+
+// Right Social widget
+register_sidebar(
+    array(
+	'name'          => __( 'right-social-widget', 'cmkx' ),
+	'id'            => 'right-sociale-widget',
+	'description'   => 'Widget placed at right of social news',
+	'class'         => '',
+	'before_widget' => '',
+	'after_widget'  => '',
+	'before_title'  => '<h2 id="right-social-widget">',
+	'after_title'   => '</h2>')
+);
+
+// Customizing tag cloud
+function widget_custom_tag_cloud($args) {
+    // Control number of tags to be displayed - 0 no tags
+    $args['number'] = 25;
+    $args['largest'] = 25;
+    $args['smallest'] = 12;
+    $args['unit'] = 'px';
+    
+    // Outputs our edited widget
+    return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'widget_custom_tag_cloud' );
 
 // Register Custom Navigation Walker
 require_once('class-wp-bootstrap-navwalker.php');
@@ -170,10 +213,10 @@ function bootstrap4_comment_form_fields() {
     $html5    = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
     
     $fields   =  array(
-        'author' => '<div class="form-group"><label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-                  '<input class="form-control" id="author" name="author" required="required" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="300"' . $aria_req . ' /></div>',
-        'email'  => '<div class="form-group"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-                  '<input class="form-control" required="required" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></div>');
+	'author' => '<div class="form-group"><label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+		  '<input class="form-control" id="author" name="author" required="required" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="300"' . $aria_req . ' /></div>',
+	'email'  => '<div class="form-group"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+		  '<input class="form-control" required="required" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></div>');
 
     $defaults = array($fields);
     return $fields;
@@ -221,3 +264,8 @@ function cmkx_register_real_audio_widget() {
 }
 add_action( 'widgets_init', 'cmkx_register_real_audio_widget' );
 
+require_once('widgets\cmkx-specials.php');
+function cmkx_register_specials_widget() { 
+    register_widget( 'cmkxSpecials' );
+}
+add_action( 'widgets_init', 'cmkx_register_specials_widget' );

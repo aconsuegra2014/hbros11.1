@@ -1,6 +1,5 @@
 
 <?php get_header(); ?>
-<?php  $language = 'es_ES'; ?>
 <?php $culture = 'cultura'; ?>
 <?php $society = 'sociedad'; ?>
 <?php $sports = 'deportes'; ?>
@@ -9,8 +8,7 @@
 <?php $specials='especiales'; ?>
 <?php $main = 'principal'; ?>
 <?php $secondary ='secundaria'; ?>
-<?php  if(get_locale() === 'en_en'): ?>
-    <?php $language = 'en_EN'; ?>
+<?php  if(get_locale() === 'en_US'): ?>
     <?php $culture = 'culture'; ?>
     <?php $society = 'society'; ?>
     <?php $sports = 'sports'; ?>
@@ -40,7 +38,7 @@
     <div class="col-md-custom">
 	<div class="mainPostCaption">
 	    <h2 class="bold">
-		<a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
+		<a href="<?php echo get_permalink(); ?>">
 		    <?php the_title(); ?>
 		</a>
 	    </h2>
@@ -67,8 +65,8 @@
 		<?php endif; ?>
 		
 		<div class="secondMainPostCaption">
-		    <h2 class="bold">
-			<a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
+		    <h2>
+			<a href="<?php get_permalink(); ?>">
 			    <?php the_title($secondMainPost); ?>
 			</a>
 		    </h2>
@@ -92,8 +90,8 @@
                     <img src="<?php bloginfo('template_directory'); ?>/assets/images/fondo.png" alt="...">
 		<?php endif; ?>
 		<div class="thirdMainPostCaption">
-		    <h2 class="bold">
-			<a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
+		    <h2>
+			<a href="<?php echo get_permalink(); ?>">
 			    <?php the_title($thirdMainPost); ?>
 			</a>
 		    </h2>
@@ -137,7 +135,7 @@
 			<?php the_post_thumbnail(); ?>
 		    </div>
 		    <h3 class="bold">
-			<a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
+			<a href="<?php echo get_permalink(); ?>">
 		            <?php the_title(); ?>
 			</a>
 		    </h3>
@@ -151,8 +149,8 @@
 			    <div class="secondaryPostsContainer">
 				<?php the_post_thumbnail(); ?>
 			    </div>
-			    <h3 class="bold">
-				<a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
+			    <h3>
+				<a href="<?php echo get_permalink(); ?>">
 				    <?php the_title(); ?>
 				</a>
 			    </h3>
@@ -170,21 +168,28 @@
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Deportes','cmkx'); ?>"><?php _e('Deportes','cmkx'); ?></a>
 	</p>
 	
-	<div class="row">
-	    <?php $sportPosts = new WP_Query( array( 'category_name' => $sports,'posts_per_page' => 3 )  ); ?>
+	<div class="row index-category-posts">
+	    <?php $sportPosts = new WP_Query( array( 'category_name' => $sports,'posts_per_page' => 1 )  ); ?>
 	    <?php if ( $sportPosts->have_posts() ) : ?>
-		<?php while ( $sportPosts->have_posts() ) : $sportPosts->the_post() ?>
-		    <div class="col-md-4 culturePosts">
-			<div class="sectionThumbnailContainer">
-			    <?php the_post_thumbnail(); ?>
-			</div>
-			<h3 class="bold">
-			    <a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
-				<?php the_title(); ?>
-    			    </a>
-			</h3>
+		<?php $sportPosts->the_post(); ?>
+		<div class="col-md-5 culturePosts">
+		    <div class="sectionThumbnailContainer">
+			<?php the_post_thumbnail(); ?>
 		    </div>
-		<?php endwhile; ?>
+		</div>
+		<div class="col-md-4">
+		    <h3 class="bold">
+			<a href="<?php echo get_permalink(); ?>">
+			    <?php the_title(); ?>
+    			</a>
+		    </h3>
+		    <?php the_excerpt(); ?>
+		</div>
+		<div class="col-md-3">
+		    <a href="http://www.ivoox.com/escuchar-cmkxdigital_nq_288004_1.html">
+			<img src="<?php bloginfo('template_directory'); ?>/assets/images/ivoox.png" alt="Canal en ivoox">
+		    </a>
+		</div>
 		<?php wp_reset_postdata(); ?>
 	    <?php endif; ?>
 	</div>
@@ -195,21 +200,28 @@
 	    <?php   $category_link = get_category_link( $category_id ); ?>
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Cultura','cmkx'); ?>"><?php _e('Cultura','cmkx'); ?></a>
 	</p>
-	<div class="row">
-	    <?php $culturePosts = new WP_Query( array( 'category_name' => $culture ,'posts_per_page' => 3 )  ); ?>
+	<div class="row index-category-posts">
+	    <?php $culturePosts = new WP_Query( array( 'category_name' => $culture ,'posts_per_page' => 1 )  ); ?>
 	    <?php if ( $culturePosts->have_posts() ) : ?>
-		<?php while ( $culturePosts->have_posts() ) : $culturePosts->the_post() ?>
-		    <div class="col-md-4 culturePosts">
-			<div class="sectionThumbnailContainer">
-			    <?php the_post_thumbnail(); ?>
-			</div>
-			<h3 class="bold">
-			    <a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
-				<?php the_title(); ?>
-    			    </a>
-			</h3>
+		<?php $culturePosts->the_post(); ?>
+		<div class="col-md-5">
+		    <div class="sectionThumbnailContainer">
+			<?php the_post_thumbnail(); ?>
 		    </div>
-		<?php endwhile; ?>
+		</div>
+		<div class="col-md-4">
+		    <h3 class="bold">
+			<a href="<?php echo get_permalink(); ?>">
+			    <?php the_title(); ?>
+    			</a>
+		    </h3>
+		    <?php the_excerpt(); ?>
+		</div>
+		<div class="col-md-3">
+		    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('right-culture-widget')) : else : ?>
+			<p>Widget placed at right of culture news</p>
+		    <?php endif; ?>
+		</div>
 		<?php wp_reset_postdata(); ?>
 	    <?php endif; ?>
 	</div>
@@ -220,21 +232,28 @@
 	    <?php   $category_link = get_category_link( $category_id ); ?>
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Ciencia y Tecnología','cmkx'); ?>"><?php _e('Ciencia y Tecnología','cmkx'); ?></a>
 	</p>
-	<div class="row">
-	    <?php $scincePosts = new WP_Query( array( 'category_name' => $science,'posts_per_page' => 3 )  ); ?>
+	<div class="row index-category-posts">
+	    <?php $scincePosts = new WP_Query( array( 'category_name' => $science,'posts_per_page' => 1 )  ); ?>
 	    <?php if ( $scincePosts->have_posts() ) : ?>
-		<?php while ( $scincePosts->have_posts() ) : $scincePosts->the_post() ?>
-		    <div class="col-md-4 culturePosts">
-			<div class="sectionThumbnailContainer">
-			    <?php the_post_thumbnail(); ?>
-			</div>
-			<h3 class="bold">
-			    <a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
-				<?php the_title(); ?>
-    			    </a>
-			</h3>
+		<?php $scincePosts->the_post(); ?>
+		<div class="col-md-5 culturePosts">
+		    <div class="sectionThumbnailContainer">
+			<?php the_post_thumbnail(); ?>
 		    </div>
-		<?php endwhile; ?>
+		</div>
+		<div class="col-md-4">
+		    <h3 class="bold">
+			<a href="<?php echo get_permalink(); ?>">
+			    <?php the_title(); ?>
+    			</a>
+		    </h3>
+		    <?php the_excerpt(); ?>
+		</div>
+		<div class="col-md-3">
+		    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('right-science-widget')) : else : ?>
+			<p>Widget placed at right of science news</p>
+		    <?php endif; ?>
+		</div>
 		<?php wp_reset_postdata(); ?>
 	    <?php endif; ?>
 	</div>
@@ -246,27 +265,30 @@
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Sociedad','cmkx'); ?>"><?php _e('Sociedad','cmkx'); ?></a>
 	</p>
 	
-	<div class="row">
-	    <?php $societyPosts = new WP_Query( array( 'category_name' => $society ,'posts_per_page' => 3 )  ); ?>
+	<div class="row index-category-posts">
+	    <?php $societyPosts = new WP_Query( array( 'category_name' => $society ,'posts_per_page' => 1 )  ); ?>
 	    <?php if ( $societyPosts->have_posts() ) : ?>
-		<?php while ( $societyPosts->have_posts() ) : $societyPosts->the_post() ?>
-		    <div class="col-md-4 culturePosts">
-			<div class="sectionThumbnailContainer">
-			    <?php the_post_thumbnail(); ?>
-			</div>
-			<h3 class="bold">
-			    <a href="<?php echo add_query_arg( 'l', $language ,get_permalink()); ?>">
-				<?php the_title(); ?>
-    			    </a>
-			</h3>
+		<?php $societyPosts->the_post(); ?>
+		<div class="col-md-5">
+		    <div class="sectionThumbnailContainer">
+			<?php the_post_thumbnail(); ?>
 		    </div>
-		<?php endwhile; ?>
+		</div>
+		<div class="col-md-4">
+		    <h3 class="bold">
+			<a href="<?php echo get_permalink(); ?>">
+			    <?php the_title(); ?>
+    			</a>
+		    </h3>
+		    <?php the_excerpt(); ?>
+		</div>
+		<div class="col-md-3">
+		    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('right-social-widget')) : else : ?>
+			<p>Widget placed at right of social news</p>
+		    <?php endif; ?>	
+		    </div>
 		<?php wp_reset_postdata(); ?>
 	    <?php endif; ?>
-	</div>
-	<hr>
-	<div class="row">
-	    <?php dynamic_sidebar( 'bottom-middle-widget' ); ?>
 	</div>
 	<hr>
 

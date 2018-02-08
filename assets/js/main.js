@@ -50,11 +50,11 @@ jQuery(function($) {
     
     window.addEventListener('scroll', function(e){
 	var topRadioStation = document.getElementById("top-radio-station");
-	console.log(window.scrollY);
 	if(window.scrollY > 0)
 	    topRadioStation.style = "position: fixed;   top: 0;" ;
 	else
 	    topRadioStation.style = "" ;
+        
     });
     
 
