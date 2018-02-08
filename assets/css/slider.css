@@ -5,6 +5,12 @@
 	margin: 10px auto 30px auto;
 }
 
+@media (max-width: 320px){
+    #slider {
+	width: 320px;
+    }
+}
+
 #slider li {
 	position: absolute;
 	top: 0;
@@ -18,8 +24,8 @@
 	padding: 5px 0 0 0;
 	color: #fff;
 	text-align: center;
-	font: 25px/1 '微软雅黑';
-	z-index: 200;
+	font: 25px/1 ' ';
+	z-index: 1;
 }
 
 .prev-link, .next-link {

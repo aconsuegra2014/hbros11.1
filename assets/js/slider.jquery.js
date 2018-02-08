@@ -76,8 +76,9 @@
                         width: this.divWidth,
                         position: "absolute",
                         top: 0,
-                        backgroundRepeat: "no-repeat"
-                    };
+                        backgroundRepeat: "no-repeat",
+			"background-size": "cover"
+		    };
                     this.createDivs();
                     this.$divs = a("div", j);
                     this.transitionCount = -1

@@ -81,7 +81,7 @@ ol#coverage-posts{
 @media (min-width: 1024px) {
     .col-md-custom{
 	max-width: 320px;
-	padding: 0 !important;
+	padding: 0 10px 0 0 !important;
     }
 }
 .col-md-custom{
