@@ -47,14 +47,30 @@ jQuery(function($) {
 	return false;
     });
     //
-    
+    var lastYposition = 0;
+    var navBarHidden = false;
     window.addEventListener('scroll', function(e){
 	var topRadioStation = document.getElementById("top-radio-station");
-	if(window.scrollY > 0)
-	    topRadioStation.style = "position: fixed;   top: 0;" ;
+	var hideNavBar = function(){
+	    if(!navBarHidden){
+		topRadioStation.style = "transform: translateY(-100%);" ;
+		navBarHidden = true;
+	    }
+	}
+
+	// Check if is a device if large or medium screem
+	if( window.innerHeight > 600)
+	    if( window.scrollY  < (lastYposition)){
+		if(window.scrollY == 0)
+		    topRadioStation.style ="";
+		else
+		    topRadioStation.style = "position: fixed; transform: translateY(0);";
+		navBarHidden = false;
+	    }
 	else
-	    topRadioStation.style = "" ;
-        
+	    hideNavBar();
+	lastYposition = window.scrollY;
+	
     });
     
 

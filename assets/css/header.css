@@ -8,8 +8,9 @@
     background: white;
     max-width: 1024px;
     z-index: 2;
-
-
+    padding-bottom: 5px;
+    position: relative;
+    transition: transform 0.5s;
 }
 .fa-facebook-square{
     color: #4267b2;
@@ -34,7 +35,6 @@
     filter: grayscale(100%);
 }
 div.topNavBar{
-    padding-bottom: 20px;
     grid-column: 1 / -1 ;
 }
 
