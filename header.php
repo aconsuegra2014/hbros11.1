@@ -92,5 +92,6 @@
       <img id="top-bayamo" src="<?php bloginfo('template_directory'); ?>/assets/images/Bayamo-top-web-<?php echo rand(1,3); ?>.jpg" alt="Bayamo">
       
       
-
-      <?php get_template_part("coverage"); ?>
+      <?php if(is_front_page() && is_home()): ?>
+	  <?php get_template_part("coverage"); ?>
+      <?php endif; ?>
