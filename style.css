@@ -126,7 +126,7 @@ div.singlePost p{
 }
 
 #widget-middle-right-bar{
-    width: 305px;
+    max-width: 310px;
     padding: 0 5px 0 5px;
 }
 
