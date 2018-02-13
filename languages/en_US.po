@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cmkx\n"
-"POT-Creation-Date: 2018-02-06 09:39-0500\n"
-"PO-Revision-Date: 2018-02-06 09:40-0500\n"
+"POT-Creation-Date: 2018-02-12 16:54-0500\n"
+"PO-Revision-Date: 2018-02-12 17:20-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -43,35 +43,35 @@ msgstr ""
 msgid "top-right-widget"
 msgstr ""
 
-#: functions.php:73
-msgid "bottom-middle-widget"
-msgstr ""
-
-#: functions.php:86
+#: functions.php:74
 msgid "right-sport-widget"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:87
 msgid "right-culture-widget"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:100
 msgid "right-science-widget"
 msgstr ""
 
-#: functions.php:202
+#: functions.php:113
+msgid "right-social-widget"
+msgstr ""
+
+#: functions.php:216
 msgid "Name"
 msgstr "Name"
 
-#: functions.php:204
+#: functions.php:218
 msgid "Email"
 msgstr "Email"
 
-#: functions.php:213
+#: functions.php:227
 msgid "Comment"
 msgstr "Comentario"
 
-#: functions.php:219
+#: functions.php:233
 msgid "Post Comment"
 msgstr "Publicar comentario"
 
@@ -87,12 +87,12 @@ msgstr "Culture"
 msgid "Ciencia y Tecnología"
 msgstr "Science and Technology"
 
-#: index.php:266
+#: index.php:265
 msgid "Sociedad"
 msgstr "Society"
 
-#: index.php:352
-msgid "Foto reportaje"
+#: index.php:347
+msgid "Fotorreportaje"
 msgstr "Photo journalism"
 
 #: searchform.php:2
@@ -115,13 +115,13 @@ msgstr "Recent posts"
 msgid "Más leidas"
 msgstr "Most read"
 
-#: specials.php:4 widgets/cmkx-specials.php:22
-msgid "Especiales"
-msgstr "Specials"
-
 #: widgets/cmkx-real-audio.php:14
 msgid "Audio real"
 msgstr "Real audio only in Spanish"
+
+#: widgets/cmkx-specials.php:22
+msgid "Especiales"
+msgstr "Specials"
 
 #, fuzzy
 #~| msgid "Name"

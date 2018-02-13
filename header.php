@@ -34,7 +34,7 @@
 	    <span>CMKX</span>
 	    <span>RADIO</span>
 	    <span>BAYAMO</span>
-	    <span>99.5 y 107.9 FM / 1150 AM</span>
+	    <span>99.5 y 107.9 FM</span>
 	  </h1>
 	</div>
 	<div>
@@ -45,19 +45,26 @@
 	      </a>
 	    </li>
 	    <li>
-	      <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+	      <a href="https://www.facebook.com/RadioBayamo/">
+		<i class="fa fa-facebook-square fa-2x"></i>
+	      </a>
 	    </li>
 	    <li>
-	      <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+	      <a href="https://twitter.com/cmkxdigital">
+		<i class="fa fa-twitter-square fa-2x"></i>
+	      </a>
 	    </li>
 	    <li>
-	      <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+	      <a href="https://plus.google.com/u/0/100727408183787081261">
+		<i class="fa fa-google-plus-square fa-2x"></i></a>
 	    </li>
 	    <li>
 	      <a href="#"><i class="fa fa-youtube-square fa-2x"></i></a>
 	    </li>
 	    <li>
-	      <a href="#"><i class="fa fa-rss-square fa-2x"></i></a>
+	      <a href="<?php bloginfo('atom_url'); ?>">
+		<i class="fa fa-rss-square fa-2x"></i>
+	      </a>
 	    </li>
 	  </ol>
 	</div>

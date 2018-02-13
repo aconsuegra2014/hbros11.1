@@ -90,18 +90,6 @@ ol#coverage-posts{
     width: 100%;
 }
 
-.navBarLight{
-  background-color: #dddcdc;
-}
-
-.navBarLight a{
-	color: black;
-}
-
-.navBarLight a:hover{
-	color: #BE2503;
-}
-
 h1,h2, h3, h4, h5, h6{
 	color: #BE2503;
 	padding-top: 8px;
@@ -491,6 +479,10 @@ hr{
 a:hover{
 	text-decoration: none;
 	color: black;
+}
+
+.nav-link:hover{
+	color: #BE2503 !important;
 }
 /*  ------------- */
 

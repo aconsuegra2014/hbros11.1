@@ -66,7 +66,7 @@
 		
 		<div class="secondMainPostCaption">
 		    <h2>
-			<a href="<?php get_permalink(); ?>">
+			<a href="<?php echo get_permalink(); ?>">
 			    <?php the_title($secondMainPost); ?>
 			</a>
 		    </h2>
@@ -344,7 +344,7 @@
 	    <hr>
 	<?php endif; ?>
 	<p class="postCategories">
-	    <a href="<?php echo $category_link ; ?>" title="<?php _e('Foto reportaje','cmkx'); ?>"><?php _e('Foto reportaje','cmkx'); ?></a>
+	    <a href="<?php echo get_post_type_archive_link( 'foto-reportaje' ); ?>" title="<?php _e('Fotorreportaje','cmkx'); ?>"><?php _e('Fotorreportaje','cmkx'); ?></a>
 	</p>
 	<?php $photoReport = new WP_Query( array( 'post_type' => 'foto-reportaje','posts_per_page' => 1, 'lang' => pll_current_language() )  ); ?>
 	<?php if($photoReport->have_posts()) : ?>
