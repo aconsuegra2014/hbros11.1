@@ -72,23 +72,23 @@
 	<div class="topNavBar"> 	  
 	  <nav class="navbar navbar-expand-lg navBarLight navbar-light">
 	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
+		<span class="navbar-toggler-icon"></span>
 	    </button>
 	    
 	    <?php
-	      wp_nav_menu(array(
-	      'theme_location' => 'top-menu',
-	    'depth' => 2,
-	'menu' => 'top-menu',
-	'container' => 'div',
-	'container_class'   => 'collapse navbar-collapse',
-	'container_id'      => 'navbarSupportedContent',
-	'menu_class'        => 'navbar-nav mr-auto',
-	'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-	'walker'            => new WP_Bootstrap_Navwalker()
-	)
-	);
-	?>
+	    wp_nav_menu(array(
+		'theme_location' => 'top-menu',
+		'depth' => 2,
+		'menu' => 'top-menu',
+		'container' => 'div',
+		'container_class'   => 'collapse navbar-collapse',
+		'container_id'      => 'navbarSupportedContent',
+		'menu_class'        => 'navbar-nav mr-auto',
+		'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+		'walker'            => new WP_Bootstrap_Navwalker()
+	    )
+	    );
+	    ?>
 	    <?php get_search_form(); ?>
 	  </nav>
 	</div>
@@ -97,7 +97,7 @@
       </div>
       
       <img id="top-bayamo" src="<?php bloginfo('template_directory'); ?>/assets/images/Bayamo-top-web-<?php echo rand(1,3); ?>.jpg" alt="Bayamo">
-      
+      <hr>
       
       <?php if(is_front_page() && is_home()): ?>
 	  <?php get_template_part("coverage"); ?>
