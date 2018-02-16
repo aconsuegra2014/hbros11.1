@@ -78,3 +78,9 @@ ol.social-media{
     list-style: none;
     padding-top: 8px;
 }
+
+/* Coverage */
+div.coverage-thumbnail-container{
+    max-height: 160px;
+    overflow: hidden;
+}

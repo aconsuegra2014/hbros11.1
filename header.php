@@ -59,7 +59,9 @@
 		<i class="fa fa-google-plus-square fa-2x"></i></a>
 	    </li>
 	    <li>
-	      <a href="#"><i class="fa fa-youtube-square fa-2x"></i></a>
+	      <a href="https://www.youtube.com/channel/UCaemmbo3ws7AuTz8A3dzY3Q">
+		<i class="fa fa-youtube-square fa-2x"></i>
+	      </a>
 	    </li>
 	    <li>
 	      <a href="<?php bloginfo('atom_url'); ?>">

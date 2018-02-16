@@ -44,7 +44,7 @@
     <div class="row">
 	<?php while ($coverages->have_posts()) : $coverages->the_post(); ?>
 	    <div class="col-md-4 coverage">
-		<div>
+		<div class="coverage-thumbnail-container">
 		    <?php the_post_thumbnail(); ?>
 		</div>
 		<h2>

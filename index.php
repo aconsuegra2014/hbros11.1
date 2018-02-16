@@ -111,9 +111,11 @@
 	    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Top-right-widget')) : else : ?>
 		<p>Widget Top right bar
 	    <?php endif; ?>
+	    <!-- 
 	    <a href="#">
 		<img src="<?php bloginfo('template_directory'); ?>/assets/images/cartelera.svg" alt="Cartelera">
 	    </a>
+	    -->
 	</div>
     </div>
     
