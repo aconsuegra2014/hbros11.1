@@ -350,6 +350,11 @@ ol.relatedPosts img{
    overflow: hidden;   
 }
 
+div.sectionThumbnailContainer{
+    max-height: 231px;
+    overflow: hidden;
+}
+
 h3.fromCover{
 	font-size: 18px;
 	padding-top: 0;

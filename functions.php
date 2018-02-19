@@ -258,13 +258,13 @@ add_filter( 'comment_form_submit_button', 'boostrap4_comment_form_submit_button'
  */
 
 
-require_once('widgets\cmkx-real-audio.php');
+require_once('widgets/cmkx-real-audio.php');
 function cmkx_register_real_audio_widget() { 
     register_widget( 'cmkxRealAudio' );
 }
 add_action( 'widgets_init', 'cmkx_register_real_audio_widget' );
 
-require_once('widgets\cmkx-specials.php');
+require_once('widgets/cmkx-specials.php');
 function cmkx_register_specials_widget() { 
     register_widget( 'cmkxSpecials' );
 }
