@@ -23,11 +23,16 @@ h2#right-culture-widget, h2#right-social-widget{
     color: gray;
 }
 
-/* Special widget */
-div.specials > p.postCategories > a{
+/* Special widget and OnePost widget */
+div.specials > p.postCategories > a, div.one-post > p.postCategories > a{
     color: gray;
 }
 
-div.specials > img{
+div.specials > img, div.one-post img{
     filter: grayscale(100%);
+}
+
+/* OnePost widget */
+div.one-post h2{
+    font-size: 14px;
 }

@@ -269,3 +269,9 @@ function cmkx_register_specials_widget() {
     register_widget( 'cmkxSpecials' );
 }
 add_action( 'widgets_init', 'cmkx_register_specials_widget' );
+
+require_once('widgets/cmkx-one-post.php');
+function cmkx_register_one_post_widget() {
+    register_widget( 'cmkxOnePost' );
+}
+add_action( 'widgets_init', 'cmkx_register_one_post_widget' );
