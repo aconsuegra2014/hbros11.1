@@ -236,9 +236,13 @@ ol.secondaryPosts img{
 ol.secondaryPosts h3{
     font-size: 15px;
     display: inline;
-    top: 0;
+    top: 0.5rem;
     position: absolute;
     padding: 0 10px 0 10px;
+}
+
+ol.secondaryPosts li:first-of-type h3{
+    top: 0;
 }
 
 ol.secondaryPosts li:first-of-type{
@@ -246,7 +250,7 @@ ol.secondaryPosts li:first-of-type{
 }
 
 ol.secondaryPosts li{
-    padding: 0.1rem 0 15px 0;
+    padding: 0.5rem 0 15px 0;
 }
 
 .specials h2{
