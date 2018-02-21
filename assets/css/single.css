@@ -2,3 +2,7 @@ ol#comment-list,ol.children{
     list-style: none;
     width: 100%;
 }
+
+h2.recentPosts + ol, h2.mostRead + ol{
+    line-height: 1.2em;
+}
