@@ -1,3 +1,11 @@
+<?php
+$topWebImageNumber = $_COOKIE["top-web-image-number"];
+if( $topWebImageNumber == null)
+    $topWebImageNumber = 1;
+else
+    $topWebImageNumber = $topWebImageNumber >= 3 ? 1 : $topWebImageNumber + 1;
+setcookie("top-web-image-number", $topWebImageNumber);
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -98,7 +106,7 @@
 	
       </div>
       
-      <img id="top-bayamo" src="<?php bloginfo('template_directory'); ?>/assets/images/Bayamo-top-web-<?php echo rand(1,3); ?>.jpg" alt="Bayamo">
+      <img id="top-bayamo" src="<?php bloginfo('template_directory'); ?>/assets/images/Bayamo-top-web-<?php echo $topWebImageNumber; ?>.jpg" alt="Bayamo">
       <hr>
       
       <?php if(is_front_page() && is_home()): ?>
