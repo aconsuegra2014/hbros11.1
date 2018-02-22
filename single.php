@@ -26,6 +26,7 @@
 		</li>
 	    <?php endforeach;?>
 	</ol>
+	<?php edit_post_link(); ?>
 	<h2>
 	    <?php the_title(); ?>
 	</h2>
