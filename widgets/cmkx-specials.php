@@ -33,7 +33,7 @@ class cmkxSpecials extends WP_Widget{
 	));
 	if ( $specials_posts->have_posts() ) :
 			  $specials_posts->the_post(); 
-	the_post_thumbnail();
+	the_post_thumbnail('full');
 	echo '<h2>';
 	echo '<a href="'. get_permalink() .'">';
 	echo the_title();

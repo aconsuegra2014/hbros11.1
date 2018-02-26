@@ -27,7 +27,7 @@
 	    <div class="col-md-12 firstMainPost">
          	<?php if ( has_post_thumbnail() ): ?>  
 		    <div class="thumbnailContainer">
-			<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail('full'); ?>
 		    </div>
 	        <?php else: ?>
 		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/fondo.png" alt="...">
@@ -58,7 +58,7 @@
 		<?php $secondMainPost = $main_posts->the_post(); ?>
 	        <?php if ( has_post_thumbnail($secondMainPost) ): ?>  
 		    <div class="secondMainPostThumbnailContainer">
-			<?php the_post_thumbnail($secondMainPost); ?>
+			<?php the_post_thumbnail('full'); ?>
 		    </div>
 	        <?php else: ?>
 		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/fondo.png" alt="...">
@@ -84,7 +84,7 @@
 		<?php $thirdMainPost = $main_posts->the_post(); ?>
 	        <?php if ( has_post_thumbnail($thirdMainPost) ): ?> 
                     <div class="thirdMainPostThumbnailContainer">			  
-			<?php the_post_thumbnail($thirdMainPost); ?>
+			<?php the_post_thumbnail('full'); ?>
 		    </div>
 	        <?php else: ?>
                     <img src="<?php bloginfo('template_directory'); ?>/assets/images/fondo.png" alt="...">
@@ -137,7 +137,7 @@
 		<?php if ( $secondaryPosts->have_posts() ) : ?>
 		    <?php $secondaryPosts->the_post(); ?>
 		    <div class="firstSecondaryPostContainer">
-			<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail('full'); ?>
 		    </div>
 		    <h3 class="bold">
 			<a href="<?php echo get_permalink(); ?>">
@@ -152,7 +152,7 @@
 			<?php $secondaryPosts->the_post(); ?>
 			<li  class="list-group-item">
 			    <div class="secondaryPostsContainer">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail('full'); ?>
 			    </div>
 			    <h3>
 				<a href="<?php echo get_permalink(); ?>">
@@ -179,7 +179,7 @@
 		<?php $sportPosts->the_post(); ?>
 		<div class="col-md-5 culturePosts">
 		    <div class="sectionThumbnailContainer">
-			<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail('full'); ?>
 		    </div>
 		</div>
 		<div class="col-md-4">
@@ -211,7 +211,7 @@
 		<?php $culturePosts->the_post(); ?>
 		<div class="col-md-5">
 		    <div class="sectionThumbnailContainer">
-			<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail('full'); ?>
 		    </div>
 		</div>
 		<div class="col-md-4">
@@ -243,7 +243,7 @@
 		<?php $scincePosts->the_post(); ?>
 		<div class="col-md-5 culturePosts">
 		    <div class="sectionThumbnailContainer">
-			<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail('full'); ?>
 		    </div>
 		</div>
 		<div class="col-md-4">
@@ -276,7 +276,7 @@
 		<?php $societyPosts->the_post(); ?>
 		<div class="col-md-5">
 		    <div class="sectionThumbnailContainer">
-			<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail('full'); ?>
 		    </div>
 		</div>
 		<div class="col-md-4">
@@ -348,11 +348,11 @@
 
 	    <hr>
 	<?php endif; ?>
-	<p class="postCategories">
-	    <a href="<?php echo get_post_type_archive_link( 'foto-reportaje' ); ?>" title="<?php _e('Fotorreportaje','cmkx'); ?>"><?php _e('Fotorreportaje','cmkx'); ?></a>
-	</p>
 	<?php $photoReport = new WP_Query( array( 'post_type' => 'foto-reportaje','posts_per_page' => 1, 'lang' => pll_current_language() )  ); ?>
 	<?php if($photoReport->have_posts()) : ?>
+	    <p class="postCategories">
+		<a href="<?php echo get_post_type_archive_link( 'foto-reportaje' ); ?>" title="<?php _e('Fotorreportaje','cmkx'); ?>"><?php _e('Fotorreportaje','cmkx'); ?></a>
+	    </p>
 	    <div class="row" id="photo-report">
 		<div class="col-md-7">
 		    <div id="photo-report-container">

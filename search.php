@@ -15,7 +15,7 @@
 		<div class="col-md-3">
  		    <?php  $postTags = get_the_tags(); ?>
 		    <?php if(!is_array($postTags)) : ?>
-			<?php $postTags = ['']; ?>
+			<?php $postTags = array(); ?>
 		    <?php endif; ?>
 		    <ol class="categoryTags">
 			<?php $counter = 0; ?>

@@ -1,7 +1,12 @@
 <?php get_header(); ?>
+<?php $main = 'principal'; ?>
+<?php  if(get_locale() === 'en_US'): ?>
+    <?php $main = 'main'; ?>
+<?php endif; ?>
+
 <?php while ( have_posts() ) : the_post(); ?>
     <div>
-	<?php $categoryTags =  []; ?>
+	<?php $categoryTags = array(); ?>
 	<?php $postCategories = get_the_category(); ?>
 	<?php foreach($postCategories as $pCat) : ?>
 	    <?php if( $pCat->slug != 'secundaria' && $pCat->slug != 'principal') : ?>
@@ -77,7 +82,7 @@
 			<li>
 			    <a rel="external" href="<?php the_permalink()?>">
 				<div class="thumbnailContainerRelated zoomImage">
-				    <?php the_post_thumbnail(); ?>
+				    <?php the_post_thumbnail('full'); ?>
 				</div>
 				<?php the_title(); ?>
 			    </a>
@@ -90,7 +95,7 @@
     </div>
     <div class="col-md-3">
 	<h3 class="fromCover"><?php _e('En portada','cmkx'); ?></h3>
-	<?php $main_posts = new WP_Query( array( 'category_name' => 'principal','posts_per_page' => 1 )  ); ?>
+	<?php $main_posts = new WP_Query( array( 'category_name' => $main,'posts_per_page' => 1 )  ); ?>
 	<?php if ( $main_posts->have_posts() ) : ?>
 	    <?php $mainPost = $main_posts->the_post(); ?>
 	    <?php if ( has_post_thumbnail($mainPost) ): ?>  

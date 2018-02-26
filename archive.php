@@ -15,7 +15,7 @@
 		<div class="col-md-3">
  		    <?php  $postTags = get_the_tags(); ?>
 		    <?php if(!is_array($postTags)) : ?>
-			<?php $postTags = ['']; ?>
+			<?php $postTags = array(); ?>
 		    <?php endif; ?>
 		    <ol class="categoryTags">
 			<?php $counter = 0; ?>
@@ -35,7 +35,7 @@
 			<?php echo get_the_date('d/m/Y'); ?>
 		    </p>
 		    <div class="categoryImagePostsContainer">
-			<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail('full'); ?>
 		    </div>
 		    <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 
