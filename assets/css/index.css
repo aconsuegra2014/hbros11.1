@@ -1,0 +1,27 @@
+.first-secondary-post-container{
+	max-height: 377px;
+	overflow: hidden;
+}
+
+ol.secondary-posts{
+    height: 377px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ol.secondary-posts img{
+	width: 50%;
+	height: auto;
+}
+
+ol.secondary-posts h3{
+    font-size: 15px;
+    display: inline;
+    position: absolute;
+    padding: 0 10px 0 10px;
+}
+
+ol.secondary-posts li{
+    padding: 0;
+}

@@ -6,3 +6,7 @@ ol#comment-list,ol.children{
 h2.recentPosts + ol, h2.mostRead + ol{
     line-height: 1.2em;
 }
+
+div.single-post img{
+    margin-bottom: 10px;
+}

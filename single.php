@@ -3,13 +3,14 @@
 <?php  if(get_locale() === 'en_US'): ?>
     <?php $main = 'main'; ?>
 <?php endif; ?>
-
+<?php $positions = array('principal', 'main', 'secundaria', 'secondary', 'deportes', 'sports',
+			 'cultura', 'culture', 'ciencia', 'science-and-technology', 'sociedad', 'society'); ?>
 <?php while ( have_posts() ) : the_post(); ?>
     <div>
 	<?php $categoryTags = array(); ?>
 	<?php $postCategories = get_the_category(); ?>
 	<?php foreach($postCategories as $pCat) : ?>
-	    <?php if( $pCat->slug != 'secundaria' && $pCat->slug != 'principal') : ?>
+	    <?php if( !in_array($pCat->slug,$positions) ) : ?>
 		<?php $categoryTags[] = $pCat; ?>       
 	    <?php endif; ?>
 	<?php endforeach; ?>

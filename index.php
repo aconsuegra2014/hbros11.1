@@ -20,10 +20,12 @@
 <?php endif; ?>
 
 <div class='row'>
+    <? $postsShown = array(); ?>
     <?php $main_posts = new WP_Query( array( 'category_name' => $main ,'posts_per_page' => 3 )  ); ?>
     <div class="col no-gutters">
 	<?php if ( $main_posts->have_posts() ) : ?>
             <?php $mainPost = $main_posts->the_post(); ?>
+	    <?php $postsShown[] = $post->ID ?>
 	    <div class="col-md-12 firstMainPost">
          	<?php if ( has_post_thumbnail() ): ?>  
 		    <div class="thumbnailContainer">
@@ -55,8 +57,9 @@
     <div class="col">
 	<div class="row">
 	    <div class="col-md-6 secondMainPost">
-		<?php $secondMainPost = $main_posts->the_post(); ?>
-	        <?php if ( has_post_thumbnail($secondMainPost) ): ?>  
+		<?php $main_posts->the_post(); ?>
+		<?php $postsShown[] = $post->ID ?>
+	        <?php if ( has_post_thumbnail() ): ?>  
 		    <div class="secondMainPostThumbnailContainer">
 			<?php the_post_thumbnail('full'); ?>
 		    </div>
@@ -67,7 +70,7 @@
 		<div class="secondMainPostCaption">
 		    <h2>
 			<a href="<?php echo get_permalink(); ?>">
-			    <?php the_title($secondMainPost); ?>
+			    <?php the_title(); ?>
 			</a>
 		    </h2>
 		    <div class="clamp" data-lines="3" >
@@ -81,8 +84,9 @@
 	    </div>
 	    
 	    <div class="col-md-6 thirdMainPost">
-		<?php $thirdMainPost = $main_posts->the_post(); ?>
-	        <?php if ( has_post_thumbnail($thirdMainPost) ): ?> 
+		<?php $main_posts->the_post(); ?>
+		<?php $postsShown[] = $post->ID ?>
+	        <?php if ( has_post_thumbnail() ): ?> 
                     <div class="thirdMainPostThumbnailContainer">			  
 			<?php the_post_thumbnail('full'); ?>
 		    </div>
@@ -92,7 +96,7 @@
 		<div class="thirdMainPostCaption">
 		    <h2>
 			<a href="<?php echo get_permalink(); ?>">
-			    <?php the_title($thirdMainPost); ?>
+			    <?php the_title(); ?>
 			</a>
 		    </h2>
 		    <div class="clamp" data-lines="3">
@@ -112,9 +116,9 @@
 		<p>Widget Top right bar
 	    <?php endif; ?>
 	    <!-- 
-	    <a href="#">
-		<img src="<?php bloginfo('template_directory'); ?>/assets/images/cartelera.svg" alt="Cartelera">
-	    </a>
+		 <a href="#">
+		 <img src="<?php bloginfo('template_directory'); ?>/assets/images/cartelera.svg" alt="Cartelera">
+		 </a>
 	    -->
 	</div>
     </div>
@@ -133,10 +137,10 @@
 	<div class="row">
 	    <?php $secondaryPosts = new WP_Query( array( 'category_name' => $secondary,'posts_per_page' => 4 )  ); ?>
 	    <div class="col firstSecondaryPost">
-		
 		<?php if ( $secondaryPosts->have_posts() ) : ?>
 		    <?php $secondaryPosts->the_post(); ?>
-		    <div class="firstSecondaryPostContainer">
+		    <?php $postsShown[] = $post->ID ?>
+		    <div class="first-secondary-post-container">
 			<?php the_post_thumbnail('full'); ?>
 		    </div>
 		    <h3 class="bold">
@@ -147,7 +151,7 @@
 	    </div>
 	    
 	    <div class="col-md-custom">
-		<ol class="list-group secondaryPosts">
+		<ol class="list-group secondary-posts">
 		    <?php while($secondaryPosts->have_posts() ) : ?>
 			<?php $secondaryPosts->the_post(); ?>
 			<li  class="list-group-item">
@@ -174,7 +178,7 @@
 	</p>
 	
 	<div class="row index-category-posts">
-	    <?php $sportPosts = new WP_Query( array( 'category_name' => $sports,'posts_per_page' => 1 )  ); ?>
+	    <?php $sportPosts = new WP_Query( array( 'category_name' => $sports,'posts_per_page' => 1, 'post__not_in' => $postsShown )  ); ?>
 	    <?php if ( $sportPosts->have_posts() ) : ?>
 		<?php $sportPosts->the_post(); ?>
 		<div class="col-md-5 culturePosts">
@@ -206,7 +210,7 @@
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Cultura','cmkx'); ?>"><?php _e('Cultura','cmkx'); ?></a>
 	</p>
 	<div class="row index-category-posts">
-	    <?php $culturePosts = new WP_Query( array( 'category_name' => $culture ,'posts_per_page' => 1 )  ); ?>
+	    <?php $culturePosts = new WP_Query( array( 'category_name' => $culture ,'posts_per_page' => 1, 'post__not_in' => $postsShown )  ); ?>
 	    <?php if ( $culturePosts->have_posts() ) : ?>
 		<?php $culturePosts->the_post(); ?>
 		<div class="col-md-5">
@@ -238,7 +242,7 @@
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Ciencia y Tecnología','cmkx'); ?>"><?php _e('Ciencia y Tecnología','cmkx'); ?></a>
 	</p>
 	<div class="row index-category-posts">
-	    <?php $scincePosts = new WP_Query( array( 'category_name' => $science,'posts_per_page' => 1 )  ); ?>
+	    <?php $scincePosts = new WP_Query( array( 'category_name' => $science,'posts_per_page' => 1, 'post__not_in' => $postsShown )  ); ?>
 	    <?php if ( $scincePosts->have_posts() ) : ?>
 		<?php $scincePosts->the_post(); ?>
 		<div class="col-md-5 culturePosts">
@@ -271,7 +275,7 @@
 	</p>
 	
 	<div class="row index-category-posts">
-	    <?php $societyPosts = new WP_Query( array( 'category_name' => $society ,'posts_per_page' => 1 )  ); ?>
+	    <?php $societyPosts = new WP_Query( array( 'category_name' => $society ,'posts_per_page' => 1, 'post__not_in' => $postsShown )  ); ?>
 	    <?php if ( $societyPosts->have_posts() ) : ?>
 		<?php $societyPosts->the_post(); ?>
 		<div class="col-md-5">
@@ -336,14 +340,14 @@
 			</a>
 		    </div>
 		</div>
-            <a class="carousel-control-prev" href="#blogs" role="button" data-slide="prev">
-		<i class="fa fa-chevron-left fa-lg text-muted"></i>
-		<span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next text-faded" href="#blogs" role="button" data-slide="next">
-		<i class="fa fa-chevron-right fa-lg text-muted"></i>
-		<span class="sr-only">Next</span>
-            </a>
+		<a class="carousel-control-prev" href="#blogs" role="button" data-slide="prev">
+		    <i class="fa fa-chevron-left fa-lg text-muted"></i>
+		    <span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next text-faded" href="#blogs" role="button" data-slide="next">
+		    <i class="fa fa-chevron-right fa-lg text-muted"></i>
+		    <span class="sr-only">Next</span>
+		</a>
 	    </div>
 
 	    <hr>
