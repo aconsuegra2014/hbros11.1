@@ -60,7 +60,7 @@
 		<?php $postsShown[] = $post->ID ?>
 	        <?php if ( has_post_thumbnail() ): ?>  
 		    <div class="secondMainPostThumbnailContainer">
-			<?php the_post_thumbnail('full'); ?>
+			<?php the_post_thumbnail('cmkx-medium'); ?>
 		    </div>
 	        <?php else: ?>
 		    <img src="<?php bloginfo('template_directory'); ?>/assets/images/fondo.png" alt="...">
@@ -87,7 +87,7 @@
 		<?php $postsShown[] = $post->ID ?>
 	        <?php if ( has_post_thumbnail() ): ?> 
                     <div class="thirdMainPostThumbnailContainer">			  
-			<?php the_post_thumbnail('full'); ?>
+			<?php the_post_thumbnail('cmkx-medium'); ?>
 		    </div>
 	        <?php else: ?>
                     <img src="<?php bloginfo('template_directory'); ?>/assets/images/fondo.png" alt="...">
@@ -182,7 +182,7 @@
 		<?php $sportPosts->the_post(); ?>
 		<div class="col-md-5 culturePosts">
 		    <div class="sectionThumbnailContainer">
-			<?php the_post_thumbnail('full'); ?>
+			<?php the_post_thumbnail('cmkx-medium'); ?>
 		    </div>
 		</div>
 		<div class="col-md-4">

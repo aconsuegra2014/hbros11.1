@@ -4,6 +4,7 @@ add_action( 'after_setup_theme', 'my_theme_setup' );
 function my_theme_setup(){
     load_theme_textdomain( 'cmkx', get_template_directory() . '/languages' );
     add_image_size( 'cmkx-small', 200, 150 );
+    add_image_size( 'cmkx-medium', 450, 338 );
 }
 
 /* Add support for post thumbnails */
@@ -36,6 +37,47 @@ function additional_js()
 
 }
 add_action('wp_head','additional_js');
+
+// Add open graph doctype
+function doctype_opengraph($output) {
+    return $output . '
+    xmlns:og="http://opengraphprotocol.org/schema/"
+    xmlns:fb="http://www.facebook.com/2008/fbml"';
+}
+add_filter('language_attributes', 'doctype_opengraph');
+
+// Add open grahp meta
+function fb_opengraph() {
+    global $post;
+    
+    if(is_single()) {
+        if(has_post_thumbnail($post->ID)) {
+            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+	    $img_src = $img_src[0];
+        } else {
+            $img_src = bloginfo('template_directory'). '/assets/images/Bayamo-top-web-1.jpg';
+        }
+        if($excerpt = $post->post_excerpt) {
+            $excerpt = strip_tags($post->post_excerpt);
+            $excerpt = str_replace("", "'", $excerpt);
+        } else {
+            $excerpt = get_bloginfo('description');
+        }
+?>
+
+<meta property="og:title" content="<?php echo the_title(); ?>"/>
+<meta property="og:description" content="<?php echo $excerpt; ?>"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="<?php echo the_permalink(); ?>"/>
+<meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+<meta property="og:image" content="<?php echo $img_src; ?>"/>
+
+<?php
+} else {
+    return;
+}
+}
+add_action('wp_head', 'fb_opengraph', 5);
 
 /* Add custom class to the_excerpt method */
 /*
