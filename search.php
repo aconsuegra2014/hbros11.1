@@ -59,4 +59,4 @@
 	<?php the_posts_pagination( array( 'mid_size' => 2, 'next_text' => 'Siguiente', 'prev_text' => 'Anterior', 'screen_reader_text' => 'a', 'type' => 'list' ) ); ?>
     </div>
 </div>
-<?php get_footer(); ?>
+<?php get_footer(); 

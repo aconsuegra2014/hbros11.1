@@ -1,4 +1,3 @@
-
 <?php get_header(); ?>
 <?php $culture = 'cultura'; ?>
 <?php $society = 'sociedad'; ?>
@@ -156,7 +155,7 @@
 			<?php $secondaryPosts->the_post(); ?>
 			<li  class="list-group-item">
 			    <div class="secondaryPostsContainer">
-				<?php the_post_thumbnail('full'); ?>
+				<?php the_post_thumbnail('cmkx-small'); ?>
 			    </div>
 			    <h3>
 				<a href="<?php echo get_permalink(); ?>">
@@ -386,6 +385,6 @@
 		</div>
 	    </div>
 	    <hr>
-	<?php endif; ?>
+	<?php endif; 
 	
-	<?php get_footer(); ?>
+	get_footer();

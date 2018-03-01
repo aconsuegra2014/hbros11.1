@@ -26,8 +26,3 @@ class cmkxRealAudio extends WP_Widget{
     }
 
 }
-
-
-?>
-
-  

@@ -1,5 +1,6 @@
-<?php get_header(); ?>
-<?php
+<?php 
+get_header();
+
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array( 'post_type' => 'post', 'lang' =>  pll_current_language(), 'posts_per_page' => 12, 'paged' => $paged );
 $archive = new WP_Query( $args );
@@ -79,4 +80,4 @@ $archive = new WP_Query( $args );
 
 
 <?php wp_reset_postdata(); ?>
-<?php get_footer(); ?>
+<?php get_footer();

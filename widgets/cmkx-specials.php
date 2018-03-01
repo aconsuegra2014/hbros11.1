@@ -52,8 +52,3 @@ class cmkxSpecials extends WP_Widget{
     }
 
 }
-
-
-?>
-
-

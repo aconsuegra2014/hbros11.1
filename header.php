@@ -109,6 +109,6 @@ setcookie("top-web-image-number", $topWebImageNumber);
       <img id="top-bayamo" src="<?php bloginfo('template_directory'); ?>/assets/images/Bayamo-top-web-<?php echo $topWebImageNumber; ?>.jpg" alt="Bayamo">
       <hr>
       
-      <?php if(is_front_page() && is_home()): ?>
-	  <?php get_template_part("coverage"); ?>
-      <?php endif; ?>
+      <?php if(is_front_page() && is_home()): 
+	  get_template_part("coverage"); 
+      endif; 
