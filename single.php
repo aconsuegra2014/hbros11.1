@@ -3,8 +3,11 @@
 <?php  if(get_locale() === 'en_US'): ?>
     <?php $main = 'main'; ?>
 <?php endif; ?>
-<?php $positions = array('principal', 'main', 'secundaria', 'secondary', 'deportes', 'sports',
-			 'cultura', 'culture', 'ciencia', 'science-and-technology', 'sociedad', 'society'); ?>
+<?php
+$positions = array('principal', 'main', 'secundaria', 'secondary');
+$sections = array( 'deportes', 'sports', 'cultura', 'culture', 'ciencia', 'science-and-technology', 'sociedad', 'society');
+
+?>
 <?php while ( have_posts() ) : the_post(); ?>
     <div>
 	<?php $categoryTags = array(); ?>
@@ -12,6 +15,9 @@
 	<?php foreach($postCategories as $pCat) : ?>
 	    <?php if( !in_array($pCat->slug,$positions) ) : ?>
 		<?php $categoryTags[] = $pCat; ?>       
+	    <?php endif; ?>
+	    <?php if(in_array($pCat->slug, $sections)) : ?>
+		<?php array_unshift($categoryTags,$pCat); ?>
 	    <?php endif; ?>
 	<?php endforeach; ?>
 	<?php  $postTags = get_the_tags(); ?>
@@ -43,7 +49,6 @@
 		    <?php echo $author->name ?>
 		</a>
 	    <?php endforeach; ?>
-	    
 	</p>				
 	<p class="redaction">			
 	    <?php $redactions = wp_get_post_terms($post->ID, 'redaccion', array("fields" => "all", 'orderby' => 'name')); ?>
@@ -83,7 +88,7 @@
 			<li>
 			    <a rel="external" href="<?php the_permalink()?>">
 				<div class="thumbnailContainerRelated zoomImage">
-				    <?php the_post_thumbnail('full'); ?>
+				    <?php the_post_thumbnail('cmkx-small'); ?>
 				</div>
 				<?php the_title(); ?>
 			    </a>

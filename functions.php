@@ -88,10 +88,72 @@ add_action('wp_head', 'fb_opengraph', 5);
    add_filter ( 'the_excerpt' ,   'wpc_custom_excerpt' ) ;
  */
 
+
+//
+function jsonldArticle(){
+    global $post;
+    
+    if(is_single()) {
+	if(has_post_thumbnail($post->ID)) {
+            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+	    $img_src = $img_src[0];
+        } else {
+            $img_src = bloginfo('template_directory'). '/assets/images/Bayamo-top-web-1.jpg';
+        }
+        if($excerpt = $post->post_excerpt) {
+            $excerpt = strip_tags($post->post_excerpt);
+            $excerpt = str_replace("", "'", $excerpt);
+        } else {
+            $excerpt = the_excerpt();
+        }
+
+	$tags = get_the_tags();
+	$keywords = '';
+	foreach($tags as $tag)
+	$keywords = $keywords. $tag->name .' ';
+
+	$journalist = '';
+	$authors = wp_get_post_terms($post->ID, 'autores', array("fields" => "all", 'orderby' => 'name'));
+	foreach ($authors as $author)
+	$journalist = $author->name;
+	
+	$url = get_permalink();
+
+	$logo = get_template_directory_uri() .'/assets/images/cmkx-digital.jpg';
+	echo '<script type="application/ld+json">
+       { "@context": "http://schema.org", 
+	 "@type": "Article",
+	 "headline": "'. $post->post_title .'",
+	 "alternativeHeadline": "'. $excerpt .'",
+	 "image": "'. $img_src .'",
+	 "author": "'. $journalist .'", 
+	 "keywords": "'. $keywords .'", 
+	 "publisher": {
+             "@context": "http://schema.org",
+             "@type": "Organization",
+             "name": "CMKX Radio Bayamo Digital",
+             "legalName" : "CMKX Radio Bayamo",
+             "logo": {
+               "@type": "imageObject",
+               "url": "'. $logo .'"
+             },
+             "url": "http://www.radiobayamo.icrt.cu/"
+         },
+	 "url": "'. $url .'",
+         "mainEntityOfPage": "'. $url .'" ,
+	 "datePublished": "'. get_the_date('Y-m-d') .'",
+	 "dateModified": "'.  $post->post_modified  .'"
+       }
+</script>';
+    }
+}
+add_action('wp_head', 'jsonldArticle');
+
+
 /* Adding support for menu */
 function register_my_menu() {
     register_nav_menus( array('top-menu' =>   'Top menu',
-                              'side-menu' => 'Side menu'
+			      'side-menu' => 'Side menu'
     ));
 }
 add_action( 'init', 'register_my_menu' );
@@ -170,7 +232,7 @@ function widget_custom_tag_cloud($args) {
     $args['largest'] = 25;
     $args['smallest'] = 12;
     $args['unit'] = 'px';
-    
+
     // Outputs our edited widget
     return $args;
 }
@@ -213,8 +275,8 @@ add_filter( 'nav_menu_css_class', 'add_specific_li_class_to_side_menu', 10, 3 );
 // Remove screen text reader in post navigation (pagination)
 function remove_screen_reader_text_post_navigation(){
     $template= '<nav class="post-navigation %1$s" role="navigation">
-	<div class="nav-links">%3$s</div>
-	</nav>';
+    <div class="nav-links">%3$s</div>
+</nav>';
 
     return $template;
 }
@@ -225,12 +287,12 @@ function set_popular_post($postID) {
     $count_key = 'post_visit_count';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
+	$count = 0;
+	delete_post_meta($postID, $count_key);
+	add_post_meta($postID, $count_key, '0');
     }else{
-        $count++;
-        update_post_meta($postID, $count_key, $count);
+	$count++;
+	update_post_meta($postID, $count_key, $count);
     }
 }
 // To keep the count accurate, lets get rid of prefetching
@@ -250,11 +312,11 @@ add_action( 'wp_head', 'count_popular_post');
 // Adding boostrap style to comment's form
 function bootstrap4_comment_form_fields() {
     $commenter = wp_get_current_commenter();
-    
+
     $req      = get_option( 'require_name_email' );
     $aria_req = ( $req ? " aria-required='true'" : '' );
     $html5    = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
-    
+
     $fields   =  array(
 	'author' => '<div class="form-group"><label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
 		  '<input class="form-control" id="author" name="author" required="required" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="300"' . $aria_req . ' /></div>',
@@ -274,7 +336,7 @@ add_filter( 'comment_form_field_comment', 'boostrap4_comment_form_field_comment'
 function boostrap4_comment_form_submit_button(){
     return '<div class="form-group">
     <input name="submit" type="submit" id="submit" class="btn" value="'. __("Post Comment") . '" />
-	</div>';
+</div>';
 }
 add_filter( 'comment_form_submit_button', 'boostrap4_comment_form_submit_button', 10 ,0 );
 

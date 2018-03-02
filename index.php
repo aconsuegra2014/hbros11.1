@@ -180,6 +180,7 @@
 	    <?php $sportPosts = new WP_Query( array( 'category_name' => $sports,'posts_per_page' => 1, 'post__not_in' => $postsShown )  ); ?>
 	    <?php if ( $sportPosts->have_posts() ) : ?>
 		<?php $sportPosts->the_post(); ?>
+		<?php $postsShown[] = $post->ID ?>
 		<div class="col-md-5 culturePosts">
 		    <div class="sectionThumbnailContainer">
 			<?php the_post_thumbnail('cmkx-medium'); ?>
