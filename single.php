@@ -4,7 +4,7 @@
     <?php $main = 'main'; ?>
 <?php endif; ?>
 <?php
-$positions = array('principal', 'main', 'secundaria', 'secondary');
+$positions = array('principal', 'main', 'secundaria', 'secondary','deportes', 'sports', 'cultura', 'culture', 'ciencia', 'science-and-technology', 'sociedad', 'society');
 $sections = array( 'deportes', 'sports', 'cultura', 'culture', 'ciencia', 'science-and-technology', 'sociedad', 'society');
 
 ?>
