@@ -83,7 +83,6 @@ ol#coverage-posts{
 }
 .container{
     max-width: 1024px;
-    padding: 0;
 }
 
 @media (min-width: 1024px) {
@@ -350,10 +349,6 @@ div.fromCover{
 }
 
 
-/* Foto reportaje*/
-#slider{
-/*	max-height: 500px; */
-}
 
 /*  Text effects code pen */
 h1.elegantshadow {
