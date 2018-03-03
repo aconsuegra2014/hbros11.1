@@ -72,7 +72,7 @@
 	<?php while ($postFromCoverage->have_posts()) : $postFromCoverage->the_post(); ?>
 	<li>
     	<div class="categoryImagePostsContainer">
-	      <?php the_post_thumbnail(); ?>
+	      <?php the_post_thumbnail('cmkx-small'); ?>
         </div>
         <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 	</li>

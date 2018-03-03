@@ -27,7 +27,7 @@ class cmkxOnePost extends WP_Widget{
 	$onePost = new WP_Query(array('category_name' => $category,  'posts_per_page' => 1	));
 	if ( $onePost->have_posts() ) :
 		   $onePost->the_post(); 
-	the_post_thumbnail();
+	the_post_thumbnail('cmkx-medium');
 	?>
 	    <h2>
 		<a href="<?php  echo get_permalink(); ?>">

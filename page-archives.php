@@ -40,7 +40,7 @@ $archive = new WP_Query( $args );
 			<?php echo get_the_date('d/m/Y'); ?>
 		    </p>
 		    <div class="categoryImagePostsContainer">
-			<?php the_post_thumbnail('full'); ?>
+			<?php the_post_thumbnail('cmkx-small'); ?>
 		    </div>
 		    <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 

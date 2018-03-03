@@ -18,7 +18,7 @@
 	    <?php  _e('COBERTURA ESPECIAL','cmkx'); ?>
 	</span>
 	<?php if ( has_post_thumbnail() ): ?>  
-	    <?php the_post_thumbnail(); ?>
+	    <?php the_post_thumbnail('cmkx-medium'); ?>
 	<?php else: ?>
 	    <h1 class="elegantshadow" style="font-size: 30px;font-weight: bold;color: #262b62;">
 		<a href="<?php echo get_permalink()?>">
@@ -45,7 +45,7 @@
 	<?php while ($coverages->have_posts()) : $coverages->the_post(); ?>
 	    <div class="col-md-4 coverage">
 		<div class="coverage-thumbnail-container">
-		    <?php the_post_thumbnail(); ?>
+		    <?php the_post_thumbnail('cmkx-medium'); ?>
 		</div>
 		<h2>
 		    <a href="<?php echo get_permalink()?>">

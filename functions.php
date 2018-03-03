@@ -3,7 +3,7 @@
 add_action( 'after_setup_theme', 'my_theme_setup' );
 function my_theme_setup(){
     load_theme_textdomain( 'cmkx', get_template_directory() . '/languages' );
-    add_image_size( 'cmkx-small', 200, 150 );
+    add_image_size( 'cmkx-small', 320, 240 );
     add_image_size( 'cmkx-medium', 450, 338 );
 }
 
