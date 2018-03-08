@@ -26,6 +26,12 @@ Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-backgr
 @import 'assets/css/single.css';
 @import 'assets/css/footer.css';
 
+/* Colors */
+:root{
+    --gray: #808080cc;
+}
+
+
 /* ----------------------   General */
 h1,h2,h3,h4,h5,h6, p{
     /*    font-family: Arial;*/
@@ -234,7 +240,7 @@ div#blogs img{
 }
 
 p.date{
-    color: #808080cc;
+    color: var(--gray);
     font-size: 12px;
 
 }
@@ -285,26 +291,22 @@ ol.tags li a, ol.categoryTags a{
     max-height: 270px;  
 }
 
-p.author{
+p.author, p.photographer{
 	margin: 0;
 	color: #000000;
-	font-size: 13px !important;
+	font-size: 13px;
 	text-transform: uppercase;
 	font-weight: bold;
 	margin: 0;
 }
-p.author a{
-		color: #000000;
+p.author > i, p.photographer > i{
+    color: var(--gray);
 }
 
-div.author p{
-	font-size: 12px;
+p.author a, p.photographer a{
+    color: #000000;
 }
 
-div.author img{
-	border-radius: 50%;
-	width: 40%;
-}
 
 p.redaction{
 	margin: 0;

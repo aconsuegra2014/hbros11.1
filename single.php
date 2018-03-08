@@ -44,9 +44,23 @@ $sections = array( 'deportes', 'sports', 'cultura', 'culture', 'ciencia', 'scien
 	</h2>
 	<p class="author">
 	    <?php $authors = wp_get_post_terms($post->ID, 'autores', array("fields" => "all", 'orderby' => 'name')); ?>
+	    <?php if( !empty($authors) ) : ?>
+		<i class="fa fa-pencil"></i>
+	    <?php endif; ?>
 	    <?php foreach ($authors as $author) : ?>
 		<a href="<?php echo esc_attr(get_term_link($author, 'autores'))?>">								
 		    <?php echo $author->name ?>
+		</a>
+	    <?php endforeach; ?>
+	</p>
+	<p class="photographer">
+	    <?php $photographers = wp_get_post_terms($post->ID, 'fotografo', array("fields" => "all", 'orderby' => 'name')); ?>
+	    <?php if( !empty($photographers) ) : ?>
+		<i class="fa fa-camera"></i>
+	    <?php endif; ?>
+	    <?php foreach ($photographers as $photographer) : ?>
+		<a href="<?php echo esc_attr(get_term_link($photographer, 'fotografo'))?>">								
+		    <?php echo $photographer->name ?>
 		</a>
 	    <?php endforeach; ?>
 	</p>				

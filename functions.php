@@ -116,13 +116,15 @@ function jsonldArticle(){
 	$authors = wp_get_post_terms($post->ID, 'autores', array("fields" => "all", 'orderby' => 'name'));
 	foreach ($authors as $author)
 	$journalist = $author->name;
+	if($journalist == '')
+	    $journalist = 'Radio Bayamo Digital';
 	
 	$url = get_permalink();
 
 	$logo = get_template_directory_uri() .'/assets/images/cmkx-digital.jpg';
 	echo '<script type="application/ld+json">
        { "@context": "http://schema.org", 
-	 "@type": "Article",
+	 "@type": "NewsArticle",
 	 "headline": "'. $post->post_title .'",
 	 "alternativeHeadline": "'. $excerpt .'",
 	 "image": "'. $img_src .'",
