@@ -5,12 +5,13 @@ function my_theme_setup(){
     load_theme_textdomain( 'cmkx', get_template_directory() . '/languages' );
     add_image_size( 'cmkx-small', 320, 240 );
     add_image_size( 'cmkx-medium', 450, 338 );
+    /* Add support to automatic titles */
+    add_theme_support( 'title-tag' );
+    /* Add support for post thumbnails */
+    add_theme_support( 'post-thumbnails' );
+    /* Add support for html5 */
+    add_theme_support( 'html5',array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption',) );
 }
-
-/* Add support for post thumbnails */
-add_theme_support( 'post-thumbnails' );
-/* Add support for html5 */
-add_theme_support( 'html5',array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption',) );
 
 
 /*

@@ -9,7 +9,6 @@ setcookie("top-web-image-number", $topWebImageNumber);
 <!DOCTYPE html>
 <html>
   <head>
-    <title><?php bloginfo('name'); ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="google-site-verification" content="r-VDsjyVuLh9T70QG8SlznY_fOTqlehAc3QSXWfcEAs" />
