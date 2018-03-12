@@ -21,6 +21,7 @@ Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-backgr
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 */
 @import 'assets/css/header.css';
+@import 'assets/css/coverage.css';
 @import 'assets/css/index.css';
 @import 'assets/css/widgets.css';
 @import 'assets/css/single.css';

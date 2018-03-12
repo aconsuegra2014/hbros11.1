@@ -13,7 +13,7 @@
 <?php if($currentCoverage->have_posts()) : ?>
     <?php  $currentCoverage->the_post(); ?>
     <?php $coverageId = $post->ID;  ?>
-    <div class="row">
+    <div class="row"  id="coverage-header">
 	<span id="specialCoverage">
 	    <?php  _e('COBERTURA ESPECIAL','cmkx'); ?>
 	</span>
