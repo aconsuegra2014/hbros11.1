@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
     <div>
-	<?php $categoryTags =  []; ?>
+	<?php $categoryTags =  array(); ?>
 	<?php $postCategories = get_the_category(); ?>
 	<?php foreach($postCategories as $pCat) : ?>
 	    <?php if( $pCat->slug != 'secundaria' && $pCat->slug != 'principal') : ?>

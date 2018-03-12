@@ -55,15 +55,16 @@ function fb_opengraph() {
         if(has_post_thumbnail($post->ID)) {
             $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
 	    $img_src = $img_src[0];
-        } else {
-            $img_src = bloginfo('template_directory'). '/assets/images/Bayamo-top-web-1.jpg';
-        }
+        } 
+	else 
+            $img_src = get_bloginfo('template_directory') . '/assets/images/Bayamo-top-web-1.jpg';
+
         if($excerpt = $post->post_excerpt) {
             $excerpt = strip_tags($post->post_excerpt);
             $excerpt = str_replace("", "'", $excerpt);
-        } else {
-            $excerpt = get_bloginfo('description');
-        }
+        } else 
+            $excerpt = the_excerpt();
+        
 ?>
 
 <meta property="og:title" content="<?php echo the_title(); ?>"/>
@@ -95,11 +96,13 @@ function jsonldArticle(){
     global $post;
     
     if(is_single()) {
+	$img_src= '';
+	$excerpt= '';
 	if(has_post_thumbnail($post->ID)) {
             $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
 	    $img_src = $img_src[0];
         } else {
-            $img_src = bloginfo('template_directory'). '/assets/images/Bayamo-top-web-1.jpg';
+            $img_src = get_bloginfo('template_directory') . '/assets/images/Bayamo-top-web-1.jpg';
         }
         if($excerpt = $post->post_excerpt) {
             $excerpt = strip_tags($post->post_excerpt);
@@ -110,8 +113,11 @@ function jsonldArticle(){
 
 	$tags = get_the_tags();
 	$keywords = '';
-	foreach($tags as $tag)
-	$keywords = $keywords. $tag->name .' ';
+	if(is_array($tags))
+	    foreach($tags as $tag){
+		$keywords = $keywords. $tag->name .' ';
+	    }
+	
 
 	$journalist = '';
 	$authors = wp_get_post_terms($post->ID, 'autores', array("fields" => "all", 'orderby' => 'name'));
