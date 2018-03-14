@@ -9,13 +9,30 @@ jQuery(function($) {
 	cursorborder: ""
 	,cursorcolor: "#808080cc"
     }); 
-	
-	// Adding slider on index with various effects
+
+    var slider = document.getElementById('slider');
+    if(slider !=null){
+	var sliderCloned = slider.cloneNode(true);
+	window.addEventListener("orientationchange", function() {
+	    var sliderContainer = document.getElementById('photo-report-container');
+	    sliderContainer.removeChild(slider);
+	    sliderContainer.appendChild(sliderCloned.cloneNode(true));
+	    // Adding slider on index with various effects
+	    $( '#slider' ).lateralSlider( {
+		captionPadding: '0',
+		captionHeight: 45
+	    } );
+	    
+	});
+    }
+    
+    // Adding slider on index with various effects
     $( '#slider' ).lateralSlider( {
       captionPadding: '0',
       captionHeight: 45
     } );
-	
+
+    //var document.querySelectorAll('div#slider > div')
     // Audio control
     var play = false;
     var realAudio = document.getElementById('cmkx-audio');
