@@ -11,15 +11,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 */
-/*
-@font-face {
-  font-family: "Roboto";
-  src: url("assets/fonts/Roboto-Regular.ttf") format("truetype");
 
-}*/
-/*
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-*/
 @import 'assets/css/header.css';
 @import 'assets/css/coverage.css';
 @import 'assets/css/index.css';

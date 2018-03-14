@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+
+}
+
 #top-radio-station{
     display: grid;
     grid-template-areas: 

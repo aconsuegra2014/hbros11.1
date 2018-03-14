@@ -1,21 +1,24 @@
 <?php
-$topWebImageNumber = $_COOKIE["top-web-image-number"];
-if( $topWebImageNumber == null)
-    $topWebImageNumber = 1;
-else
+
+$topWebImageNumber = null;
+if( isset( $_COOKIE["top-web-image-number"] ) ){
+    $topWebImageNumber = $_COOKIE["top-web-image-number"];
     $topWebImageNumber = $topWebImageNumber >= 3 ? 1 : $topWebImageNumber + 1;
+}
+else
+    $topWebImageNumber = 1;
+
 setcookie("top-web-image-number", $topWebImageNumber);
 ?>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="google-site-verification" content="r-VDsjyVuLh9T70QG8SlznY_fOTqlehAc3QSXWfcEAs" />
-    <!-- External fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-    <!-- Bootstrap -->
-    <link href="<?php bloginfo('template_directory'); ?>/assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="google-site-verification" content="r-VDsjyVuLh9T70QG8SlznY_fOTqlehAc3QSXWfcEAs" />
+	
+	<!-- Bootstrap -->
+	<link href="<?php bloginfo('template_directory'); ?>/assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- FontAwesome -->
     <link href="<?php bloginfo('template_directory'); ?>/assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
     
