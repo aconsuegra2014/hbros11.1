@@ -4,11 +4,6 @@ for(let clampDocument of documents)
 
 
 jQuery(function($) {
-	// Adding custom scroll with javascript
-    $("section").niceScroll({
-	cursorborder: ""
-	,cursorcolor: "#808080cc"
-    }); 
 
     var slider = document.getElementById('slider');
     if(slider !=null){
