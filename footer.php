@@ -53,24 +53,13 @@
 <div class="row">
     <div class="col-md-12" id="copyright">
         <p>
-	    <?php _e('Copyright © 2001-2018. Todos los derechos reservados. CMKX Radio Bayamo, Bayamo, Cuba.','cmkx');  ?>
+	    <?php _e('Copyright © 2001-2018. Todos los derechos reservados. CMKX Radio Bayamo, Bayamo, Cuba.','cmkx'); ?>
 	    <br><br>
 	    <?php _e('Fundada el 10 octubre de 1936. Autorizamos la reproducción de trabajos de este medio, siempre que sea de forma íntegra y se acredite la fuente.', 'cmkx'); ?>
 	</p>
     </div>
 </div>
 </div>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/clamp.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.nicescroll.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.jcarousel.min.js"></script>
-
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/bloggers-carousel.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/slider.jquery.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
-
-
-
-
+<?php wp_footer(); ?>
   </body>
 </html>

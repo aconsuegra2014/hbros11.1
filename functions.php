@@ -30,14 +30,21 @@ remove_action( 'wp_head', 'wlwmanifest_link' );
 function additional_js()
 {
     wp_deregister_script('jquery');
+    
     wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/js/jquery.3.2.1.min.js', array(), null, true);
     wp_enqueue_script('popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), null, true);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), null, true);
-    wp_print_scripts();
 
+
+    wp_enqueue_script('clamp', get_template_directory_uri() . '/assets/js/clamp.min.js', array(), null, true);
+    wp_enqueue_script('jquery-carousel', get_template_directory_uri() . '/assets/js/jquery.jcarousel.min.js', array(), null, true);
+    wp_enqueue_script('blogs-carousel', get_template_directory_uri() . '/assets/js/bloggers-carousel.js', array(), null, true);
+    wp_enqueue_script('slider-jqury', get_template_directory_uri() . '/assets/js/slider.jquery.js', array(), null, true);
+    wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
 
 }
-add_action('wp_head','additional_js');
+// Add js script at bottom
+add_action('wp_footer','additional_js');
 
 // Add open graph doctype
 function doctype_opengraph($output) {
@@ -52,19 +59,19 @@ function fb_opengraph() {
     global $post;
     
     if(is_single()) {
-        if(has_post_thumbnail($post->ID)) {
-            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+	if(has_post_thumbnail($post->ID)) {
+	    $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
 	    $img_src = $img_src[0];
-        } 
+	} 
 	else 
-            $img_src = get_bloginfo('template_directory') . '/assets/images/Bayamo-top-web-1.jpg';
+	    $img_src = get_bloginfo('template_directory') . '/assets/images/Bayamo-top-web-1.jpg';
 
-        if($excerpt = $post->post_excerpt) {
-            $excerpt = strip_tags($post->post_excerpt);
-            $excerpt = str_replace("", "'", $excerpt);
-        } else 
-            $excerpt = the_excerpt();
-        
+	if($excerpt = $post->post_excerpt) {
+	    $excerpt = strip_tags($post->post_excerpt);
+	    $excerpt = str_replace("", "'", $excerpt);
+	} else 
+	$excerpt = the_excerpt();
+	
 ?>
 
 <meta property="og:title" content="<?php echo the_title(); ?>"/>
