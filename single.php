@@ -94,7 +94,7 @@ $sections = array( 'deportes', 'sports', 'cultura', 'culture', 'ciencia', 'scien
 		<?php foreach($tags as $individual_tag) : ?>
 		    <?php $tag_ids[] = $individual_tag->term_id; ?>
 		<?php endforeach; ?>
-		<?php  $args=array('tag__in' => $tag_ids, 'post__not_in' => array($post->ID), 'posts_per_page'=>4, 'caller_get_posts'=>1 ); ?>
+		<?php  $args=array('tag__in' => $tag_ids, 'post__not_in' => array($post->ID), 'posts_per_page'=>4, 'ignore_sticky_posts'=> 1 ); ?>
 		<?php  $my_query = new wp_query( $args ); ?>
 		<ol class="relatedPosts">
 		    <?php while( $my_query->have_posts() ) : ?>
