@@ -1,4 +1,18 @@
-<?php get_header(); ?>
+<?php
+get_header(); 
+$locale = 'es_LA';
+
+if(get_locale() === 'en_US')
+    $locale = 'en_US';
+?>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) return;
+     js = d.createElement(s); js.id = id;
+     js.src = 'https://connect.facebook.net/<?php echo $locale; ?>/sdk.js#xfbml=1&version=v2.12&appId=339397659913070&autoLogAppEvents=1';
+     fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));</script>
 <?php $main = 'principal'; ?>
 <?php  if(get_locale() === 'en_US'): ?>
     <?php $main = 'main'; ?>
@@ -81,6 +95,7 @@ $sections = array( 'deportes', 'sports', 'cultura', 'culture', 'ciencia', 'scien
 <div class="row single-post">
     <div class=col-md-9>
 	<?php the_content(); ?>
+	<div class="fb-like" data-href="<?php the_permalink()?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 
 	<?php if ( comments_open() || get_comments_number() ) : ?>
 	    <?php comments_template();  ?>
