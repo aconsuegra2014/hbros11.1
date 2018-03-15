@@ -127,9 +127,7 @@ div.single-post p{
 }
 
 .thumbnailContainer{
-    max-height: 377px;
     min-width: 320px;
-    overflow: hidden;
     margin-bottom: 25px;	
 }
 
