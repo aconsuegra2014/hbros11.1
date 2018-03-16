@@ -1,0 +1,8 @@
+I'm using  uglify-js to compress the js code.
+Intall uglify with the command:
+npm install uglify-js -g
+If you are using proxy, then set it with
+>npm config set proxy "http://aconsuegra:my password@proxy.cmkx.icrt.cu:3128"
+
+
+>uglifyjs jquery.3.2.1.min.js popper.min.js bootstrap.min.js clamp.min.js jquery.jcarousel.min.js bloggers-carousel.js slider.jquery.js main.js --warn -o cmkx.js

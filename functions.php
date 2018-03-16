@@ -30,7 +30,7 @@ remove_action( 'wp_head', 'wlwmanifest_link' );
 function additional_js()
 {
     wp_deregister_script('jquery');
-    
+    /*
     wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/js/jquery.3.2.1.min.js', array(), null, true);
     wp_enqueue_script('popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), null, true);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), null, true);
@@ -41,6 +41,8 @@ function additional_js()
     wp_enqueue_script('blogs-carousel', get_template_directory_uri() . '/assets/js/bloggers-carousel.js', array(), null, true);
     wp_enqueue_script('slider-jqury', get_template_directory_uri() . '/assets/js/slider.jquery.js', array(), null, true);
     wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+    */
+    wp_enqueue_script('cmkx', get_template_directory_uri() . '/assets/js/cmkx.js', array(), 1, true);
 
 }
 // Add js script at bottom
