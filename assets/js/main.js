@@ -1,6 +1,6 @@
 var documents = document.querySelectorAll('.clamp p');
-for(let clampDocument of documents)
-    $clamp(clampDocument, {clamp: 2});
+for(var i =0; i < documents.length; i++)
+    $clamp(documents[i], {clamp: 2});
 
 
 jQuery(function($) {
