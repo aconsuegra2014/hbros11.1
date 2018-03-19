@@ -61,5 +61,8 @@
 </div>
 </div>
 <?php wp_footer(); ?>
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a96c321e83d6fd7"></script>
+
   </body>
 </html>
