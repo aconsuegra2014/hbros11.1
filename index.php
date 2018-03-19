@@ -171,6 +171,42 @@
 	</div>
 	<hr>
 	<p class="postCategories">
+	    <?php $category_link = get_term_link($specials, 'categoria_menu'  );  ?>
+	    <a href="<?php echo esc_url( $category_link );  ?>" title="<?php _e('Especiales','cmkx'); ?>"><?php  _e('Especiales','cmkx'); ?></a>
+	</p>
+	<div class="row index-category-posts">
+	    <div class="col-md-6">
+		<?php 
+		$specials_posts = new WP_Query(array('tax_query' => array(
+		    array(
+			'taxonomy' => 'categoria_menu',
+			'field'    => 'slug',
+			'terms'    => $specials,
+		    ),
+		),
+						     'posts_per_page' => 1
+		));
+		if ( $specials_posts->have_posts() ) :
+				  $specials_posts->the_post();
+		?>
+		    <div id='index-special-thumbnail-container'>
+			<?php the_post_thumbnail('cmkx-medium');  ?>
+		    </div>
+
+		    <?php endif; ?>
+	    </div>
+	    <div class="col-md-6">
+		<h3>
+		    <a href="<?php echo get_permalink(); ?> ">
+			<?php echo the_title();  ?>
+		    </a>
+		</h3>
+		<?php the_excerpt(); ?>
+		<?php wp_reset_postdata();  ?>
+	    </div>
+	</div>
+	<hr>
+	<p class="postCategories">
 	    <?php   $category_id = get_cat_ID( $sports ); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Deportes','cmkx'); ?>"><?php _e('Deportes','cmkx'); ?></a>
