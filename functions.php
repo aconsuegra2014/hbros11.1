@@ -52,19 +52,19 @@ add_action('wp_footer','additional_js');
 function additional_css(){
 
     /*
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'cmkx-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'bloggers-carousel', get_template_directory_uri() . '/assets/css/bloggers-carousel.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'feedburner', get_template_directory_uri() . '/assets/css/feedburner.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'slider', get_template_directory_uri() . '/assets/css/slider.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'header', get_template_directory_uri() . '/assets/css/header.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'coverage', get_template_directory_uri() . '/assets/css/coverage.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'index', get_template_directory_uri() . '/assets/css/index.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'cmkx-widgets', get_template_directory_uri() . '/assets/css/widgets.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'single', get_template_directory_uri() . '/assets/css/single.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/css/footer.css',  array(),  false, 'all' );
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css',  array(),  false, 'all' );
-    */
+       wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'cmkx-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'bloggers-carousel', get_template_directory_uri() . '/assets/css/bloggers-carousel.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'feedburner', get_template_directory_uri() . '/assets/css/feedburner.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'slider', get_template_directory_uri() . '/assets/css/slider.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'header', get_template_directory_uri() . '/assets/css/header.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'coverage', get_template_directory_uri() . '/assets/css/coverage.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'index', get_template_directory_uri() . '/assets/css/index.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'cmkx-widgets', get_template_directory_uri() . '/assets/css/widgets.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'single', get_template_directory_uri() . '/assets/css/single.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/css/footer.css',  array(),  false, 'all' );
+       wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css',  array(),  false, 'all' );
+     */
     wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/cmkx.css',  array(),  2, 'all' );
     
     
@@ -83,7 +83,7 @@ add_filter('language_attributes', 'doctype_opengraph');
 // Add open grahp meta
 function fb_opengraph() {
     global $post;
-    
+    setup_postdata( $post ); 
     if(is_single()) {
 	if(has_post_thumbnail($post->ID)) {
 	    $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
@@ -92,16 +92,17 @@ function fb_opengraph() {
 	else 
 	    $img_src = get_bloginfo('template_directory') . '/assets/images/Bayamo-top-web-1.jpg';
 
-	if($excerpt = $post->post_excerpt) {
-	    $excerpt = strip_tags($post->post_excerpt);
-	    $excerpt = str_replace("", "'", $excerpt);
-	} else 
-	$excerpt = the_excerpt();
+	$excerpt = $post->post_excerpt;
+	if($excerpt == '') 
+            $excerpt = 	get_the_excerpt();
+	
+	$excerpt = strip_tags($excerpt);
+	$excerpt = str_replace("", "'", $excerpt);
 	
 ?>
 
 <meta property="og:title" content="<?php echo the_title(); ?>"/>
-<meta property="og:description" content="<?php echo $excerpt; ?>"/>
+<meta property="og:description" content="<?php  echo $excerpt; ?>"/>
 <meta property="og:type" content="article"/>
 <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
 <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
@@ -127,22 +128,22 @@ add_action('wp_head', 'fb_opengraph', 5);
 //
 function jsonldArticle(){
     global $post;
-    
+    setup_postdata( $post ); 
     if(is_single()) {
 	$img_src= '';
-	$excerpt= '';
 	if(has_post_thumbnail($post->ID)) {
             $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
 	    $img_src = $img_src[0];
         } else {
             $img_src = get_bloginfo('template_directory') . '/assets/images/Bayamo-top-web-1.jpg';
         }
-        if($excerpt = $post->post_excerpt) {
-            $excerpt = strip_tags($post->post_excerpt);
-            $excerpt = str_replace("", "'", $excerpt);
-        } else {
-            $excerpt = the_excerpt();
-        }
+
+	$excerpt = $post->post_excerpt;
+	if($excerpt == '') 
+            $excerpt = 	get_the_excerpt();
+	
+	$excerpt = strip_tags($excerpt);
+	$excerpt = str_replace("", "'", $excerpt);
 
 	$tags = get_the_tags();
 	$keywords = '';
