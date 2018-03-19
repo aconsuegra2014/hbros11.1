@@ -12,18 +12,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 */
 
-@import 'assets/css/header.css';
-@import 'assets/css/coverage.css';
-@import 'assets/css/index.css';
-@import 'assets/css/widgets.css';
-@import 'assets/css/single.css';
-@import 'assets/css/footer.css';
 
 :root{
     /* Colors */
     --gray: #808080cc;
     /* Sizes */
     --max-content-width: 720px;
+    --index-heading-category-post: 22px;
 }
 
 
@@ -235,7 +230,8 @@ div#blogs img{
 }
 
 .index-category-posts h3{
-    font-size: 22px;
+    font-size: var(--index-heading-category-post);
+    font-weight: bolder;
 }
 
 p.date{
@@ -247,6 +243,7 @@ p.date{
 p.date + p{
   padding-top: 5px;	
 }
+
 p.category-date{
     font-size: 11px;
 }
@@ -285,10 +282,11 @@ ol.tags li a, ol.categoryTags a{
     padding: 4px 0 20px 0;
 }
 
-.thumbnailContainerInner{
+#index-special-thumbnail-container, .thumbnailContainerInner{
     overflow: hidden;
     max-height: 270px;  
 }
+
 
 p.author, p.photographer{
 	margin: 0;

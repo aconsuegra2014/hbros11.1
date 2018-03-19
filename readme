@@ -6,3 +6,14 @@ If you are using proxy, then set it with
 
 
 >uglifyjs jquery.3.2.1.min.js popper.min.js bootstrap.min.js clamp.min.js jquery.jcarousel.min.js bloggers-carousel.js slider.jquery.js main.js --warn -o cmkx.js
+
+I'm using cssnano to compress ths css files.
+Install cssnano wiht the command:
+>npm install cssnano
+After
+>npm install postcss-cli --global
+
+To compress run:
+>type bootstrap.min.css font-awesome.min.css bloggers-carousel.css feedburner.css slider.css header.css coverage.css index.css widgets.css single.css footer.css ..\..\style.css > cmkx-tmp.css
+Then compress the temp css generated.
+>postcss cmkx-tmp.css > cmkx.css
