@@ -108,6 +108,8 @@ function fb_opengraph() {
 <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
 <meta property="og:image" content="<?php echo $img_src; ?>"/>
 
+<meta name="description" content="<?php  echo $excerpt; ?>">
+
 <?php
 } else {
     return;
