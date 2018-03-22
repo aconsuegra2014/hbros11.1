@@ -16,14 +16,14 @@ setcookie("top-web-image-number", $topWebImageNumber);
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="google-site-verification" content="r-VDsjyVuLh9T70QG8SlznY_fOTqlehAc3QSXWfcEAs" />
-    
+	
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	    <script src="<?php bloginfo('template_directory'); ?>/assets/js/html5shiv.js"></script>
 	    <script src="<?php bloginfo('template_directory'); ?>/assets/js/respond.min.js"></script>
 	<![endif]-->
-
-    <?php wp_head(); ?>
+	<script defer src="<?php bloginfo('template_directory'); ?>/assets/js/turbolinks.js"></script> 
+	<?php wp_head(); ?>
   </head>
   <body>
     <div class="container">
