@@ -46,6 +46,7 @@ figcaption{
     color: white;
     font-size: 0.8rem;
     margin: -10px 0 0 0;
+    max-width: var(--max-content-width);
 		
 }
 
@@ -313,21 +314,6 @@ p.redaction{
 	color: #666666;
 }
 
-ol.relatedPosts{
-	list-style: none;
-	padding: 0;
-}
-
-ol.relatedPosts li{
-   display: inline-block;
-   width: 24%;
-   vertical-align: top;
-}
-
-ol.relatedPosts img{
-   width: 100%;
-   height: auto;
-}
 .thumbnailContainerRelated{
    height: 120px;
    overflow: hidden;   

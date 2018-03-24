@@ -9,7 +9,7 @@ If you are using proxy, then set it with
 
 I'm using cssnano to compress ths css files.
 Install cssnano wiht the command:
->npm install cssnano
+>npm install cssnano --save-dev
 After
 >npm install postcss-cli --global
 
