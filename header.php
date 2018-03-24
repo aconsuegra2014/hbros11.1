@@ -54,7 +54,7 @@ setcookie("top-web-image-number", $topWebImageNumber);
 	      </a>
 	    </li>
 	    <li>
-	      <a href="https://plus.google.com/u/0/100727408183787081261">
+	      <a href="https://plus.google.com/u/0/+RadioBayamo">
 		<i class="fa fa-google-plus-square fa-2x"></i></a>
 	    </li>
 	    <li>
