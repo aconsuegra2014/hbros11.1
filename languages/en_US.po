@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cmkx\n"
-"POT-Creation-Date: 2018-02-26 12:37-0500\n"
-"PO-Revision-Date: 2018-02-26 12:37-0500\n"
+"POT-Creation-Date: 2018-03-27 10:30-0400\n"
+"PO-Revision-Date: 2018-03-27 10:30-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -39,67 +39,75 @@ msgstr ""
 "Founded on October 10, 1936. We authorize the reproduction of works of this "
 "means, whenever in full and source are credited."
 
-#: functions.php:60
+#: functions.php:211
 msgid "top-right-widget"
 msgstr ""
 
-#: functions.php:74
+#: functions.php:225
 msgid "right-sport-widget"
 msgstr ""
 
-#: functions.php:87
+#: functions.php:238
 msgid "right-culture-widget"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:251
 msgid "right-science-widget"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:264
 msgid "right-social-widget"
 msgstr ""
 
-#: functions.php:216
+#: functions.php:367
 msgid "Name"
 msgstr "Name"
 
-#: functions.php:218
+#: functions.php:369
 msgid "Email"
 msgstr "Email"
 
-#: functions.php:227
+#: functions.php:378
 msgid "Comment"
 msgstr "Comentario"
 
-#: functions.php:233
+#: functions.php:384
 msgid "Post Comment"
 msgstr "Publicar comentario"
 
-#: index.php:173
+#: index.php:176 widgets/cmkx-specials.php:22
+msgid "Especiales"
+msgstr "Specials"
+
+#: index.php:215
 msgid "Deportes"
 msgstr "Sports"
 
-#: index.php:206
+#: index.php:249
 msgid "Cultura"
 msgstr "Culture"
 
-#: index.php:238
+#: index.php:282
 msgid "Ciencia y Tecnología"
 msgstr "Science and Technology"
 
-#: index.php:270
+#: index.php:315
 msgid "Sociedad"
 msgstr "Society"
 
-#: index.php:354
+#: index.php:348
+msgid "Más noticias"
+msgstr "More news"
+
+#: index.php:420
 msgid "Fotorreportaje"
 msgstr "Photo journalism"
 
-#: page-archive.php:68 page-archives.php:68 page-archivos.php:68
+#: page-archives.php:69 page-archivos.php:68
 msgid "Publicaciones anteriores"
 msgstr "Older posts"
 
-#: page-archive.php:71 page-archives.php:71 page-archivos.php:71
+#: page-archives.php:72 page-archivos.php:71
 msgid "Publicaciones más recientes"
 msgstr "Recent posts"
 
@@ -107,29 +115,24 @@ msgstr "Recent posts"
 msgid "Buscar"
 msgstr "Search"
 
-#: single.php:70
+#: single.php:105
 msgid "Contenido relacionado"
 msgstr "Related content"
 
-#: single.php:97
+#: single.php:132
 msgid "En portada"
 msgstr "On the front page"
 
-#: single.php:116
+#: single.php:151
 msgid "Publicaciones recientes"
 msgstr "Recent posts"
 
-#: single.php:128
+#: single.php:163
 msgid "Más leidas"
 msgstr "Most read"
 
-#: widgets/cmkx-real-audio.php:14
-msgid "Audio real"
-msgstr "Real audio only in Spanish"
-
-#: widgets/cmkx-specials.php:22
-msgid "Especiales"
-msgstr "Specials"
+#~ msgid "Audio real"
+#~ msgstr "Real audio only in Spanish"
 
 #~ msgid "Older Entries"
 #~ msgstr "Publicaciones anteriores"

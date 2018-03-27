@@ -154,6 +154,7 @@
 		<ol class="list-group secondary-posts">
 		    <?php while($secondaryPosts->have_posts() ) : ?>
 			<?php $secondaryPosts->the_post(); ?>
+			<?php $postsShown[] = $post->ID ?>
 			<li  class="list-group-item">
 			    <div class="secondaryPostsContainer">
 				<?php the_post_thumbnail('cmkx-small'); ?>
