@@ -16,6 +16,7 @@ Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-backgr
 :root{
     /* Colors */
     --gray: #808080cc;
+    --red: #BE2503;
     /* Sizes */
     --max-content-width: 720px;
     --index-heading-category-post: 22px;

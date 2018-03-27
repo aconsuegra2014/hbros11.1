@@ -25,3 +25,20 @@ ol.secondary-posts h3{
 ol.secondary-posts li{
     padding: 0;
 }
+
+#more-news-header{
+    color: var(--red);
+}
+
+#more-news-body{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-gap: 15px;
+}
+
+#more-news-body h4{
+    font-size: 18px;
+}
+#more-news-body i{
+    color: var(--gray);
+}

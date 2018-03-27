@@ -64,10 +64,10 @@ function additional_css(){
        wp_enqueue_style( 'single', get_template_directory_uri() . '/assets/css/single.css',  array(),  false, 'all' );
        wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/css/footer.css',  array(),  false, 'all' );
        wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css',  array(),  false, 'all' );
-     */
     
+    */
     wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/cmkx.css',  array(),  null, 'all' );
-    
+
     
 }
 // Add css to head
