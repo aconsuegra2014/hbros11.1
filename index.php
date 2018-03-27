@@ -346,7 +346,7 @@
 	<?php if($moreNews->have_posts()): ?>
 	    <hr>
 	    <p id="more-news-header" class="postCategories">
-		<?php _e('Más noticias','cmkx'); ?>
+		<?php _e('Noticias recientes','cmkx'); ?>
 	    </p>
 
 	    <div id="more-news-body">
@@ -354,8 +354,8 @@
 		    <div>
 			<h4>
 			    <a href="<?php echo get_permalink(); ?>">
-				<i class="fa fa-newspaper-o" aria-hidden="true"></i> <?php the_title(); ?>
-    			    </a>
+				<i class="fa fa-edit" aria-hidden="true"></i> <?php the_title(); ?>
+			    </a>
 			</h4>
 		    </div>
 		<?php endwhile; ?>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cmkx\n"
-"POT-Creation-Date: 2018-03-27 10:30-0400\n"
-"PO-Revision-Date: 2018-03-27 10:30-0400\n"
+"POT-Creation-Date: 2018-03-27 17:23-0400\n"
+"PO-Revision-Date: 2018-03-27 17:24-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -75,31 +75,31 @@ msgstr "Comentario"
 msgid "Post Comment"
 msgstr "Publicar comentario"
 
-#: index.php:176 widgets/cmkx-specials.php:22
+#: index.php:177 widgets/cmkx-specials.php:22
 msgid "Especiales"
 msgstr "Specials"
 
-#: index.php:215
+#: index.php:216
 msgid "Deportes"
 msgstr "Sports"
 
-#: index.php:249
+#: index.php:250
 msgid "Cultura"
 msgstr "Culture"
 
-#: index.php:282
+#: index.php:283
 msgid "Ciencia y Tecnología"
 msgstr "Science and Technology"
 
-#: index.php:315
+#: index.php:316
 msgid "Sociedad"
 msgstr "Society"
 
-#: index.php:348
-msgid "Más noticias"
-msgstr "More news"
+#: index.php:349
+msgid "Noticias recientes"
+msgstr "Recent news"
 
-#: index.php:420
+#: index.php:421
 msgid "Fotorreportaje"
 msgstr "Photo journalism"
 
@@ -130,6 +130,9 @@ msgstr "Recent posts"
 #: single.php:163
 msgid "Más leidas"
 msgstr "Most read"
+
+#~ msgid "Más noticias"
+#~ msgstr "More news"
 
 #~ msgid "Audio real"
 #~ msgstr "Real audio only in Spanish"
