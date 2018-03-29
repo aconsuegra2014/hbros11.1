@@ -342,7 +342,7 @@
 		<?php wp_reset_postdata(); ?>
 	    <?php endif; ?>
 	</div>
-	<?php $moreNews = new WP_Query( array( 'posts_per_page' => 6, 'post__not_in' => $postsShown, 'no_found_rows' => true )  ); ?>
+	<?php $moreNews = new WP_Query( array( 'posts_per_page' => 9, 'post__not_in' => $postsShown, 'no_found_rows' => true )  ); ?>
 	<?php if($moreNews->have_posts()): ?>
 	    <hr>
 	    <p id="more-news-header" class="postCategories">
