@@ -20,7 +20,7 @@
 
 <div class='row'>
     <? $postsShown = array(); ?>
-    <?php $main_posts = new WP_Query( array( 'category_name' => $main ,'posts_per_page' => 3 )  ); ?>
+    <?php $main_posts = new WP_Query( array( 'category_name' => $main ,'posts_per_page' => 3, 'no_found_rows' => true )  ); ?>
     <div class="col no-gutters">
 	<?php if ( $main_posts->have_posts() ) : ?>
             <?php $mainPost = $main_posts->the_post(); ?>
@@ -108,6 +108,7 @@
 	    </div>
 	</div>
     </div>
+    <?php wp_reset_postdata(); ?>
     
     <div class="col-md-custom">
 	<div id="widget-middle-right-bar">
@@ -123,7 +124,7 @@
     </div>
     
 </div>
-<?php wp_reset_postdata(); ?>
+
 	<?php endif; ?>
 	<hr>
 	<div class="row" id="radioCubana">
@@ -134,7 +135,7 @@
 	
 	<hr>
 	<div class="row">
-	    <?php $secondaryPosts = new WP_Query( array( 'category_name' => $secondary,'posts_per_page' => 4 )  ); ?>
+	    <?php $secondaryPosts = new WP_Query( array( 'category_name' => $secondary,'posts_per_page' => 4, 'no_found_rows' => true )  ); ?>
 	    <div class="col firstSecondaryPost">
 		<?php if ( $secondaryPosts->have_posts() ) : ?>
 		    <?php $secondaryPosts->the_post(); ?>
@@ -153,6 +154,7 @@
 		<ol class="list-group secondary-posts">
 		    <?php while($secondaryPosts->have_posts() ) : ?>
 			<?php $secondaryPosts->the_post(); ?>
+			<?php $postsShown[] = $post->ID ?>
 			<li  class="list-group-item">
 			    <div class="secondaryPostsContainer">
 				<?php the_post_thumbnail('cmkx-small'); ?>
@@ -185,15 +187,17 @@
 		    ),
 		),
 						     'posts_per_page' => 1
+						   , 'no_found_rows' => true
 		));
 		if ( $specials_posts->have_posts() ) :
 				  $specials_posts->the_post();
 		?>
+		    <?php $postsShown[] = $post->ID ?>
 		    <div id='index-special-thumbnail-container'>
 			<?php the_post_thumbnail('cmkx-medium');  ?>
 		    </div>
 
-		    <?php endif; ?>
+		<?php endif; ?>
 	    </div>
 	    <div class="col-md-6">
 		<h3>
@@ -213,7 +217,7 @@
 	</p>
 	
 	<div class="row index-category-posts">
-	    <?php $sportPosts = new WP_Query( array( 'category_name' => $sports,'posts_per_page' => 1, 'post__not_in' => $postsShown )  ); ?>
+	    <?php $sportPosts = new WP_Query( array( 'category_name' => $sports,'posts_per_page' => 1, 'post__not_in' => $postsShown, 'no_found_rows' => true )  ); ?>
 	    <?php if ( $sportPosts->have_posts() ) : ?>
 		<?php $sportPosts->the_post(); ?>
 		<?php $postsShown[] = $post->ID ?>
@@ -246,12 +250,13 @@
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Cultura','cmkx'); ?>"><?php _e('Cultura','cmkx'); ?></a>
 	</p>
 	<div class="row index-category-posts">
-	    <?php $culturePosts = new WP_Query( array( 'category_name' => $culture ,'posts_per_page' => 1, 'post__not_in' => $postsShown )  ); ?>
+	    <?php $culturePosts = new WP_Query( array( 'category_name' => $culture ,'posts_per_page' => 1, 'post__not_in' => $postsShown, 'no_found_rows' => true )  ); ?>
 	    <?php if ( $culturePosts->have_posts() ) : ?>
 		<?php $culturePosts->the_post(); ?>
+		<?php $postsShown[] = $post->ID ?>
 		<div class="col-md-5">
 		    <div class="sectionThumbnailContainer">
-			<?php the_post_thumbnail('full'); ?>
+			<?php the_post_thumbnail('cmkx-medium'); ?>
 		    </div>
 		</div>
 		<div class="col-md-4">
@@ -278,12 +283,13 @@
 	    <a href="<?php echo esc_url( $category_link ); ?>" title="<?php _e('Ciencia y Tecnología','cmkx'); ?>"><?php _e('Ciencia y Tecnología','cmkx'); ?></a>
 	</p>
 	<div class="row index-category-posts">
-	    <?php $scincePosts = new WP_Query( array( 'category_name' => $science,'posts_per_page' => 1, 'post__not_in' => $postsShown )  ); ?>
+	    <?php $scincePosts = new WP_Query( array( 'category_name' => $science,'posts_per_page' => 1, 'post__not_in' => $postsShown, 'no_found_rows' => true )  ); ?>
 	    <?php if ( $scincePosts->have_posts() ) : ?>
 		<?php $scincePosts->the_post(); ?>
+		<?php $postsShown[] = $post->ID ?>
 		<div class="col-md-5 culturePosts">
 		    <div class="sectionThumbnailContainer">
-			<?php the_post_thumbnail('full'); ?>
+			<?php the_post_thumbnail('cmkx-medium'); ?>
 		    </div>
 		</div>
 		<div class="col-md-4">
@@ -311,12 +317,13 @@
 	</p>
 	
 	<div class="row index-category-posts">
-	    <?php $societyPosts = new WP_Query( array( 'category_name' => $society ,'posts_per_page' => 1, 'post__not_in' => $postsShown )  ); ?>
+	    <?php $societyPosts = new WP_Query( array( 'category_name' => $society ,'posts_per_page' => 1, 'post__not_in' => $postsShown, 'no_found_rows' => true )  ); ?>
 	    <?php if ( $societyPosts->have_posts() ) : ?>
 		<?php $societyPosts->the_post(); ?>
+		<?php $postsShown[] = $post->ID ?>
 		<div class="col-md-5">
 		    <div class="sectionThumbnailContainer">
-			<?php the_post_thumbnail('full'); ?>
+			<?php the_post_thumbnail('cmkx-medium'); ?>
 		    </div>
 		</div>
 		<div class="col-md-4">
@@ -335,6 +342,26 @@
 		<?php wp_reset_postdata(); ?>
 	    <?php endif; ?>
 	</div>
+	<?php $moreNews = new WP_Query( array( 'posts_per_page' => 9, 'post__not_in' => $postsShown, 'no_found_rows' => true )  ); ?>
+	<?php if($moreNews->have_posts()): ?>
+	    <hr>
+	    <p id="more-news-header" class="postCategories">
+		<?php _e('Noticias recientes','cmkx'); ?>
+	    </p>
+
+	    <div id="more-news-body">
+		<?php while ( $moreNews->have_posts() ) : $moreNews->the_post(); ?>
+		    <div>
+			<h4>
+			    <a href="<?php echo get_permalink(); ?>">
+				<i class="fa fa-edit" aria-hidden="true"></i> <?php the_title(); ?>
+			    </a>
+			</h4>
+		    </div>
+		<?php endwhile; ?>
+	    </div>
+	<?php endif; ?>
+	<?php wp_reset_postdata(); ?>
 	<hr>
 	<?php if(get_locale()!='en_US') : ?>
 	    <div id="blogs" class="carousel slide" data-ride="carousel" data-interval="9000">
@@ -388,7 +415,7 @@
 
 	    <hr>
 	<?php endif; ?>
-	<?php $photoReport = new WP_Query( array( 'post_type' => 'foto-reportaje','posts_per_page' => 1, 'lang' => pll_current_language() )  ); ?>
+	<?php $photoReport = new WP_Query( array( 'post_type' => 'foto-reportaje','posts_per_page' => 1, 'lang' => pll_current_language(), 'no_found_rows' => true )  ); ?>
 	<?php if($photoReport->have_posts()) : ?>
 	    <p class="postCategories">
 		<a href="<?php echo get_post_type_archive_link( 'foto-reportaje' ); ?>" title="<?php _e('Fotorreportaje','cmkx'); ?>"><?php _e('Fotorreportaje','cmkx'); ?></a>

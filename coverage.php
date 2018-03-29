@@ -41,9 +41,9 @@
 	)
     ); ?>
 	
-    <div class="row">
+    <div id="coverage-body">
 	<?php while ($coverages->have_posts()) : $coverages->the_post(); ?>
-	    <div class="col-md-4 coverage">
+	    <div class="coverage">
 		<div class="coverage-thumbnail-container">
 		    <?php the_post_thumbnail('cmkx-medium'); ?>
 		</div>

@@ -1,12 +1,22 @@
-ol#comment-list,ol.children{
-    list-style: none;
-    width: 100%;
+div.single-post img{
+    margin-bottom: 10px;
 }
 
 h2.recentPosts + ol, h2.mostRead + ol{
     line-height: 1.2em;
 }
 
-div.single-post img{
-    margin-bottom: 10px;
+ol#comment-list,ol.children{
+    list-style: none;
+    width: 100%;
+}
+
+
+ol.relatedPosts{
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(173px,1fr));
+    grid-gap: 15px;
+    justify-content: space-evenly;
 }

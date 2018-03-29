@@ -1,3 +1,11 @@
 #coverage-header{
     flex-direction: column;
 }
+
+#coverage-body{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-gap: 15px;
+    align-content: space-evenly;
+    justify-items: center;
+}
