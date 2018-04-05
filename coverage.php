@@ -22,7 +22,7 @@
 	<?php else: ?>
 	    <h1 class="elegantshadow" style="font-size: 30px;font-weight: bold;color: #262b62;">
 		<a href="<?php echo get_permalink()?>">
-		  <?php  echo the_title(); ?>
+		    <?php  echo the_title(); ?>
 		</a>
 	    </h1>
 	<?php endif; ?>
@@ -40,9 +40,10 @@
 	    
 	)
     ); ?>
-	
+    <?php global $postsShown; ?>
     <div id="coverage-body">
 	<?php while ($coverages->have_posts()) : $coverages->the_post(); ?>
+	    <?php $postsShown[] = $post->ID ?>
 	    <div class="coverage">
 		<div class="coverage-thumbnail-container">
 		    <?php the_post_thumbnail('cmkx-medium'); ?>

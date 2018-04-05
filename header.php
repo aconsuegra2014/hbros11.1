@@ -9,7 +9,11 @@ else
     $topWebImageNumber = 1;
 
 setcookie("top-web-image-number", $topWebImageNumber);
+
+global $postsShown;
+$postsShown= array();
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>

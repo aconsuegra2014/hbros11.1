@@ -18,8 +18,8 @@
     <?php $main = 'main'; ?>
 <?php endif; ?>
 
+<?php global $postsShown; ?>
 <div class='row'>
-    <? $postsShown = array(); ?>
     <?php $main_posts = new WP_Query( array( 'category_name' => $main ,'posts_per_page' => 3, 'no_found_rows' => true )  ); ?>
     <div class="col no-gutters">
 	<?php if ( $main_posts->have_posts() ) : ?>
