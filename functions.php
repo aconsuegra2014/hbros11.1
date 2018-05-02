@@ -66,7 +66,7 @@ function additional_css(){
        wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css',  array(),  false, 'all' );
     
     */
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/cmkx-v2.css',  array(),  null, 'all' );
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/cmkx-v3.css',  array(),  null, 'all' );
 
     
 }
@@ -274,8 +274,8 @@ register_sidebar(
 // Customizing tag cloud
 function widget_custom_tag_cloud($args) {
     // Control number of tags to be displayed - 0 no tags
-    $args['number'] = 25;
-    $args['largest'] = 25;
+    $args['number'] = 26;
+    $args['largest'] = 26;
     $args['smallest'] = 12;
     $args['unit'] = 'px';
 
