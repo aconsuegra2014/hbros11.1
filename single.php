@@ -58,33 +58,37 @@ $sections = array( 'deportes', 'sports', 'cultura', 'culture', 'ciencia', 'scien
 	</h2>
 	<p class="author">
 	    <?php $authors = wp_get_post_terms($post->ID, 'autores', array("fields" => "all", 'orderby' => 'name')); ?>
-	    <?php if( !empty($authors) ) : ?>
+	    <?php if( !empty($authors) and !is_wp_error($authors) ) : ?>
 		<i class="fa fa-pencil"></i>
-	    <?php endif; ?>
-	    <?php foreach ($authors as $author) : ?>
-		<a href="<?php echo esc_attr(get_term_link($author, 'autores'))?>">								
-		    <?php echo $author->name ?>
-		</a>
-	    <?php endforeach; ?>
+	   
+	      <?php foreach ($authors as $author) : ?>
+        	<a href="<?php echo esc_attr(get_term_link($author, 'autores'))?>">								
+		      <?php echo $author->name ?>
+		  </a>
+	      <?php endforeach; ?>
+            <?php endif; ?>
 	</p>
 	<p class="photographer">
 	    <?php $photographers = wp_get_post_terms($post->ID, 'fotografo', array("fields" => "all", 'orderby' => 'name')); ?>
-	    <?php if( !empty($photographers) ) : ?>
+	    <?php if( !empty($photographers) and !is_wp_error($photographers) ) : ?>
 		<i class="fa fa-camera"></i>
-	    <?php endif; ?>
+	  
 	    <?php foreach ($photographers as $photographer) : ?>
 		<a href="<?php echo esc_attr(get_term_link($photographer, 'fotografo'))?>">								
 		    <?php echo $photographer->name ?>
 		</a>
 	    <?php endforeach; ?>
+  <?php endif; ?>
 	</p>				
 	<p class="redaction">			
 	    <?php $redactions = wp_get_post_terms($post->ID, 'redaccion', array("fields" => "all", 'orderby' => 'name')); ?>
+	    <?php if( !empty($redactions) and !is_wp_error($redactions) ) : ?>
 	    <?php foreach ($redactions as $redaction) : ?>
 		<a href="<?php echo esc_attr(get_term_link($redaction, 'redaccion')); ?>">								
 		    <?php echo $redaction->name; ?>
 		</a>
 	    <?php endforeach; ?>
+  <?php endif; ?>
 	</p>
 	<p class="date">
 	    <?php echo get_the_date(); ?>

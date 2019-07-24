@@ -172,6 +172,8 @@
 		<?php wp_reset_postdata(); ?>
 	</div>
 	<hr>
+       <?php $category_link = get_term_link($specials, 'categoria_menu'  );  ?>
+      <?php if(!is_wp_error($category_link) ) : ?>
 	<p class="postCategories">
 	    <?php $category_link = get_term_link($specials, 'categoria_menu'  );  ?>
 	    <a href="<?php echo esc_url( $category_link );  ?>" title="<?php _e('Especiales','cmkx'); ?>"><?php  _e('Especiales','cmkx'); ?></a>
@@ -210,6 +212,7 @@
 	    </div>
 	</div>
 	<hr>
+  <?php endif; ?>
 	<p class="postCategories">
 	    <?php   $category_id = get_cat_ID( $sports ); ?>
 	    <?php   $category_link = get_category_link( $category_id ); ?>
