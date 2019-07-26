@@ -162,17 +162,12 @@ div.single-post p{
 .secondMainPost h2, .thirdMainPost h2{
     font-size: 18px;
     font-weight: bold;
-    height: 55px;
-    overflow: hidden;
 }
 
 .recentPosts, .mostRead{
 	font-size: 18px;
 }
 
-.thirdMainPostCaption, .secondMainPostCaption{
-
-}
 
 #radioCubana{
     justify-content: center;

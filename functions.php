@@ -42,7 +42,7 @@ function additional_js()
        wp_enqueue_script('slider-jqury', get_template_directory_uri() . '/assets/js/slider.jquery.js', array(), null, true);
        wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
      */
-    wp_enqueue_script('cmkx', get_template_directory_uri() . '/assets/js/cmkx.js', array(), 2, true);
+    wp_enqueue_script('cmkx', get_template_directory_uri() . '/assets/js/cmkx.js', array(), 3, true);
 
 }
 // Add js script at bottom

@@ -1,3 +1,6 @@
+Required plugins
+https://polylang.pro/
+
 I'm using  uglify-js to compress the js code.
 Intall uglify with the command:
 npm install uglify-js -g
