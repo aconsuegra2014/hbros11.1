@@ -166,7 +166,10 @@ $sections = array( 'deportes', 'sports', 'cultura', 'culture', 'ciencia', 'scien
 	<hr>
 	<h2 class="mostRead"><?php _e('Más leidas','cmkx');  ?></h2>
 	<ol class="list-group">
-	    <?php $popular = new WP_Query(array('posts_per_page'=>7, 'meta_key'=>'post_visit_count', 'orderby'=>'meta_value_num', 'order'=>'DESC')); ?>
+        <?php $popular = new WP_Query(array('posts_per_page'=>7, 'meta_key'=>'post_visit_count',
+                                            'date_query' => array(array('after' => '-30 days',
+                    	                                                'column' => 'post_date' )),
+                                            'orderby'=>'meta_value_num', 'order'=>'DESC')); ?>
 	    <?php while ($popular->have_posts()) : $popular->the_post(); ?>
 		<li class="list-group-item">
 		    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
