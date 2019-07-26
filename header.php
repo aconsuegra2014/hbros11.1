@@ -59,10 +59,6 @@ $postsShown= array();
 			    </a>
 			</li>
 			<li>
-			    <a href="https://plus.google.com/u/0/+RadioBayamo">
-				<i class="fa fa-google-plus-square fa-2x"></i></a>
-			</li>
-			<li>
 			    <a href="https://www.youtube.com/channel/UCaemmbo3ws7AuTz8A3dzY3Q">
 				<i class="fa fa-youtube-square fa-2x"></i>
 			    </a>
