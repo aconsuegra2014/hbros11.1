@@ -5,9 +5,12 @@ for(var i =0; i < documents.length; i++)
 //Set same height for second and third main post
 var secondMainTitle = document.querySelector(".secondMainPostCaption h2");
 var thirdMainTitle = document.querySelector(".thirdMainPostCaption h2");
-var biggerHeight = secondMainTitle.clientHeight > thirdMainTitle.clientHeight ? secondMainTitle.clientHeight : thirdMainTitle.clientHeight;
-secondMainTitle.style ="height: "+ biggerHeight + "px;";
-thirdMainTitle.style ="height: "+ biggerHeight + "px;";
+
+if(secondMainTitle != null && thirdMainTitle != null){
+    var biggerHeight = secondMainTitle.clientHeight > thirdMainTitle.clientHeight ? secondMainTitle.clientHeight : thirdMainTitle.clientHeight;
+    secondMainTitle.style ="height: "+ biggerHeight + "px;";
+    thirdMainTitle.style ="height: "+ biggerHeight + "px;";
+}
 
 
 jQuery(function($) {
