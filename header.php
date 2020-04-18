@@ -21,7 +21,6 @@ $postsShown= array();
     <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="google-site-verification" content="r-VDsjyVuLh9T70QG8SlznY_fOTqlehAc3QSXWfcEAs" />
     <link rel="author" href="<?php bloginfo('template_directory'); ?>/humans.txt" />
 	
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
